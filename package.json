@@ -1,0 +1,25 @@
+{
+  "name": "itorg-pl",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Strona firmowa ITORG Krzysztof Radzimski — innowacyjne rozwiązania IT dla administracji publicznej. Next.js (static export) na Cloudflare Pages.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "preview": "npm run build && wrangler pages dev out",
+    "deploy": "npm run build && wrangler pages deploy out",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.7.0",
+    "wrangler": "^3.99.0"
+  }
+}

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 39.6875 39.6875" role="img" aria-label="ITORG">
+  <defs>
+    <linearGradient id="ig1"><stop offset="0" stop-color="#002f51"/><stop offset="1" stop-color="#004a7f"/></linearGradient>
+    <linearGradient id="ig3"><stop offset="0" stop-color="#2e1c38"/><stop offset="1" stop-color="#794891"/></linearGradient>
+    <linearGradient id="ig5"><stop offset="0" stop-color="#621146"/><stop offset="1" stop-color="#a11146"/></linearGradient>
+    <linearGradient id="ig7"><stop offset="0" stop-color="#00560a"/><stop offset="1" stop-color="#298900"/></linearGradient>
+    <linearGradient xlink:href="#ig1" id="ig2" x1="46.260002" y1="127.11978" x2="68.744885" y2="127.11978" gradientUnits="userSpaceOnUse" gradientTransform="translate(44.214514,10.982417)"/>
+    <linearGradient xlink:href="#ig3" id="ig4" x1="44.046067" y1="167.01547" x2="82.932004" y2="167.01547" gradientUnits="userSpaceOnUse" gradientTransform="translate(42.315538,-10.919118)"/>
+    <linearGradient xlink:href="#ig5" id="ig6" x1="93.976349" y1="187.606" x2="103.53205" y2="177.85793" gradientUnits="userSpaceOnUse" gradientTransform="translate(10.887468,-37.441497)"/>
+    <linearGradient xlink:href="#ig7" id="ig8" x1="124.09607" y1="175.90004" x2="133.13538" y2="167.48123" gradientUnits="userSpaceOnUse" gradientTransform="translate(-23.578964,-24.117008)"/>
+  </defs>
+  <g transform="translate(-85.232979,-128.65625)">
+    <g transform="translate(-0.85042702,0.40283385)">
+      <path style="fill:url(#ig4)" d="m 96.01563,157.87299 -9.65403,-9.65675 1.77665,-1.77664 1.77664,-1.77664 4.4026,4.35578 c 2.42144,2.39568 6.08594,5.98677 8.14333,7.98019 l 3.74072,3.6244 7.88351,-7.84293 7.88351,-7.84294 1.63949,1.63949 1.63949,1.63949 -9.65393,9.65665 c -5.30966,5.31115 -9.71469,9.65664 -9.78894,9.65664 -0.0743,0 -4.47932,-4.34553 -9.78904,-9.65674 z"/>
+      <path style="fill:url(#ig6)" d="m 102.78286,151.25805 -1.84359,-1.85783 6.34323,-6.34736 6.34323,-6.34737 1.85279,1.85277 1.85277,1.85278 -6.35242,6.35242 -6.35242,6.35242 z"/>
+      <path style="fill:url(#ig8)" d="m 100.12957,153.79782 -5.752484,-5.75695 5.627414,-5.62284 5.6274,-5.62285 1.63467,1.65635 1.63468,1.65635 -4.50364,4.57101 c -2.477,2.51406 -4.464994,4.6796 -4.417764,4.81231 0.117374,0.32976 4.473534,4.77189 4.679554,4.77189 4.51801,-4.25753 8.8682,-8.69803 13.26002,-13.08722 l 1.73698,1.71497 1.73698,1.71496 -7.61794,7.47448 c -4.18987,4.11096 -7.67992,7.47448 -7.75567,7.47448 -0.0757,0 -2.72634,-2.59062 -5.8902,-5.75694 z"/>
+      <path style="fill:url(#ig2)" d="m 91.984619,145.76774 -1.5101,-1.52603 7.66896,-7.66555 7.668971,-7.66555 3.57347,3.56612 3.57348,3.56612 -1.67351,1.67351 -1.67351,1.6735 -1.89126,-1.93502 -1.89125,-1.93503 -5.896861,5.88698 c -3.24328,3.23784 -6.01868,5.88698 -6.16757,5.88698 -0.14889,0 -0.95026,-0.68672 -1.78082,-1.52603 z"/>
+    </g>
+  </g>
+</svg>

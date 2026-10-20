@@ -25,6 +25,7 @@ export default function ProductLayout({ site, locale, page, children }: SiteProp
         {children}
         <section className="section section--tint product-contact" aria-labelledby="product-contact-title">
           <div className="container">
+            <hr className="rule" />
             <h2 className="section__title" id="product-contact-title">{site.contact.title}</h2>
             <p className="section__subtitle">{site.contact.subtitle}</p>
             <a className="btn btn--brand" href={`${homePath(locale)}#kontakt`}>{site.hero.primaryCta} <ArrowRightIcon /></a>

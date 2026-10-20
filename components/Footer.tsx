@@ -8,7 +8,6 @@ export default function Footer({ site, locale }: SiteProps) {
   const { company } = site;
   return (
     <footer className="footer">
-      <div className="footer__glow" aria-hidden="true" />
       <div className="container">
         <div className="footer__grid">
           <div className="footer__brand">

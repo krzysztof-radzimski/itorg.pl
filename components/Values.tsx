@@ -8,9 +8,9 @@ export default function Values({ site, locale }: SiteProps) {
   return (
     <section className="section section--dark" id="wartosci" tabIndex={-1} aria-labelledby="values-title">
       <div className="container">
-        <div className="section-head section-head--center">
+        <div className="section-head">
           <p className="eyebrow">{values.eyebrow}</p>
-          <hr className="rule rule--center" />
+          <hr className="rule" />
           <h2 className="section__title" id="values-title">{values.title}</h2>
         </div>
 

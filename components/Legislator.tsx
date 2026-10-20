@@ -1,6 +1,7 @@
 import type { SiteProps } from "@/content/site";
 import { fixOrphans } from "@/lib/typography";
 import { ArrowRightIcon, CheckIcon } from "./Icons";
+import ProductLogo from "./ProductLogo";
 
 export default function Legislator({ site, locale }: SiteProps) {
   const { legislator } = site;
@@ -9,6 +10,7 @@ export default function Legislator({ site, locale }: SiteProps) {
       <div className="container">
         <div className="legislator__overview">
           <div>
+            <ProductLogo product="eap-legislator" eager />
             <p className="eyebrow">{legislator.eyebrow}</p>
             <hr className="rule" />
             <h1 className="section__title" id="legislator-title">{legislator.title}</h1>
@@ -28,8 +30,9 @@ export default function Legislator({ site, locale }: SiteProps) {
           </ul>
         </div>
         <ul className="legislator__editions">
-          {legislator.editions.map((edition) => (
+          {legislator.editions.map((edition, index) => (
             <li className="legislator__edition" key={edition.href}>
+              <img className="edition-logo" src={`/products/${["legislator", "legislator-gov", "bestia"][index]}.svg`} alt="" width={48} height={48} loading="lazy" />
               <h2>{edition.name}</h2>
               <p>{fixOrphans(edition.desc, locale)}</p>
               <a className="link" href={edition.href}>{edition.cta}<ArrowRightIcon /></a>

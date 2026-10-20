@@ -1,0 +1,50 @@
+[
+  {
+    "file": "products/legislator.svg",
+    "source": "https://abcpro.pl/build/images/abcpro/products/logo/128/legislator.svg",
+    "retrieved": "2026-10-20",
+    "adaptation": "Grafika bez zmian; uporządkowany zapis XML i wymiary SVG."
+  },
+  {
+    "file": "products/baw.svg",
+    "source": "https://abcpro.pl/build/images/abcpro/products/logo/128/baw.svg",
+    "retrieved": "2026-10-20",
+    "adaptation": "Grafika bez zmian; uporządkowany zapis XML i wymiary SVG."
+  },
+  {
+    "file": "products/kancelaria.svg",
+    "source": "https://abcpro.pl/build/images/abcpro/products/logo/128/ABC-KANCELARIA-EZD.svg",
+    "retrieved": "2026-10-20",
+    "adaptation": "Grafika bez zmian; uporządkowany zapis XML i wymiary SVG."
+  },
+  {
+    "file": "products/anon.svg",
+    "source": "https://abcpro.pl/build/images/abcpro/products/logo/128/anon.svg",
+    "retrieved": "2026-10-20",
+    "adaptation": "Grafika bez zmian; uporządkowany zapis XML i wymiary SVG."
+  },
+  {
+    "file": "products/bestia.svg",
+    "source": "https://abcpro.pl/build/images/abcpro/products/logo/64/bestia.svg",
+    "retrieved": "2026-10-20",
+    "adaptation": "Grafika bez zmian; uporządkowany zapis XML i wymiary SVG."
+  },
+  {
+    "file": "products/legislator-gov.svg",
+    "source": "https://abcpro.pl/build/images/abcpro/products/logo/64/legislator-gov.svg",
+    "retrieved": "2026-10-20",
+    "adaptation": "Grafika bez zmian; uporządkowany zapis XML i wymiary SVG."
+  },
+  {
+    "file": "products/orion.svg",
+    "source": "https://orion.abcpro.pl/assets/images/logo-orion-ai.svg",
+    "retrieved": "2026-10-20",
+    "adaptation": "Oficjalny sygnet orion-symbol, z kadrem używanym w nagłówku platformy."
+  },
+  {
+    "file": "partners/abc-pro.svg",
+    "source": "https://abcpro.pl/build/images/abcpro/abc.svg",
+    "retrieved": "2026-10-20",
+    "adaptation": "Grafika bez zmian; uporządkowany zapis XML i wymiary SVG."
+  }
+]

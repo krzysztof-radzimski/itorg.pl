@@ -58,12 +58,30 @@ odnośników `hreflang`; wszystkie wersje są w `sitemap.xml`.
 - [lib/metadata.ts](lib/metadata.ts): metadane i alternatywne wersje stron.
 - [lib/products.ts](lib/products.ts): powiązanie opisów produktów z ich adresami.
 - [components](components): wspólne komponenty dla wszystkich języków.
+- [components/ProductLogo.tsx](components/ProductLogo.tsx): przypisanie oficjalnych
+  znaków SVG do produktów, wspólne dla katalogu, strony głównej i opisów.
 - [app/globals.css](app/globals.css): kolory, układ i motywy.
 - [public/_headers](public/_headers): nagłówki bezpieczeństwa Cloudflare.
 
 Polskie trasy znajdują się w grupie `app/(pl)`, a pozostałe w `app/[locale]`.
 Osobne układy główne zapewniają właściwy język dokumentu także bez JavaScriptu.
 Lata działalności i rok w stopce są wyliczane podczas kompilacji.
+
+## Identyfikacja wizualna
+
+Paleta i geometryczne akcenty pochodzą z czterech części logo ITORG.
+`BrandMotif` wykorzystuje ścieżki firmowego sygnetu, a `brand-accent.svg`
+powtarza jego kolory i kierunek ukośnych linii. Dekoracje nie zasłaniają treści.
+Układ korzysta z płaskich powierzchni, prostych przycisków i opisowych łączy
+ze strzałkami. Kafle katalogu mają jeden link obejmujący całą powierzchnię.
+Jego nazwa dostępna zawiera widoczny tekst produktu, bez nadpisywania etykiety
+atrybutami ARIA.
+
+Oficjalne logotypy ABC PRO, produktów oraz dodatków są zapisane lokalnie
+w `public/products` i `public/partners`. Są to rzeczywiste grafiki wektorowe.
+[Wykaz źródeł](public/brand-assets.json) zawiera adresy pobrania i opis adaptacji
+sygnetu Orion używanego również w nagłówku jego oficjalnej strony. Przeglądarka
+odwiedzającego nie pobiera tych grafik z domen partnerów.
 
 ## Dostępność i prywatność
 

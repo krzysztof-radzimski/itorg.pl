@@ -39,7 +39,12 @@ for (const language of languages) {
       for (const match of html.matchAll(/\s(?:aria-labelledby|aria-controls)="([^"]+)"/g)) {
         for (const id of match[1].split(/\s+/)) assert.ok(ids.includes(id), `Brak celu ARIA: ${id}`);
       }
-      for (const image of tags(html, "img")) assert.notEqual(attr(image, "alt"), undefined, "Obraz wymaga alt");
+      for (const image of tags(html, "img")) {
+        assert.notEqual(attr(image, "alt"), undefined, "Obraz wymaga alt");
+        const src = attr(image, "src");
+        assert.ok(src?.startsWith("/"), "Grafiki są hostowane lokalnie");
+        assert.ok(existsSync(resolve(root, `.${src}`)), `Brak grafiki w eksporcie: ${src}`);
+      }
 
       const anchors = tags(html, "a");
       const nav = html.match(/<nav\b[^>]*class="nav__links"[\s\S]*?<\/nav>/i)?.[0];

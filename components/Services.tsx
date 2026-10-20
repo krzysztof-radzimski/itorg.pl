@@ -8,10 +8,10 @@ export default function Services({ site, locale }: SiteProps) {
 
   return (
     <section className="section section--light section--alt" id="uslugi" tabIndex={-1} aria-labelledby="services-title">
-      <div className="container">
-        <div className="section-head section-head--center">
+      <div className="container services-layout">
+        <div className="section-head">
           <p className="eyebrow">{services.eyebrow}</p>
-          <hr className="rule rule--center" />
+          <hr className="rule" />
           <h2 className="section__title" id="services-title">{services.title}</h2>
           <p className="section__subtitle">{services.subtitle}</p>
         </div>

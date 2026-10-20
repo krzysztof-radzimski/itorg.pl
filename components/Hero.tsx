@@ -1,23 +1,18 @@
 import type { SiteProps } from "@/content/site";
 import { yearsSince } from "@/lib/typography";
-import { ArrowRightIcon, CheckIcon } from "./Icons";
+import { ArrowRightIcon } from "./Icons";
+import BrandMotif from "./BrandMotif";
 
-// Komponent serwerowy — brak interaktywności. Tło (aurora + siatka) jest czysto
-// CSS-owe, więc liczba lat zostaje wyliczona i zapisana w statycznym HTML.
+// Liczba lat jest wyliczana podczas eksportu statycznego.
 export default function Hero({ site }: SiteProps) {
   const years = yearsSince(site.company.foundedYear);
   const subtitle = site.hero.subtitle.replace("{years}", String(years));
 
   return (
     <section className="hero" id="top" tabIndex={-1} aria-labelledby="hero-title">
-      <div className="hero__bg" aria-hidden="true">
-        <div className="hero__aurora" />
-        <div className="hero__grid" />
-      </div>
-
       <div className="container hero__inner">
         <div className="hero__content">
-          <img className="hero__logo" src="/logo.svg" alt="" width={64} height={64} />
+          <hr className="rule" />
           <p className="eyebrow hero__eyebrow">{site.hero.eyebrow}</p>
           <h1 className="hero__title" id="hero-title">
             {site.hero.titleLead}{" "}
@@ -34,28 +29,8 @@ export default function Hero({ site }: SiteProps) {
           </div>
         </div>
 
-        {/* Dekoracyjny panel „produktowy" — odzwierciedla kompetencje firmy. */}
         <div className="hero__visual" aria-hidden="true">
-          <div className="hero__panel">
-            <div className="hero__panel-head">
-              <img src="/logo.svg" alt="" width={26} height={26} />
-              <span className="hero__panel-name">ITORG · {site.ui.platform}</span>
-              <span className="hero__panel-dot" />
-            </div>
-            <ul className="hero__panel-list">
-              {site.services.items.map((s) => (
-                <li key={s.title}>
-                  <span className="hero__panel-check">
-                    <CheckIcon />
-                  </span>
-                  {s.title}
-                </li>
-              ))}
-            </ul>
-            <div className="hero__panel-meter">
-              <span />
-            </div>
-          </div>
+          <BrandMotif />
         </div>
       </div>
 

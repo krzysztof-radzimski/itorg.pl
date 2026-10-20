@@ -4,6 +4,15 @@
 (() => {
   if (!["localhost", "127.0.0.1"].includes(location.hostname)) throw new Error("Audyt wymaga lokalnego Podglądu");
   const tick = (win) => new Promise((resolve) => win.requestAnimationFrame(() => win.requestAnimationFrame(resolve)));
+  const settled = async (win) => {
+    await tick(win);
+    // Zmiana emulowanego motywu uruchamia także przejścia kolorów. Audyt ma
+    // mierzyć widok docelowy, a nie przypadkową klatkę w trakcie przejścia.
+    await Promise.all(win.document.getAnimations().filter((animation) =>
+      animation.effect?.getComputedTiming().iterations !== Infinity
+    ).map((animation) => animation.finished.catch(() => {})));
+    await tick(win);
+  };
   const tags = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa", "best-practice"];
   let frame;
 
@@ -44,7 +53,7 @@
       style.textContent = "*{line-height:1.5!important;letter-spacing:.12em!important;word-spacing:.16em!important}p{margin-bottom:2em!important}";
       doc.head.append(style);
     }
-    await tick(win);
+    await settled(win);
     const trigger = doc.querySelector(".footer__linkbtn");
     if (modal) {
       trigger.focus();

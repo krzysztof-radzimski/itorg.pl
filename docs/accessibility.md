@@ -21,8 +21,11 @@ odnośniki do ABC PRO, kolejność menu i przełącznik zachowujący wybrany pro
 - Link pomijający nagłówek prowadzi do całej treści głównej, łącznie z hero.
   Cel może otrzymać fokus. Nagłówek pozostaje w zwykłym przepływie dokumentu,
   dzięki czemu nie zasłania kontrolki z fokusem.
-- Widoczna obwódka fokusu, większe cele interakcji, podkreślone linki w treści,
-  odpowiedni kontrast tekstów i obramowań w obu motywach.
+- Widoczna obwódka fokusu, większe cele interakcji oraz odpowiedni kontrast
+  tekstów i obramowań w obu motywach. Łącza akcji mają strzałki, a nawigacja
+  własne regiony i wyróżnienie aktywnej pozycji. Rozpoznanie łącza nie opiera
+  się wyłącznie na kolorze. Kafel produktu jest jednym linkiem, którego
+  nazwa dostępna zawiera widoczną treść; nie zawiera zagnieżdżonych kontrolek.
 - Menu i języki używają `details/summary`: obsługa klawiatury także bez JS.
   Skrypt dodaje Escape, zamknięcie po opuszczeniu menu i przeniesienie fokusu
   do sekcji wybranej z menu mobilnego.
@@ -51,6 +54,8 @@ Eksport produkcyjny Next.js i TypeScript zakończyły się poprawnie. `npm test`
 **69 testów zakończonych powodzeniem**. Sprawdzono eksport, języki, alternatywne
 adresy, kanoniczne adresy polityk, linki wewnętrzne i kotwice, strukturę ARIA,
 tabele, komplet przełączników cookie, mapę witryny i kontrast tokenów.
+Testy sprawdzają również obecność lokalnych grafik w eksporcie, kontrast
+przycisków w stanie zwykłym i po najechaniu oraz kontrast obwódki fokusu.
 
 W Podglądzie działał rzeczywisty eksport na lokalnym serwerze Cloudflare Pages
 z nagłówkami `public/_headers`. Użyto axe-core 4.14.0 z tagami `wcag2a`,
@@ -66,6 +71,8 @@ Razem **336 wariantów**. Szerokość testowano w rzeczywistym dokumencie iframe
 o podanym rozmiarze, wewnątrz Podglądu. Motywy wymuszano przez przełączenie
 reguły CSS `prefers-color-scheme`, sprawdzając końcowy kolor tła. Zmienione
 odstępy: interlinia 1,5, odstęp liter 0,12 em, wyrazów 0,16 em i akapitów 2 em.
+Pomiary kontrastu następują po zakończeniu skończonych przejść CSS wywołanych
+przełączeniem motywu. Reguły axe nie są wyłączane.
 
 Dodatkowo sprawdzono w DOM działającej aplikacji otwieranie menu, Escape,
 przejście do sekcji z przeniesieniem fokusu, nieaktywność tła modalu, zawijanie
@@ -87,13 +94,13 @@ panel pojawiał się ponownie, a odmowa zapisywała wyłącznie kategorię niezb
 
 ## Granice kontroli
 
-Axe oznacza część ocen kontrastu jako `incomplete` ze względu na gradienty
-i dekoracyjne warstwy. Nie są one liczone jako automatycznie potwierdzone.
-Testy kontrastu osobno sprawdzają kolory obu motywów i gradient przycisków.
-Dla hero wyliczają zachowawczą górną granicę jasności: wszystkie maksima aurory,
-przecięcie linii siatki i minimalne przyciemnienie tła. Teksty zachowują w tym
-wariancie co najmniej 4,5:1. Wygląd strony oraz sekcji Legislator i Orion
-obejrzano na zrzutach.
+Axe może oznaczać część ocen kontrastu jako `incomplete`. Takich ocen nie
+liczymy jako automatycznie potwierdzonych. Testy kontrastu osobno sprawdzają
+kolory obu motywów, zwykły i aktywny kolor przycisków oraz fokus na jasnych
+i ciemnych powierzchniach. Hero ma jednolite tło, a jego dekoracja zajmuje
+osobną kolumnę; usunięto aurorę, siatkę i gradientowe litery. Znaki produktów
+są oficjalnymi plikami SVG, hostowanymi lokalnie. Sąsiadują z tekstowymi nazwami,
+więc dekoracyjne obrazy nie powtarzają tych samych nazw w odczycie.
 
 Nie wykonano pełnego audytu eksperckiego z czytnikiem ekranu ani testów na
 wszystkich kombinacjach urządzeń i technologii asystujących. Do manualnego

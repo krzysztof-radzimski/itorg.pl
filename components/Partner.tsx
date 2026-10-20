@@ -11,6 +11,7 @@ export default function Partner({ site, locale }: SiteProps) {
       <div className="container">
         <div className="partner__grid">
           <div>
+            <img className="partner__logo" src="/partners/abc-pro.svg" alt="ABC PRO" width={200} height={40} loading="lazy" />
             <p className="eyebrow">{partner.eyebrow}</p>
             <hr className="rule" />
             <h2 className="section__title" id="partner-title">{partner.title}</h2>

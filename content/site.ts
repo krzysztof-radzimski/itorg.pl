@@ -63,7 +63,7 @@ export const site = {
     titleAccent: "dla administracji publicznej i biznesu",
     // {years} zostaje podmienione na liczbę lat działalności (od FOUNDED_YEAR).
     subtitle:
-      "Od {years} lat tworzymy oprogramowanie dopasowane do potrzeb administracji i firm — usprawniamy pracę z dokumentami, łączymy systemy i automatyzujemy procesy.",
+      "Od {years} lat tworzymy oprogramowanie dopasowane do potrzeb samorządów, administracji rządowej i innych instytucji. Usprawniamy pracę z dokumentami, integrujemy systemy i automatyzujemy procesy.",
     primaryCta: "Skontaktuj się z nami",
     secondaryCta: "Zobacz usługi",
     scrollLabel: "Przewiń niżej",
@@ -79,60 +79,60 @@ export const site = {
   about: {
     eyebrow: "O firmie",
     title: "Tworzymy i wdrażamy oprogramowanie",
-    lead: "ITORG od 2009 roku projektuje, rozwija i wdraża oprogramowanie dla urzędów oraz instytucji publicznych.",
+    lead: "ITORG od 2009 roku projektuje, rozwija i wdraża oprogramowanie dla jednostek samorządu terytorialnego, administracji rządowej i innych instytucji.",
     paragraphs: [
-      "Wspieramy przygotowywanie aktów prawnych, obsługę spraw i elektroniczny obieg dokumentów.",
+      "Wspieramy procesy legislacyjne, prowadzenie spraw oraz elektroniczne zarządzanie dokumentacją.",
       "Dla ABC PRO rozwijamy EAP Legislator, edytor uchwał, zarządzeń i innych aktów prawnych. Współpracujemy również przy wdrożeniach systemów tej firmy.",
-      "Tworzymy narzędzia sztucznej inteligencji do pracy z dokumentami i analizowania informacji. Współpracujemy przy rozwoju platformy Orion firmy ABC PRO.",
+      "Opracowujemy narzędzia wykorzystujące sztuczną inteligencję do przetwarzania dokumentów i analizy informacji. Uczestniczymy w rozwoju platformy Orion firmy ABC PRO.",
     ],
   },
 
   services: {
     eyebrow: "Usługi",
-    title: "W czym możemy pomóc",
-    subtitle: "Projektujemy, rozwijamy i łączymy systemy używane w administracji publicznej.",
+    title: "Zakres usług",
+    subtitle: "Projektujemy, rozwijamy i integrujemy systemy informatyczne wspierające realizację zadań publicznych.",
     items: [
       {
         icon: "legislation",
         title: "Elektronizacja prawa",
-        desc: "Tworzymy i rozwijamy narzędzia do przygotowywania, podpisywania i przekazywania aktów prawnych.",
+        desc: "Rozwijamy narzędzia do opracowywania, podpisywania i przekazywania aktów prawnych do ogłoszenia oraz organom nadzoru.",
       },
       {
         icon: "automation",
         title: "Automatyzacja procesów",
-        desc: "Automatyzujemy powtarzalne czynności w obsłudze spraw i obiegu dokumentów.",
+        desc: "Automatyzujemy powtarzalne czynności w procesach prowadzenia spraw i zarządzania dokumentacją.",
       },
       {
         icon: "integration",
-        title: "Integracje",
-        desc: "Łączymy systemy, aby mogły wymieniać dane i korzystać ze wspólnych informacji.",
+        title: "Integracja systemów",
+        desc: "Integrujemy systemy informatyczne, umożliwiając wymianę danych między aplikacjami.",
       },
       {
         icon: "digitization",
         title: "Oprogramowanie dla Samorządu",
-        desc: "Projektujemy i wdrażamy aplikacje do obsługi spraw, dokumentów i usług publicznych.",
+        desc: "Projektujemy i wdrażamy aplikacje wspierające prowadzenie spraw, zarządzanie dokumentacją i realizację usług publicznych.",
       },
       {
         icon: "ai",
         title: "Tworzenie narzędzi AI",
-        desc: "Budujemy narzędzia sztucznej inteligencji do pracy z dokumentami, analizy informacji i automatyzacji zadań.",
+        desc: "Opracowujemy rozwiązania wykorzystujące sztuczną inteligencję do przetwarzania dokumentów, analizy informacji i automatyzacji procesów.",
       },
     ] as ServiceItem[],
   },
 
   values: {
     eyebrow: "Współpraca",
-    title: "Jak pracujemy",
+    title: "Jak realizujemy projekty",
     items: [
       {
         num: "01",
-        title: "Znajomość administracji",
-        desc: "Rozwijamy systemy do legislacji i obiegu dokumentów. W projektach uwzględniamy procedury oraz sposób pracy urzędów.",
+        title: "Znajomość procesów administracyjnych",
+        desc: "Projektujemy rozwiązania z uwzględnieniem procedur legislacyjnych, zasad prowadzenia spraw i zarządzania dokumentacją.",
       },
       {
         num: "02",
         title: "Rozwój i utrzymanie",
-        desc: "Rozwijamy oprogramowanie i wspieramy jego działanie po wdrożeniu.",
+        desc: "Rozwijamy i utrzymujemy oprogramowanie po wdrożeniu, uwzględniając zmieniające się potrzeby użytkowników.",
       },
       {
         num: "03",
@@ -141,8 +141,8 @@ export const site = {
       },
       {
         num: "04",
-        title: "Dopasowanie do urzędu",
-        desc: "Projektujemy zmiany z uwzględnieniem potrzeb użytkowników i systemów, z których już korzystają.",
+        title: "Dostosowanie do procesów instytucji",
+        desc: "Dostosowujemy rozwiązania do organizacji pracy instytucji, potrzeb użytkowników oraz istniejącego środowiska informatycznego.",
       },
     ] as ValueItem[],
   },
@@ -150,17 +150,17 @@ export const site = {
   legislator: {
     eyebrow: "Edytor aktów prawnych",
     title: "EAP Legislator",
-    lead: "Edytor dla urzędów, które przygotowują uchwały, zarządzenia i inne akty prawne.",
-    description: "ITORG rozwija EAP Legislator dla ABC PRO. Program wspiera przygotowanie projektu w XML, uzgodnienia, podpis elektroniczny i przekazanie aktu do publikacji lub nadzoru prawnego.",
+    lead: "Edytor dla jednostek samorządu terytorialnego i administracji rządowej, wspierający opracowywanie uchwał, zarządzeń i innych aktów prawnych.",
+    description: "ITORG rozwija EAP Legislator dla ABC PRO. System wspiera opracowywanie projektów aktów prawnych w formacie XML, uzgodnienia, opatrywanie dokumentów podpisem elektronicznym oraz przekazywanie ich do ogłoszenia i organom nadzoru.",
     features: [
       { title: "Projekty w formacie XML", desc: "Szablony aktów i konwersja treści do XML pomagają przygotować dokument z zachowaniem jego struktury." },
       { title: "Uwagi i historia zmian", desc: "Komentarze, rejestr zmian i raporty pozwalają sprawdzić zgłoszone propozycje oraz sposób ich rozpatrzenia." },
-      { title: "Podpis i wysyłka", desc: "Podpisuj dokumenty w edytorze i przekazuj je do publikacji lub nadzoru prawnego." },
+      { title: "Podpisywanie i przekazywanie aktów", desc: "Opatrywanie aktów prawnych podpisem elektronicznym w edytorze oraz ich przekazywanie do ogłoszenia i organom nadzoru." },
     ],
     editions: [
       { name: "EAP Legislator", desc: "Edycje Standard, Premium i Legalis dla urzędów i instytucji przygotowujących akty prawne. Dostępne funkcje zależą od wybranej edycji.", cta: "Poznaj EAP Legislator", href: legislatorUrls.editor },
       { name: "Legislator dla administracji rządowej", desc: "Wersja dla ministerstw i urzędów centralnych, oparta na szablonie Rządowego Centrum Legislacji (RCL). Służy do przygotowania aktów kierowanych do Dziennika Ustaw i Monitora Polskiego.", cta: "Poznaj Legislator GOV", href: legislatorUrls.government },
-      { name: "Finanse Publiczne — dodatek Besti@", desc: "Importuje dane XML z Besti@ do uchwał budżetowych, ich zmian, wieloletnich prognoz finansowych i sprawozdań. Na ich podstawie tworzy tabele do dokumentów przekazywanych do publikacji i nadzoru regionalnych izb obrachunkowych (RIO).", cta: "Poznaj dodatek Besti@", href: legislatorUrls.finance },
+      { name: "Finanse Publiczne — dodatek Besti@", desc: "Importuje dane XML z Besti@ do uchwał budżetowych, ich zmian, wieloletnich prognoz finansowych i sprawozdań. Tworzy tabele do dokumentów przekazywanych do ogłoszenia w wojewódzkim dzienniku urzędowym oraz regionalnym izbom obrachunkowym (RIO).", cta: "Poznaj dodatek Besti@", href: legislatorUrls.finance },
     ],
   },
 
@@ -168,7 +168,7 @@ export const site = {
     eyebrow: "Partnerstwo",
     title: "Współpraca z ABC PRO",
     intro:
-      "Z ABC PRO Sp. z o.o. współpracujemy przy rozwoju i wdrażaniu oprogramowania do legislacji oraz obsługi dokumentów w administracji publicznej.",
+      "Z ABC PRO Sp. z o.o. współpracujemy przy rozwoju i wdrażaniu oprogramowania wspierającego procesy legislacyjne oraz elektroniczne zarządzanie dokumentacją w administracji publicznej.",
     note: "Przykłady systemów ABC PRO:",
     products: [
       {
@@ -177,11 +177,11 @@ export const site = {
       },
       {
         name: "Baza Aktów Własnych",
-        desc: "Zbiór uchwał, zarządzeń i regulaminów organizacji z wyszukiwaniem, skorowidzami i połączeniem z bazą aktów normatywnych.",
+        desc: "System prowadzenia i udostępniania zbiorów uchwał, zarządzeń i regulaminów instytucji, z wyszukiwaniem, skorowidzami oraz integracją z bazą aktów normatywnych.",
       },
       {
         name: "ABC ANON",
-        desc: "Narzędzie do ukrywania wybranych danych w plikach PDF, DOCX i skanach przed ich udostępnieniem.",
+        desc: "Narzędzie do anonimizacji dokumentów i wyłączania jawności wybranych treści przed udostępnieniem. Obsługuje pliki PDF, DOCX oraz dokumenty zeskanowane.",
       },
       {
         name: "ABC Kancelaria",
@@ -192,7 +192,7 @@ export const site = {
 
   products: {
     title: "Produkty",
-    intro: "Poznaj EAP Legislator, Orion AI i inne systemy ABC PRO do legislacji oraz pracy z dokumentami.",
+    intro: "EAP Legislator, Orion AI i pozostałe rozwiązania ABC PRO wspierają legislację, zarządzanie dokumentacją i analizę informacji.",
     cta: "Zobacz produkty",
     details: "Zobacz opis",
     back: "Wszystkie produkty",
@@ -203,21 +203,21 @@ export const site = {
 
   contact: {
     eyebrow: "Kontakt",
-    title: "Porozmawiajmy o Twoim projekcie",
+    title: "Porozmawiajmy o Państwa projekcie",
     subtitle:
-      "Potrzebujesz oprogramowania do obsługi dokumentów, integracji systemów lub narzędzia AI? Napisz lub zadzwoń i opisz, co chcesz usprawnić.",
+      "Zapraszamy do omówienia wymagań dotyczących oprogramowania, integracji systemów i zastosowania sztucznej inteligencji w Państwa instytucji.",
   },
 
   orion: {
     eyebrow: "Narzędzia AI",
     title: "Orion AI",
     lead: "Platforma sztucznej inteligencji firmy ABC PRO dla administracji i biznesu.",
-    description: "ITORG współpracuje przy rozwoju Oriona i tworzy narzędzia AI do pracy z dokumentami, analizy informacji i automatyzacji zadań.",
+    description: "ITORG uczestniczy w rozwoju platformy Orion i opracowuje narzędzia wykorzystujące AI do przetwarzania dokumentów, analizy informacji i automatyzacji procesów.",
     cta: "Poznaj platformę Orion AI",
   },
 
   footer: {
-    tagline: "Elektronizacja prawa, obieg dokumentów i narzędzia AI.",
+    tagline: "Elektronizacja prawa, zarządzanie dokumentacją i rozwiązania AI.",
     privacy: "Polityka prywatności",
     cookieSettings: "Ustawienia plików cookie",
   },
@@ -239,7 +239,7 @@ export const site = {
   seo: {
     title: "ITORG — Oprogramowanie dla administracji publicznej",
     description:
-      "Tworzymy i wdrażamy oprogramowanie dla urzędów: systemy legislacyjne, obieg dokumentów, integracje i narzędzia AI. Rozwijamy EAP Legislator dla ABC PRO.",
+      "Oprogramowanie dla samorządów, administracji rządowej i innych instytucji: legislacja, zarządzanie dokumentacją, integracje systemów i sztuczna inteligencja.",
     url: "https://itorg.pl",
   },
 
@@ -258,7 +258,7 @@ export const site = {
     owner: "Właściciel",
     headquarters: "Siedziba",
     specialization: "Specjalizacja",
-    specializationValue: "Legislacja · obieg dokumentów · integracje · AI",
+    specializationValue: "Legislacja · zarządzanie dokumentacją · integracje systemów · AI",
     partner: "Partner",
     platform: "Usługi",
     partnerCta: "Poznaj ofertę ABC PRO",

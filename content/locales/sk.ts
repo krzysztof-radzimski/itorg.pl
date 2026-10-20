@@ -6,7 +6,7 @@ export const sk: Site = {
   company: { ...site.company, country: "Poľsko" },
   hero: {
     eyebrow: "Legislatíva · správa dokumentov · AI", titleLead: "Premyslené riešenia", titleAccent: "pre verejnú správu a firmy",
-    subtitle: "Už {years} rokov vytvárame softvér prispôsobený potrebám verejnej správy a firiem — zjednodušujeme prácu s dokumentmi, prepájame systémy a automatizujeme procesy.",
+    subtitle: "Už {years} rokov vyvíjame softvér prispôsobený potrebám samospráv, štátnej správy a ďalších inštitúcií. Zefektívňujeme prácu s dokumentmi, integrujeme systémy a automatizujeme procesy.",
     primaryCta: "Kontaktujte nás", secondaryCta: "Naše služby", scrollLabel: "Posunúť nižšie",
   },
   stats: [
@@ -16,37 +16,37 @@ export const sk: Site = {
   ],
   about: {
     eyebrow: "O spoločnosti", title: "Vyvíjame a zavádzame softvér",
-    lead: "ITORG od roku 2009 navrhuje, vyvíja a zavádza softvér pre úrady a verejné inštitúcie v Poľsku.",
+    lead: "ITORG od roku 2009 navrhuje, vyvíja a zavádza softvér pre územné samosprávne celky, štátnu správu a ďalšie inštitúcie v Poľsku.",
     paragraphs: [
-      "Pomáhame s prípravou právnych aktov, spracovaním agendy a elektronickým obehom dokumentov.",
+      "Podporujeme legislatívne procesy, vedenie spisov a elektronickú správu dokumentov.",
       "Pre ABC PRO vyvíjame EAP Legislator, editor uznesení, nariadení a ďalších právnych aktov. Podieľame sa aj na zavádzaní systémov ABC PRO.",
-      "Vytvárame nástroje umelej inteligencie na prácu s dokumentmi a analýzu informácií. Spolupracujeme na vývoji platformy Orion spoločnosti ABC PRO.",
+      "Vyvíjame nástroje využívajúce umelú inteligenciu na spracovanie dokumentov a analýzu informácií. Podieľame sa na vývoji platformy Orion spoločnosti ABC PRO.",
     ],
   },
   services: {
-    eyebrow: "Služby", title: "S čím vám môžeme pomôcť", subtitle: "Navrhujeme, vyvíjame a prepájame systémy pre verejnú správu.",
+    eyebrow: "Služby", title: "Naše služby", subtitle: "Navrhujeme, vyvíjame a integrujeme informačné systémy podporujúce plnenie verejných úloh.",
     items: [
-      { icon: "legislation", title: "Legislatívne systémy", desc: "Vyvíjame nástroje na prípravu, podpisovanie a odovzdávanie právnych aktov." },
-      { icon: "automation", title: "Automatizácia procesov", desc: "Automatizujeme opakujúce sa úkony pri spracovaní agendy a obehu dokumentov." },
-      { icon: "integration", title: "Systémové integrácie", desc: "Prepájame systémy, aby si mohli vymieňať údaje a zdieľať informácie." },
-      { icon: "digitization", title: "Softvér pre úrady", desc: "Navrhujeme a zavádzame aplikácie na spracovanie agendy, správu dokumentov a verejné služby." },
-      { icon: "ai", title: "Vývoj nástrojov AI", desc: "Vytvárame nástroje umelej inteligencie na prácu s dokumentmi, analýzu informácií a automatizáciu úloh." },
+      { icon: "legislation", title: "Legislatívne systémy", desc: "Vyvíjame nástroje na prípravu a podpisovanie právnych aktov a ich odovzdávanie na úradné vyhlásenie a orgánom dozoru." },
+      { icon: "automation", title: "Automatizácia procesov", desc: "Automatizujeme opakujúce sa úkony pri vedení spisov a správe dokumentov." },
+      { icon: "integration", title: "Integrácia systémov", desc: "Integrujeme informačné systémy a umožňujeme výmenu údajov medzi aplikáciami." },
+      { icon: "digitization", title: "Softvér pre úrady", desc: "Navrhujeme a zavádzame aplikácie na vedenie spisov, správu dokumentov a poskytovanie verejných služieb." },
+      { icon: "ai", title: "Vývoj nástrojov AI", desc: "Vyvíjame riešenia využívajúce umelú inteligenciu na spracovanie dokumentov, analýzu informácií a automatizáciu procesov." },
     ],
   },
   values: {
-    eyebrow: "Spolupráca", title: "Ako pracujeme",
+    eyebrow: "Spolupráca", title: "Ako realizujeme projekty",
     items: [
-      { num: "01", title: "Skúsenosti s verejnou správou", desc: "Vyvíjame systémy pre legislatívu a správu dokumentov. V projektoch zohľadňujeme postupy a spôsob práce úradov." },
-      { num: "02", title: "Vývoj a údržba", desc: "Softvér ďalej rozvíjame a podporujeme jeho prevádzku po zavedení." },
+      { num: "01", title: "Znalosť administratívnych procesov", desc: "Pri návrhu riešení zohľadňujeme legislatívne postupy, pravidlá vedenia spisov a správy dokumentov." },
+      { num: "02", title: "Vývoj a údržba", desc: "Softvér po zavedení ďalej vyvíjame a udržiavame s ohľadom na meniace sa potreby používateľov." },
       { num: "03", title: "Ochrana údajov", desc: "Pri návrhu systémov zohľadňujeme bezpečnosť údajov a pravidlá prístupu k informáciám." },
-      { num: "04", title: "Podľa potrieb úradu", desc: "Zmeny navrhujeme s ohľadom na potreby používateľov a systémy, ktoré už používajú." },
+      { num: "04", title: "Prispôsobenie procesom inštitúcie", desc: "Riešenia prispôsobujeme organizácii práce inštitúcie, potrebám používateľov a existujúcemu IT prostrediu." },
     ],
   },
   legislator: {
     eyebrow: "Editor právnych aktov",
     title: "EAP Legislator",
-    lead: "Editor pre úrady, ktoré pripravujú uznesenia, nariadenia a ďalšie právne akty.",
-    description: "ITORG vyvíja EAP Legislator pre ABC PRO. Program podporuje prípravu návrhov v XML, pripomienkovanie, elektronický podpis a odovzdanie na zverejnenie alebo právny dohľad.",
+    lead: "Editor pre územné samosprávne celky a štátnu správu, ktorý podporuje prípravu uznesení, nariadení a ďalších právnych aktov.",
+    description: "ITORG vyvíja EAP Legislator pre ABC PRO. Systém podporuje prípravu návrhov právnych aktov v XML, pripomienkovanie, elektronické podpisovanie a odovzdávanie dokumentov na úradné vyhlásenie a orgánom dozoru.",
     features: [
       {
         title: "Návrhy vo formáte XML",
@@ -57,8 +57,8 @@ export const sk: Site = {
         desc: "Komentáre, záznamy zmien a prehľady umožňujú overiť predložené návrhy aj spôsob ich vyhodnotenia."
       },
       {
-        title: "Podpisovanie a odosielanie",
-        desc: "Podpisujte dokumenty v editore a odovzdávajte ich na zverejnenie alebo právny dohľad."
+        title: "Podpisovanie a odovzdávanie právnych aktov",
+        desc: "Elektronické podpisovanie v editore a odovzdávanie právnych aktov na úradné vyhlásenie a orgánom dozoru."
       }
     ],
     editions: [
@@ -76,7 +76,7 @@ export const sk: Site = {
       },
       {
         name: "Verejné financie — doplnok Besti@",
-        desc: "Importuje údaje XML z Besti@ pre rozpočtové uznesenia, ich zmeny, viacročné finančné prognózy a správy o plnení rozpočtu. Vytvára prehľadné tabuľky na zverejnenie a dohľad poľských regionálnych účtovných komôr (RIO).",
+        desc: "Importuje údaje XML z Besti@ pre rozpočtové uznesenia a ich zmeny, viacročné finančné výhľady a správy. Vytvára tabuľky pre dokumenty odovzdávané do úradných vestníkov vojvodstiev a regionálnym účtovným komorám (RIO) v Poľsku.",
         cta: "Spoznajte doplnok Besti@",
         href: legislatorUrls.finance
       }
@@ -84,24 +84,24 @@ export const sk: Site = {
   },
   partner: {
     eyebrow: "Partnerstvo", title: "Spolupráca s ABC PRO",
-    intro: "S ABC PRO Sp. z o.o. spolupracujeme na vývoji a zavádzaní softvéru pre legislatívu a správu dokumentov vo verejnej správe.",
+    intro: "S ABC PRO Sp. z o.o. spolupracujeme na vývoji a zavádzaní softvéru pre legislatívne procesy a elektronickú správu dokumentov vo verejnej správe.",
     note: "Príklady systémov ABC PRO:",
     products: [
       { name: "EAP Legislator", desc: "Editor právnych aktov v XML so sledovaním zmien, elektronickým podpisom a odovzdaním na zverejnenie." },
-      { name: "Baza Aktów Własnych", desc: "Systém na vlastné zbierky právnych aktov organizácie s vyhľadávaním, registrami a integráciou s legislatívnou databázou." },
-      { name: "ABC ANON", desc: "Nástroj na skrytie vybraných údajov v súboroch PDF, DOCX a skenoch pred ich zdieľaním." },
+      { name: "Baza Aktów Własnych", desc: "Systém na vedenie a sprístupňovanie inštitucionálnych zbierok uznesení, nariadení a vnútorných predpisov s vyhľadávaním, registrami a integráciou s databázou právnych predpisov." },
+      { name: "ABC ANON", desc: "Nástroj na anonymizáciu dokumentov a odstránenie vybraného obsahu zo sprístupňovanej verzie. Podporuje súbory PDF, DOCX a naskenované dokumenty." },
       { name: "ABC Kancelaria", desc: "Systém elektronickej správy dokumentov na korešpondenciu, evidencie a prichádzajúce aj odchádzajúce dokumenty v papierovej a elektronickej podobe." },
     ],
   },
   orion: {
     eyebrow: "Nástroje AI", title: "Orion AI",
     lead: "Platforma umelej inteligencie spoločnosti ABC PRO pre verejnú správu a podniky.",
-    description: "ITORG spolupracuje na vývoji Orionu a vytvára nástroje AI na prácu s dokumentmi, analýzu informácií a automatizáciu úloh.",
+    description: "ITORG sa podieľa na vývoji platformy Orion a vytvára nástroje AI na spracovanie dokumentov, analýzu informácií a automatizáciu procesov.",
     cta: "Spoznajte platformu Orion AI",
   },
   products: {
     title: "Produkty",
-    intro: "Spoznajte EAP Legislator, Orion AI a ďalšie systémy ABC PRO pre legislatívu a správu dokumentov.",
+    intro: "EAP Legislator, Orion AI a ďalšie riešenia ABC PRO podporujú legislatívne procesy, správu dokumentov a analýzu informácií.",
     cta: "Zobraziť produkty",
     details: "Zobraziť podrobnosti",
     back: "Všetky produkty",
@@ -110,8 +110,8 @@ export const sk: Site = {
     breadcrumb: "Drobčeková navigácia",
   },
 
-  contact: { eyebrow: "Kontakt", title: "Porozprávajme sa o vašom projekte", subtitle: "Potrebujete softvér na správu dokumentov, prepojenie systémov alebo nástroj AI? Napíšte nám alebo zavolajte a opíšte, čo chcete zlepšiť." },
-  footer: { tagline: "Legislatívne systémy, obeh dokumentov a nástroje AI.", privacy: "Zásady ochrany osobných údajov", cookieSettings: "Nastavenia cookies" },
+  contact: { eyebrow: "Kontakt", title: "Porozprávajme sa o vašom projekte", subtitle: "Kontaktujte nás a prediskutujme požiadavky vašej inštitúcie na softvér, integráciu systémov a využitie umelej inteligencie." },
+  footer: { tagline: "Elektronická legislatíva, správa dokumentov a riešenia AI.", privacy: "Zásady ochrany osobných údajov", cookieSettings: "Nastavenia cookies" },
   legal: { ...site.legal, privacyUrl: "/sk/privacy/" },
   nav: [
     { label: "Služby", href: "#uslugi" },
@@ -120,11 +120,11 @@ export const sk: Site = {
     { label: "Spolupráca", href: "#partner" },
     { label: "Kontakt", href: "#kontakt" },
   ],
-  seo: { ...site.seo, title: "ITORG — Softvér pre verejnú správu", description: "Vyvíjame a zavádzame softvér pre úrady: legislatívne systémy, obeh dokumentov, integrácie a nástroje AI. Pre ABC PRO vyvíjame EAP Legislator." },
+  seo: { ...site.seo, title: "ITORG — Softvér pre verejnú správu", description: "Softvér pre samosprávy, štátnu správu a ďalšie inštitúcie: legislatívne procesy, správa dokumentov, integrácia systémov a umelá inteligencia." },
   ui: {
     skip: "Prejsť na obsah", home: "Úvodná stránka", mainNav: "Hlavná navigácia", footerNav: "Navigácia v päte", navigation: "Navigácia", menu: "Menu",
     languages: "Vybrať jazyk", language: "Jazyk", facts: "Spoločnosť v skratke", inBrief: "V skratke", founded: "Založené", owner: "Majiteľ",
-    headquarters: "Sídlo", specialization: "Špecializácia", specializationValue: "Legislatíva · správa dokumentov · integrácie · AI", partner: "Partner", platform: "Služby",
+    headquarters: "Sídlo", specialization: "Špecializácia", specializationValue: "Legislatíva · správa dokumentov · integrácia systémov · AI", partner: "Partner", platform: "Služby",
     partnerCta: "Spoznajte riešenia ABC PRO", writeEmail: "Napísať e-mail", address: "Adresa", phone: "Telefón", email: "E-mail", eDelivery: "Poľské elektronické doručovanie",
     registration: "Registračné údaje", bank: "Bankový účet", rights: "Všetky práva vyhradené.", close: "Zavrieť",
   },

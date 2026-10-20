@@ -6,7 +6,7 @@ export const en: Site = {
   company: { ...site.company, country: "Poland" },
   hero: {
     eyebrow: "Legislation · document workflows · AI", titleLead: "Thoughtful solutions", titleAccent: "for public administration and business",
-    subtitle: "For {years} years, we have been building software tailored to public administration and businesses — streamlining document workflows, connecting systems and automating processes.",
+    subtitle: "For {years} years, we have been developing software tailored to the needs of local government, central government and other institutions. We streamline work with documents, integrate systems and automate processes.",
     primaryCta: "Get in touch", secondaryCta: "View our services", scrollLabel: "Scroll down",
   },
   stats: [
@@ -16,37 +16,37 @@ export const en: Site = {
   ],
   about: {
     eyebrow: "About us", title: "Software development and implementation",
-    lead: "Since 2009, ITORG has been designing, developing and implementing software for public authorities and institutions in Poland.",
+    lead: "Since 2009, ITORG has been designing, developing and implementing software for local government bodies, central government and other institutions in Poland.",
     paragraphs: [
-      "We help public authorities draft legal acts, handle cases and manage electronic document workflows.",
+      "We support legislative processes, case management and electronic records management.",
       "We develop EAP Legislator for ABC PRO, an editor for resolutions, orders and other legal acts. We also work on implementations of ABC PRO systems.",
-      "We build artificial intelligence tools for working with documents and analysing information, and contribute to the development of ABC PRO’s Orion platform.",
+      "We develop tools that use artificial intelligence to process documents and analyse information. We contribute to the development of ABC PRO’s Orion platform.",
     ],
   },
   services: {
-    eyebrow: "Services", title: "How we can help", subtitle: "We design, develop and connect systems used in public administration.",
+    eyebrow: "Services", title: "Our services", subtitle: "We design, develop and integrate IT systems that support the delivery of public services.",
     items: [
-      { icon: "legislation", title: "Legislative systems", desc: "We develop tools for drafting, signing and submitting legal acts." },
-      { icon: "automation", title: "Process automation", desc: "We automate repetitive tasks in case handling and document workflows." },
-      { icon: "integration", title: "System integration", desc: "We connect systems so they can exchange data and share information." },
-      { icon: "digitization", title: "Public sector software", desc: "We design and implement applications for case handling, document management and public services." },
-      { icon: "ai", title: "AI tool development", desc: "We build artificial intelligence tools for working with documents, analysing information and automating tasks." },
+      { icon: "legislation", title: "Legislative systems", desc: "We develop tools for drafting and signing legal acts, and submitting them for official publication and to supervisory authorities." },
+      { icon: "automation", title: "Process automation", desc: "We automate repetitive tasks in case management and records management processes." },
+      { icon: "integration", title: "System integration", desc: "We integrate IT systems to enable data exchange between applications." },
+      { icon: "digitization", title: "Public sector software", desc: "We design and implement applications that support case management, records management and the delivery of public services." },
+      { icon: "ai", title: "AI tool development", desc: "We develop solutions that use artificial intelligence to process documents, analyse information and automate processes." },
     ],
   },
   values: {
-    eyebrow: "Working together", title: "How we work",
+    eyebrow: "Working together", title: "How we deliver projects",
     items: [
-      { num: "01", title: "Public sector experience", desc: "We develop legislative systems and document workflows, taking public sector procedures and working practices into account." },
-      { num: "02", title: "Development and maintenance", desc: "We continue to develop software and support its operation after implementation." },
+      { num: "01", title: "Understanding administrative processes", desc: "We design solutions with legislative procedures, case management requirements and records management practices in mind." },
+      { num: "02", title: "Development and maintenance", desc: "We develop and maintain software after implementation, taking users’ changing needs into account." },
       { num: "03", title: "Data protection", desc: "We consider data security and access to information when designing systems." },
-      { num: "04", title: "Fit for your organisation", desc: "We design changes around users’ needs and the systems they already use." },
+      { num: "04", title: "Aligned with institutional processes", desc: "We adapt solutions to each institution’s working practices, user needs and existing IT environment." },
     ],
   },
   legislator: {
     eyebrow: "Legal drafting software",
     title: "EAP Legislator",
-    lead: "An editor for public authorities preparing resolutions, orders and other legal acts.",
-    description: "ITORG develops EAP Legislator for ABC PRO. The software supports drafting in XML, reviewing changes, electronic signing and submission for publication or legal oversight.",
+    lead: "An editor for local and central government bodies, supporting the drafting of resolutions, orders and other legal acts.",
+    description: "ITORG develops EAP Legislator for ABC PRO. The system supports drafting legal acts in XML, consultation, electronic signing, and submission for official publication and to supervisory authorities.",
     features: [
       {
         title: "Drafting in XML",
@@ -57,8 +57,8 @@ export const en: Site = {
         desc: "Comments, recorded changes and reports make it possible to review proposals and how they were addressed."
       },
       {
-        title: "Signing and submission",
-        desc: "Sign documents in the editor and submit them for publication or legal oversight."
+        title: "Signing and submitting legal acts",
+        desc: "Electronic signing in the editor and submission of legal acts for official publication and to supervisory authorities."
       }
     ],
     editions: [
@@ -76,7 +76,7 @@ export const en: Site = {
       },
       {
         name: "Public Finance — Besti@ add-on",
-        desc: "Imports Besti@ XML data for budget resolutions, amendments, multi-year financial forecasts and budget reports. It produces readable tables for documents submitted for publication and regional audit chamber (RIO) oversight.",
+        desc: "Imports XML data from Besti@ for budget resolutions and amendments, multiannual financial forecasts and reports. Generates tables for documents submitted to Poland’s regional official journals and regional chambers of audit (RIO).",
         cta: "Explore the Besti@ add-on",
         href: legislatorUrls.finance
       }
@@ -84,24 +84,24 @@ export const en: Site = {
   },
   partner: {
     eyebrow: "Partnership", title: "Working with ABC PRO",
-    intro: "We work with ABC PRO Sp. z o.o. on developing and implementing software for legislative work and document management in public administration.",
+    intro: "We work with ABC PRO Sp. z o.o. to develop and implement software supporting legislative processes and electronic records management in public administration.",
     note: "Examples of ABC PRO systems:",
     products: [
       { name: "EAP Legislator", desc: "An XML editor for legal acts with change tracking, electronic signing and submission for publication." },
-      { name: "Baza Aktów Własnych", desc: "A system for maintaining an organisation’s own collections of legal acts, with full-text search, indexes and integration with a database of legislation." },
-      { name: "ABC ANON", desc: "A tool for redacting selected information from PDF and DOCX files and scans before sharing them." },
+      { name: "Baza Aktów Własnych", desc: "A system for maintaining and providing access to an institution’s collections of resolutions, orders and internal regulations, with search, indexes and integration with a database of legislation." },
+      { name: "ABC ANON", desc: "A tool for anonymising documents and redacting selected content before disclosure. Supports PDF and DOCX files, as well as scanned documents." },
       { name: "ABC Kancelaria", desc: "An electronic document management system for correspondence, registers and incoming and outgoing documents in both paper and digital form." },
     ],
   },
   orion: {
     eyebrow: "AI tools", title: "Orion AI",
     lead: "ABC PRO’s artificial intelligence platform for public administration and business.",
-    description: "ITORG contributes to Orion’s development and builds AI tools for working with documents, analysing information and automating tasks.",
+    description: "ITORG contributes to the development of the Orion platform and develops AI tools for document processing, information analysis and process automation.",
     cta: "Explore the Orion AI platform",
   },
   products: {
     title: "Products",
-    intro: "Explore EAP Legislator, Orion AI and other ABC PRO systems for legislative work and document management.",
+    intro: "EAP Legislator, Orion AI and other ABC PRO solutions support legislative processes, records management and information analysis.",
     cta: "View products",
     details: "View details",
     back: "All products",
@@ -112,9 +112,9 @@ export const en: Site = {
 
   contact: {
     eyebrow: "Contact", title: "Let’s talk about your project",
-    subtitle: "Need document management software, system integration or an AI tool? Email or call us and describe what you want to improve.",
+    subtitle: "Contact us to discuss your institution’s requirements for software, system integration and the use of artificial intelligence.",
   },
-  footer: { tagline: "Legislative systems, document workflows and AI tools.", privacy: "Privacy policy", cookieSettings: "Cookie settings" },
+  footer: { tagline: "Digital legislation, records management and AI solutions.", privacy: "Privacy policy", cookieSettings: "Cookie settings" },
   legal: { ...site.legal, privacyUrl: "/en/privacy/" },
   nav: [
     { label: "Services", href: "#uslugi" },
@@ -123,11 +123,11 @@ export const en: Site = {
     { label: "Partnership", href: "#partner" },
     { label: "Contact", href: "#kontakt" },
   ],
-  seo: { ...site.seo, title: "ITORG — Software for public administration", description: "We develop and implement public sector software: legislative systems, document workflows, integrations and AI tools. We develop EAP Legislator for ABC PRO." },
+  seo: { ...site.seo, title: "ITORG — Software for public administration", description: "Software for local government, central government and other institutions: legislative processes, records management, system integration and artificial intelligence." },
   ui: {
     skip: "Skip to content", home: "Home", mainNav: "Main navigation", footerNav: "Footer navigation", navigation: "Navigation", menu: "Menu",
     languages: "Choose a language", language: "Language", facts: "Company at a glance", inBrief: "At a glance", founded: "Founded", owner: "Owner",
-    headquarters: "Based in", specialization: "Expertise", specializationValue: "Legislation · document workflows · integration · AI", partner: "Partner", platform: "Services",
+    headquarters: "Based in", specialization: "Expertise", specializationValue: "Legislation · records management · system integration · AI", partner: "Partner", platform: "Services",
     partnerCta: "Explore ABC PRO’s solutions", writeEmail: "Send an email", address: "Address", phone: "Phone", email: "Email", eDelivery: "Polish e-Delivery",
     registration: "Registration details", bank: "Bank account", rights: "All rights reserved.", close: "Close",
   },

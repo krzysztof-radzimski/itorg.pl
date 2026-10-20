@@ -7,7 +7,7 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
-  return pageMetadata(locale, true);
+  return pageMetadata(locale, "privacy");
 }
 export default async function LocalizedPrivacy({ params }: Props) {
   const { locale } = await params;

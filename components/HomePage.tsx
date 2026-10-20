@@ -5,10 +5,9 @@ import Hero from "./Hero";
 import Stats from "./Stats";
 import About from "./About";
 import Services from "./Services";
-import Legislator from "./Legislator";
+import ProductsSummary from "./ProductsSummary";
 import Values from "./Values";
 import Partner from "./Partner";
-import Orion from "./Orion";
 import Contact from "./Contact";
 import Footer from "./Footer";
 
@@ -22,12 +21,11 @@ export default function HomePage({ locale }: { locale: Locale }) {
       <main id="main" tabIndex={-1}>
         <Hero {...props} />
         <Stats {...props} />
-        <About {...props} />
         <Services {...props} />
-        <Legislator {...props} />
+        <ProductsSummary {...props} />
+        <About {...props} />
         <Values {...props} />
         <Partner {...props} />
-        <Orion {...props} />
         <Contact {...props} />
       </main>
       <Footer {...props} />

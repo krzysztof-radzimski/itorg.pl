@@ -1,5 +1,5 @@
 import type { SiteProps } from "@/content/site";
-import { homePath } from "@/lib/locales";
+import { navigationHref } from "@/lib/locales";
 import { currentYear } from "@/lib/typography";
 import CookieSettingsButton from "./CookieSettingsButton";
 import { CookieIcon } from "./Icons";
@@ -23,7 +23,7 @@ export default function Footer({ site, locale }: SiteProps) {
           <nav className="footer__col" aria-label={site.ui.footerNav}>
             <h2 className="footer__h">{site.ui.navigation}</h2>
             {site.nav.map((n) => (
-              <a key={n.href} href={`${homePath(locale)}${n.href}`}>
+              <a key={n.href} href={navigationHref(n.href, locale)}>
                 {n.label}
               </a>
             ))}

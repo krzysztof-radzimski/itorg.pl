@@ -7,13 +7,17 @@ const languages = ["pl", "en", "de", "es", "fr", "ru", "cs", "sk"];
 const root = resolve("out");
 const home = (language) => language === "pl" ? "/" : `/${language}/`;
 const privacy = (language) => language === "pl" ? "/polityka-prywatnosci/" : `/${language}/privacy/`;
+const products = (language) => language === "pl" ? "/produkty/" : `/${language}/products/`;
+const productIds = ["eap-legislator", "orion-ai", "baza-aktow-wlasnych", "abc-anon", "abc-kancelaria"];
+const pageTypes = [["home", home], ["privacy", privacy], ["products", products],
+  ...productIds.map((id) => [id, (language) => `${products(language)}${id}/`])];
 const file = (path) => resolve(root, `.${path}`, "index.html");
 const clean = (html) => html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
 const tags = (html, name) => [...html.matchAll(new RegExp(`<${name}\\b[^>]*>`, "gi"))].map((match) => match[0]);
 const attr = (tag, name) => tag.match(new RegExp(`(?:^|\\s)${name}="([^"]*)"`, "i"))?.[1];
 
 for (const language of languages) {
-  for (const [kind, pathFor] of [["home", home], ["privacy", privacy]]) {
+  for (const [kind, pathFor] of pageTypes) {
     const path = pathFor(language);
     test(`${language}: ${kind} — język, SEO, dostępność struktury i kompletność linków`, () => {
       assert.ok(existsSync(file(path)), `Brak eksportu ${path}; uruchom npm run build`);
@@ -38,6 +42,16 @@ for (const language of languages) {
       for (const image of tags(html, "img")) assert.notEqual(attr(image, "alt"), undefined, "Obraz wymaga alt");
 
       const anchors = tags(html, "a");
+      const nav = html.match(/<nav\b[^>]*class="nav__links"[\s\S]*?<\/nav>/i)?.[0];
+      assert.ok(nav, "Każda strona ma wspólne menu");
+      const sectionHref = (hash) => kind === "home" ? hash : `${home(language)}${hash}`;
+      assert.deepEqual(tags(nav, "a").map((tag) => attr(tag, "href")), [
+        sectionHref("#uslugi"), products(language), sectionHref("#o-firmie"), sectionHref("#partner"), sectionHref("#kontakt"),
+      ], "Menu prowadzi od usług i produktów do informacji o firmie oraz kontaktu");
+      if (kind !== "home") {
+        const brand = anchors.find((tag) => attr(tag, "class") === "nav__brand");
+        assert.equal(attr(brand, "href"), home(language), "Logo podstrony prowadzi do strony głównej we właściwym języku");
+      }
       for (const alternate of languages) {
         assert.ok(anchors.some((tag) => attr(tag, "hreflang") === alternate && attr(tag, "lang") === alternate && attr(tag, "href") === pathFor(alternate)), `Przełącznik nie zachowuje rodzaju strony: ${alternate}`);
       }
@@ -54,18 +68,24 @@ for (const language of languages) {
         }
       }
       if (kind === "home") {
-        assert.ok(ids.includes("legislator"), "Brak sekcji edytora aktów prawnych");
+        assert.ok(ids.includes("produkty"), "Brak zapowiedzi produktów");
+        assert.ok(!/<section\b[^>]*id="(?:legislator|orion)"/.test(html), "Szczegóły produktów są na podstronach");
+        assert.ok(anchors.some((tag) => attr(tag, "href") === products(language)));
+        assert.equal((html.match(/class="service-card"/g) || []).length, 5);
+        assert.ok(!html.includes("{years}"), "Lata muszą być wyliczone podczas eksportu");
+      } else if (kind === "products") {
+        for (const id of productIds) assert.ok(anchors.some((tag) => attr(tag, "href") === `${products(language)}${id}/`), `Brak linku do produktu: ${id}`);
+      } else if (kind === "eap-legislator") {
         const product = html.match(/<section\b[^>]*id="legislator"[\s\S]*?<\/section>/i)?.[0];
         assert.ok(product, "Opis EAP Legislator musi być w statycznym HTML");
         assert.ok(product.includes("ITORG") && product.includes("ABC PRO"), "Brak informacji o rozwoju produktu dla ABC PRO");
         for (const url of ["https://abcpro.pl/eap-legislator", "https://abcpro.pl/legislator-gov", "https://abcpro.pl/dodatek-bestia"]) {
           assert.ok(tags(product, "a").some((tag) => attr(tag, "href") === url), `Brak odnośnika do produktu: ${url}`);
         }
-        assert.ok(anchors.some((tag) => attr(tag, "href") === "https://orion.abcpro.pl/"));
+      } else if (kind === "orion-ai") {
         assert.ok(ids.includes("orion"));
-        assert.equal((html.match(/class="service-card"/g) || []).length, 5);
-        assert.ok(!html.includes("{years}"), "Lata muszą być wyliczone podczas eksportu");
-      } else {
+        assert.ok(anchors.some((tag) => attr(tag, "href") === "https://orion.abcpro.pl/"));
+      } else if (kind === "privacy") {
         assert.equal((html.match(/id="legal-[^"]+"/g) || []).length, 10);
         assert.equal(tags(html, "caption").length, 1);
         assert.ok(tags(html, "th").every((tag) => ["col", "row"].includes(attr(tag, "scope"))));
@@ -79,11 +99,11 @@ for (const language of languages) {
   }
 }
 
-test("Mapa witryny zawiera wszystkie 16 stron i poprawny robots.txt", () => {
+test("Mapa witryny zawiera wszystkie 64 strony i poprawny robots.txt", () => {
   const sitemap = readFileSync(resolve(root, "sitemap.xml"), "utf8");
-  assert.equal((sitemap.match(/<loc>/g) || []).length, 16);
+  assert.equal((sitemap.match(/<loc>/g) || []).length, languages.length * pageTypes.length);
   for (const language of languages) {
-    for (const pathFor of [home, privacy]) assert.ok(sitemap.includes(`<loc>https://itorg.pl${pathFor(language)}</loc>`));
+    for (const [, pathFor] of pageTypes) assert.ok(sitemap.includes(`<loc>https://itorg.pl${pathFor(language)}</loc>`));
   }
   assert.match(readFileSync(resolve(root, "robots.txt"), "utf8"), /Sitemap: https:\/\/itorg\.pl\/sitemap\.xml/);
 });

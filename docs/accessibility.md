@@ -1,14 +1,15 @@
 # Dostępność — WCAG 2.2 AA
 
-Stan kontroli: 20 października 2026 r. Zakres obejmuje stronę główną i politykę
-prywatności w językach pl, en, de, es, fr, ru, cs i sk, a także panel cookie,
-menu mobilne i przełącznik języków. Celem jest poziom AA standardu
+Stan kontroli: 20 października 2026 r. Zakres obejmuje stronę główną, katalog,
+pięć podstron produktów i politykę prywatności w językach pl, en, de, es, fr,
+ru, cs i sk (64 strony), a także panel cookie, menu mobilne i przełącznik
+języków. Celem jest poziom AA standardu
 [WCAG 2.2](https://www.w3.org/TR/WCAG22/).
 
-Zakres obejmuje również sekcję głównego produktu EAP Legislator, jego wersji
-dla administracji rządowej oraz dodatku Besti@, dodaną we wszystkich językach.
-Testy eksportu sprawdzają opis roli Krzysztofa Radzimskiego i komplet trzech
-odnośników do stron produktowych ABC PRO.
+Szczegóły EAP Legislator, w tym wersja dla administracji rządowej i dodatek
+Besti@, są na jego podstronie. Osobne podstrony mają Orion AI, Baza Aktów
+Własnych, ABC ANON i ABC Kancelaria. Testy eksportu sprawdzają rolę ITORG,
+odnośniki do ABC PRO, kolejność menu i przełącznik zachowujący wybrany produkt.
 
 ## Wdrożone rozwiązania
 
@@ -47,7 +48,7 @@ oraz [dialogu modalnego](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/)
 ## Wyniki automatyczne
 
 Eksport produkcyjny Next.js i TypeScript zakończyły się poprawnie. `npm test`:
-**21 testów zakończonych powodzeniem**. Sprawdzono eksport, języki, alternatywne
+**69 testów zakończonych powodzeniem**. Sprawdzono eksport, języki, alternatywne
 adresy, kanoniczne adresy polityk, linki wewnętrzne i kotwice, strukturę ARIA,
 tabele, komplet przełączników cookie, mapę witryny i kontrast tokenów.
 
@@ -57,11 +58,11 @@ z nagłówkami `public/_headers`. Użyto axe-core 4.14.0 z tagami `wcag2a`,
 
 | Scenariusz | Warianty | Wynik |
 | --- | ---: | --- |
-| 16 stron × szerokości 320 i 1280 px × oba motywy | 64 | 0 zgłoszonych naruszeń, brak przewijania poziomego |
+| 64 strony × szerokości 320 i 1280 px × oba motywy | 256 | 0 zgłoszonych naruszeń, brak przewijania poziomego |
 | Panel cookie: 8 języków × oba motywy, 320 px | 16 | 0 naruszeń, fokus na tytule i poprawny powrót, brak poziomego przepełnienia panelu |
-| 16 stron, 320 px, tekst 200% oraz zwiększone odstępy | 16 | 0 naruszeń, brak przewijania poziomego |
+| 64 strony, 320 px, tekst 200% oraz zwiększone odstępy | 64 | 0 naruszeń, brak przewijania poziomego |
 
-Razem **96 wariantów**. Szerokość testowano w rzeczywistym dokumencie iframe
+Razem **336 wariantów**. Szerokość testowano w rzeczywistym dokumencie iframe
 o podanym rozmiarze, wewnątrz Podglądu. Motywy wymuszano przez przełączenie
 reguły CSS `prefers-color-scheme`, sprawdzając końcowy kolor tła. Zmienione
 odstępy: interlinia 1,5, odstęp liter 0,12 em, wyrazów 0,16 em i akapitów 2 em.
@@ -73,6 +74,11 @@ zgody, odmowy i wyboru samych kategorii analitycznych. Testy obsługi klawiszy
 wywoływały zdarzenia programowo; nie zastępują testu fizyczną klawiaturą.
 Kliknięciem w Podglądzie potwierdzono przejście z `/fr/privacy/` do
 `/de/privacy/`, wraz ze zmianą języka HTML, nagłówka i tytułu dokumentu.
+
+Po rozdzieleniu treści potwierdzono kliknięciami przejście z menu mobilnego
+do `/produkty/`, wejście do `/produkty/eap-legislator/`, zmianę języka na
+`/de/products/eap-legislator/` oraz powrót przez Kontakt do `/de/#kontakt`.
+Zmiana języka zachowała produkt, a powrót ustawił fokus na sekcji kontaktowej.
 
 W osobnym dokumencie 320 px z usuniętymi skryptami i blokadą ich wykonania
 potwierdzono widoczność francuskiej treści oraz działanie natywnego menu.

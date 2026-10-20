@@ -1,16 +1,19 @@
 # ITORG — itorg.pl
 
 Witryna **ITORG Krzysztof Radzimski**: oprogramowanie dla administracji publicznej,
-automatyzacja, integracje i tworzenie narzędzi AI. Główny produkt rozwijany dla
-ABC PRO to **EAP Legislator**, opisany w sekcji `#legislator` we wszystkich
-ośmiu językach. Sekcja przedstawia edytor, wersję dla administracji rządowej
+automatyzacja, obieg dokumentów, integracje i tworzenie narzędzi AI. Strona
+główna przedstawia firmę, usługi i współpracę. Katalog oraz opisy produktów
+znajdują się na osobnych podstronach we wszystkich ośmiu językach.
+
+Podstrona **EAP Legislator** przedstawia edytor, wersję dla administracji rządowej
 oraz dodatek „Finanse Publiczne” do importu danych z Besti@, z odnośnikami do
 [EAP Legislator](https://abcpro.pl/eap-legislator),
 [Legislator GOV](https://abcpro.pl/legislator-gov) i
 [dodatku Besti@](https://abcpro.pl/dodatek-bestia).
 
-Partner ABC PRO Sp. z o.o.; współpraca Krzysztofa Radzimskiego przy produkcji platformy
-[Orion AI](https://orion.abcpro.pl/).
+ITORG rozwija EAP Legislator dla ABC PRO Sp. z o.o. i współpracuje przy rozwoju
+platformy [Orion AI](https://orion.abcpro.pl/). Katalog zawiera również opisy
+systemów partnera: Baza Aktów Własnych, ABC ANON i ABC Kancelaria.
 
 Next.js 15 (App Router), React 19, TypeScript i własny CSS. Eksport statyczny do
 `out/`, hosting na Cloudflare Pages. Bez backendu, zewnętrznych fontów i usług
@@ -18,8 +21,8 @@ automatycznego tłumaczenia.
 
 ## Wersje językowe
 
-Każda wersja ma przetłumaczoną stronę główną, politykę prywatności, panel cookie,
-nawigację, etykiety dostępności oraz metadane SEO.
+Każda wersja ma przetłumaczoną stronę główną, katalog, pięć opisów produktów,
+politykę prywatności, panel cookie, nawigację, etykiety dostępności i metadane SEO.
 
 | Język | Strona główna | Polityka prywatności |
 | --- | --- | --- |
@@ -32,7 +35,15 @@ nawigację, etykiety dostępności oraz metadane SEO.
 | Czeski | `/cs/` | `/cs/privacy/` |
 | Słowacki | `/sk/` | `/sk/privacy/` |
 
-Przełącznik zachowuje rodzaj strony. Język wynika z adresu, bez przekierowania
+Katalog: `/produkty/` po polsku i `/{locale}/products/` w pozostałych językach.
+Pod nim znajdują się podstrony `eap-legislator/`, `orion-ai/`,
+`baza-aktow-wlasnych/`, `abc-anon/` i `abc-kancelaria/`. Łącznie eksport obejmuje
+64 strony. Wersja GOV i dodatek Besti@ są opisane na podstronie EAP Legislator.
+
+Menu: **Usługi, Produkty, O firmie, Współpraca, Kontakt**. Pozycja Produkty
+prowadzi do katalogu, a pozostałe do sekcji strony głównej w bieżącym języku.
+
+Przełącznik zachowuje rodzaj strony i konkretny produkt. Język wynika z adresu, bez przekierowania
 według przeglądarki i bez dodatkowego cookie. Atrybut `html[lang]` jest zapisany
 w HTML podczas kompilacji. Każda strona ma własny adres kanoniczny i komplet
 odnośników `hreflang`; wszystkie wersje są w `sitemap.xml`.
@@ -45,6 +56,7 @@ odnośników `hreflang`; wszystkie wersje są w `sitemap.xml`.
 - [content/legal](content/legal): teksty polityk prywatności i panelu cookie.
 - [lib/locales.ts](lib/locales.ts): lista języków, ich nazwy i adresy.
 - [lib/metadata.ts](lib/metadata.ts): metadane i alternatywne wersje stron.
+- [lib/products.ts](lib/products.ts): powiązanie opisów produktów z ich adresami.
 - [components](components): wspólne komponenty dla wszystkich języków.
 - [app/globals.css](app/globals.css): kolory, układ i motywy.
 - [public/_headers](public/_headers): nagłówki bezpieczeństwa Cloudflare.
@@ -79,8 +91,9 @@ npm run typecheck
 npm test
 ```
 
-Testy sprawdzają wszystkie 16 wyeksportowanych stron, języki, metadane,
-przełączniki, odnośniki, kotwice, strukturę dostępności i kontrast kolorów.
+Testy sprawdzają wszystkie 64 wyeksportowane strony, języki, metadane,
+przełączniki zachowujące produkt, kolejność menu, odnośniki, kotwice,
+strukturę dostępności i kontrast kolorów.
 `npm test` wymaga aktualnego katalogu `out/` po kompilacji.
 
 Lokalnie: `npm run dev`. Podgląd statycznego eksportu z nagłówkami Cloudflare:

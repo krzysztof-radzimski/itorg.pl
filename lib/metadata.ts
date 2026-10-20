@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { getSite } from "@/content/translations";
-import { homePath, privacyPath, locales, openGraphLocales, type Locale } from "./locales";
+import { pagePath, locales, openGraphLocales, type Locale, type PageId } from "./locales";
+import { getProduct } from "./products";
 
 export const viewport: Viewport = {
   width: "device-width", initialScale: 1, viewportFit: "cover",
@@ -10,11 +11,15 @@ export const viewport: Viewport = {
   ],
 };
 
-export function pageMetadata(locale: Locale, privacy = false): Metadata {
+export function pageMetadata(locale: Locale, page: PageId = "home"): Metadata {
   const site = getSite(locale);
-  const path = privacy ? privacyPath : homePath;
-  const title = privacy ? `${site.privacy.title} — ${site.brand.legalName}` : site.seo.title;
-  const description = privacy ? site.privacy.description : site.seo.description;
+  const path = (language: Locale) => pagePath(language, page);
+  const product = page !== "home" && page !== "privacy" && page !== "products" ? getProduct(site, page) : undefined;
+  const title = page === "privacy" ? `${site.privacy.title} — ${site.brand.legalName}`
+    : page === "products" ? `${site.products.title} — ${site.brand.name}`
+    : product ? `${product.name} — ${site.brand.name}` : site.seo.title;
+  const description = page === "privacy" ? site.privacy.description
+    : page === "products" ? site.products.intro : product ? product.summary : site.seo.description;
   return {
     metadataBase: new URL(site.seo.url), title, description,
     applicationName: site.brand.legalName, authors: [{ name: "Krzysztof Radzimski" }],

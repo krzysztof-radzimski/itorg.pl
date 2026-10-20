@@ -5,7 +5,7 @@ export const cs: Site = {
   brand: { ...site.brand, eyebrow: "Digitalizace veřejné správy", tagline: "Software pro veřejnou správu." },
   company: { ...site.company, country: "Polsko" },
   hero: {
-    eyebrow: "Legislativa · dokumenty · AI", titleLead: "Software", titleAccent: "pro úřady",
+    eyebrow: "Legislativa · správa dokumentů · AI", titleLead: "Software", titleAccent: "pro úřady",
     subtitle: "Již {years} let vyvíjíme software pro přípravu právních aktů, správu dokumentů a automatizaci práce polských úřadů.",
     primaryCta: "Kontaktujte nás", secondaryCta: "Naše služby", scrollLabel: "Posunout níže",
   },
@@ -99,13 +99,26 @@ export const cs: Site = {
     description: "ITORG spolupracuje na vývoji Orionu a vytváří nástroje AI pro práci s dokumenty, analýzu informací a automatizaci úkolů.",
     cta: "Poznejte platformu Orion AI",
   },
+  products: {
+    title: "Produkty",
+    intro: "Poznejte EAP Legislator, Orion AI a další systémy ABC PRO pro legislativu a správu dokumentů.",
+    cta: "Zobrazit produkty",
+    details: "Zobrazit podrobnosti",
+    back: "Všechny produkty",
+    developmentTitle: "Legislativa a AI",
+    partnerTitle: "Další systémy ABC PRO",
+    breadcrumb: "Drobečková navigace",
+  },
+
   contact: { eyebrow: "Kontakt", title: "Promluvme si o vašem projektu", subtitle: "Potřebujete software pro správu dokumentů, propojení systémů nebo nástroj AI? Napište nám nebo zavolejte a popište, co chcete zlepšit." },
   footer: { tagline: "Legislativní systémy, oběh dokumentů a nástroje AI.", privacy: "Zásady ochrany osobních údajů", cookieSettings: "Nastavení cookies" },
   legal: { ...site.legal, privacyUrl: "/cs/privacy/" },
   nav: [
-    { label: "O společnosti", href: "#o-firmie" }, { label: "Služby", href: "#uslugi" },
-    { label: "Legislator", href: "#legislator" }, { label: "Přístup", href: "#wartosci" },
-    { label: "ABC PRO", href: "#partner" }, { label: "Orion AI", href: "#orion" }, { label: "Kontakt", href: "#kontakt" },
+    { label: "Služby", href: "#uslugi" },
+    { label: "Produkty", href: "/cs/products/" },
+    { label: "O společnosti", href: "#o-firmie" },
+    { label: "Spolupráce", href: "#partner" },
+    { label: "Kontakt", href: "#kontakt" },
   ],
   seo: { ...site.seo, title: "ITORG — Software pro veřejnou správu", description: "Vyvíjíme a zavádíme software pro úřady: legislativní systémy, oběh dokumentů, integrace a nástroje AI. Pro ABC PRO vyvíjíme EAP Legislator." },
   ui: {

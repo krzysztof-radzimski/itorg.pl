@@ -58,7 +58,7 @@ export const site = {
   },
 
   hero: {
-    eyebrow: "Legislacja · dokumenty · AI",
+    eyebrow: "Legislacja · obieg dokumentów · AI",
     titleLead: "Systemy IT",
     titleAccent: "dla urzędów",
     // {years} zostaje podmienione na liczbę lat działalności (od FOUNDED_YEAR).
@@ -190,6 +190,17 @@ export const site = {
     ] as PartnerProduct[],
   },
 
+  products: {
+    title: "Produkty",
+    intro: "Poznaj EAP Legislator, Orion AI i inne systemy ABC PRO do legislacji oraz pracy z dokumentami.",
+    cta: "Zobacz produkty",
+    details: "Zobacz opis",
+    back: "Wszystkie produkty",
+    developmentTitle: "Legislacja i AI",
+    partnerTitle: "Pozostałe systemy ABC PRO",
+    breadcrumb: "Ścieżka nawigacji",
+  },
+
   contact: {
     eyebrow: "Kontakt",
     title: "Porozmawiajmy o Twoim projekcie",
@@ -218,12 +229,10 @@ export const site = {
   },
 
   nav: [
-    { label: "O firmie", href: "#o-firmie" },
     { label: "Usługi", href: "#uslugi" },
-    { label: "Legislator", href: "#legislator" },
-    { label: "Podejście", href: "#wartosci" },
-    { label: "ABC PRO", href: "#partner" },
-    { label: "Orion AI", href: "#orion" },
+    { label: "Produkty", href: "/produkty/" },
+    { label: "O firmie", href: "#o-firmie" },
+    { label: "Współpraca", href: "#partner" },
     { label: "Kontakt", href: "#kontakt" },
   ],
 
@@ -249,7 +258,7 @@ export const site = {
     owner: "Właściciel",
     headquarters: "Siedziba",
     specialization: "Specjalizacja",
-    specializationValue: "Legislacja · dokumenty · integracje · AI",
+    specializationValue: "Legislacja · obieg dokumentów · integracje · AI",
     partner: "Partner",
     platform: "Usługi",
     partnerCta: "Poznaj ofertę ABC PRO",

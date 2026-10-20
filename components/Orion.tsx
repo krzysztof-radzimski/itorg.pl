@@ -10,7 +10,7 @@ export default function Orion({ site, locale }: SiteProps) {
         <div>
           <p className="eyebrow">{orion.eyebrow}</p>
           <hr className="rule" />
-          <h2 className="section__title" id="orion-title">{orion.title}</h2>
+          <h1 className="section__title" id="orion-title">{orion.title}</h1>
         </div>
         <div className="orion__card">
           <span className="service-card__icon" aria-hidden="true"><AiIcon /></span>

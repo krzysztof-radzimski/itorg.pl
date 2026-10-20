@@ -5,7 +5,7 @@ export const fr: Site = {
   brand: { ...site.brand, eyebrow: "Transformation numérique du secteur public", tagline: "Des logiciels pour les administrations publiques." },
   company: { ...site.company, country: "Pologne" },
   hero: {
-    eyebrow: "Législation · documents · IA", titleLead: "Des logiciels", titleAccent: "pour le secteur public",
+    eyebrow: "Législation · gestion documentaire · IA", titleLead: "Des logiciels", titleAccent: "pour le secteur public",
     subtitle: "Depuis {years} ans, nous développons des logiciels pour rédiger des actes juridiques, gérer les documents et automatiser le travail des administrations polonaises.",
     primaryCta: "Nous contacter", secondaryCta: "Voir nos services", scrollLabel: "Faire défiler vers le bas",
   },
@@ -99,13 +99,26 @@ export const fr: Site = {
     description: "ITORG participe au développement d’Orion et crée des outils d’IA pour travailler sur les documents, analyser l’information et automatiser des tâches.",
     cta: "Découvrir la plateforme Orion AI",
   },
+  products: {
+    title: "Produits",
+    intro: "Découvrez EAP Legislator, Orion AI et les autres systèmes d’ABC PRO pour la rédaction juridique et la gestion documentaire.",
+    cta: "Voir les produits",
+    details: "Voir les détails",
+    back: "Tous les produits",
+    developmentTitle: "Législation et IA",
+    partnerTitle: "Autres systèmes d’ABC PRO",
+    breadcrumb: "Fil d’Ariane",
+  },
+
   contact: { eyebrow: "Contact", title: "Parlons de votre projet", subtitle: "Besoin d’un logiciel de gestion documentaire, de connecter vos systèmes ou d’un outil d’IA ? Écrivez-nous ou appelez-nous et décrivez ce que vous souhaitez améliorer." },
   footer: { tagline: "Systèmes législatifs, gestion documentaire et outils d’IA.", privacy: "Politique de confidentialité", cookieSettings: "Paramètres des cookies" },
   legal: { ...site.legal, privacyUrl: "/fr/privacy/" },
   nav: [
-    { label: "À propos", href: "#o-firmie" }, { label: "Services", href: "#uslugi" },
-    { label: "Legislator", href: "#legislator" }, { label: "Méthode", href: "#wartosci" },
-    { label: "ABC PRO", href: "#partner" }, { label: "Orion AI", href: "#orion" }, { label: "Contact", href: "#kontakt" },
+    { label: "Services", href: "#uslugi" },
+    { label: "Produits", href: "/fr/products/" },
+    { label: "À propos", href: "#o-firmie" },
+    { label: "Partenariat", href: "#partner" },
+    { label: "Contact", href: "#kontakt" },
   ],
   seo: { ...site.seo, title: "ITORG — Logiciels pour les administrations publiques", description: "Logiciels pour les administrations : rédaction juridique, documents, intégrations et IA. Nous développons EAP Legislator pour ABC PRO." },
   ui: {

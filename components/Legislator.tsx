@@ -11,7 +11,7 @@ export default function Legislator({ site, locale }: SiteProps) {
           <div>
             <p className="eyebrow">{legislator.eyebrow}</p>
             <hr className="rule" />
-            <h2 className="section__title" id="legislator-title">{legislator.title}</h2>
+            <h1 className="section__title" id="legislator-title">{legislator.title}</h1>
             <p className="legislator__lead">{fixOrphans(legislator.lead, locale)}</p>
             <p className="about__p">{fixOrphans(legislator.description, locale)}</p>
           </div>
@@ -20,7 +20,7 @@ export default function Legislator({ site, locale }: SiteProps) {
               <li className="legislator__feature" key={feature.title}>
                 <span className="legislator__check" aria-hidden="true"><CheckIcon /></span>
                 <div>
-                  <h3 className="legislator__feature-title">{feature.title}</h3>
+                  <h2 className="legislator__feature-title">{feature.title}</h2>
                   <p>{fixOrphans(feature.desc, locale)}</p>
                 </div>
               </li>
@@ -30,7 +30,7 @@ export default function Legislator({ site, locale }: SiteProps) {
         <ul className="legislator__editions">
           {legislator.editions.map((edition) => (
             <li className="legislator__edition" key={edition.href}>
-              <h3>{edition.name}</h3>
+              <h2>{edition.name}</h2>
               <p>{fixOrphans(edition.desc, locale)}</p>
               <a className="link" href={edition.href}>{edition.cta}<ArrowRightIcon /></a>
             </li>

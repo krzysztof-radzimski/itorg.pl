@@ -1,7 +1,7 @@
-import { homePath, type Locale } from "@/lib/locales";
+import { type Locale } from "@/lib/locales";
 import { getSite } from "@/content/translations";
 import Footer from "./Footer";
-import LanguageSwitcher from "./LanguageSwitcher";
+import Nav from "./Nav";
 import CookieSettingsButton from "./CookieSettingsButton";
 
 export default function PrivacyPage({ locale }: { locale: Locale }) {
@@ -14,15 +14,7 @@ export default function PrivacyPage({ locale }: { locale: Locale }) {
   return (
     <>
       <a href="#main" className="skip-link">{ui.skip}</a>
-      <header className="subhead">
-        <div className="container subhead__bar">
-          <a className="subhead__brand" href={homePath(locale)} aria-label={`${site.brand.name} — ${ui.home}`}>
-            <img src="/logo.svg" alt="" width={32} height={32} /><span>{site.brand.name}</span>
-          </a>
-          <a className="link" href={homePath(locale)}>{ui.home}</a>
-          <LanguageSwitcher site={site} locale={locale} privacy />
-        </div>
-      </header>
+      <Nav site={site} locale={locale} page="privacy" />
       <main id="main" className="section section--light legal-page" tabIndex={-1}>
         <div className="container">
           <article className="legal">

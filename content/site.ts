@@ -94,7 +94,7 @@ export const site = {
     items: [
       {
         icon: "legislation",
-        title: "Systemy legislacyjne",
+        title: "Elektronizacja prawa",
         desc: "Tworzymy i rozwijamy narzędzia do przygotowywania, podpisywania i przekazywania aktów prawnych.",
       },
       {
@@ -217,7 +217,7 @@ export const site = {
   },
 
   footer: {
-    tagline: "Systemy legislacyjne, obieg dokumentów i narzędzia AI.",
+    tagline: "Elektronizacja prawa, obieg dokumentów i narzędzia AI.",
     privacy: "Polityka prywatności",
     cookieSettings: "Ustawienia plików cookie",
   },

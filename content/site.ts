@@ -104,7 +104,7 @@ export const site = {
       },
       {
         icon: "integration",
-        title: "Integracje systemowe",
+        title: "Integracje",
         desc: "Łączymy systemy, aby mogły wymieniać dane i korzystać ze wspólnych informacji.",
       },
       {

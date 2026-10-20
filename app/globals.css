@@ -177,6 +177,9 @@ p {
   max-width: var(--container);
   margin-inline: auto;
   padding-inline: var(--pad-inline);
+  /* Miejsce na wycięcie ekranu i zaokrąglone krawędzie telefonu w poziomie. */
+  padding-left: max(var(--pad-inline), calc(env(safe-area-inset-left, 0px) + 1rem));
+  padding-right: max(var(--pad-inline), calc(env(safe-area-inset-right, 0px) + 1rem));
 }
 .section {
   padding-block: var(--section-pad);

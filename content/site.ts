@@ -109,7 +109,7 @@ export const site = {
       },
       {
         icon: "digitization",
-        title: "Oprogramowanie dla urzędów",
+        title: "Oprogramowanie dla Samorządu",
         desc: "Projektujemy i wdrażamy aplikacje do obsługi spraw, dokumentów i usług publicznych.",
       },
       {

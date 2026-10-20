@@ -457,9 +457,18 @@ summary::-webkit-details-marker { display: none; }
 .languages__list a {
   display: flex;
   align-items: center;
+  gap: 0.65rem;
   min-height: 44px;
   padding: 0.45rem 0.8rem;
   border-radius: var(--r-sm);
+}
+.languages__flag {
+  width: 24px;
+  height: 16px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18);
 }
 .languages__list a[aria-current] { font-weight: 700; background: rgba(255, 255, 255, 0.1); box-shadow: inset 3px 0 var(--eyebrow-on-dark); }
 .languages__list a:hover { background: #25344e; }

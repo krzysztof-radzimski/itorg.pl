@@ -20,7 +20,7 @@ export const es: Site = {
     paragraphs: [
       "Nos especializamos en la digitalización del proceso legislativo y la automatización de flujos documentales, ámbitos en los que la precisión, el cumplimiento normativo y la fiabilidad son esenciales.",
       "Combinamos una amplia experiencia en el sector público con ingeniería moderna. Nuestra colaboración con ABC PRO Sp. z o.o. nos permite ofrecer herramientas jurídicas probadas e implantaciones integrales de cualquier escala.",
-      "También desarrollamos herramientas de inteligencia artificial. Krzysztof Radzimski colabora en el desarrollo de la plataforma Orion de ABC PRO, con soluciones para el trabajo diario con documentos e información.",
+      "También desarrollamos herramientas de inteligencia artificial. ITORG colabora en el desarrollo de la plataforma Orion de ABC PRO, con soluciones para el trabajo diario con documentos e información.",
     ],
   },
   services: {
@@ -95,7 +95,7 @@ export const es: Site = {
   },
   orion: {
     eyebrow: "Herramientas de IA", title: "Construimos el futuro con Orion AI",
-    lead: "Krzysztof Radzimski colabora en el desarrollo de Orion de ABC PRO, una plataforma de IA para la administración pública y las empresas.",
+    lead: "ITORG colabora en el desarrollo de Orion de ABC PRO, una plataforma de IA para la administración pública y las empresas.",
     description: "Desarrollamos herramientas de IA que ayudan a trabajar con documentos, analizar información y automatizar tareas. La colaboración en Orion une estas capacidades con nuestra experiencia en software para el sector público.",
     cta: "Descubre la plataforma Orion AI",
   },

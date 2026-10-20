@@ -20,7 +20,7 @@ export const de: Site = {
     paragraphs: [
       "Wir sind auf digitale Gesetzgebungsverfahren und die Automatisierung von Dokumentenabläufen spezialisiert — Bereiche, in denen Präzision, Rechtskonformität und Zuverlässigkeit entscheidend sind.",
       "Wir verbinden langjährige Erfahrung im öffentlichen Sektor mit moderner Softwareentwicklung. Gemeinsam mit ABC PRO Sp. z o.o. bieten wir bewährte Fachanwendungen und umfassende Implementierungen jeder Größenordnung.",
-      "Wir entwickeln auch Werkzeuge mit künstlicher Intelligenz. Krzysztof Radzimski wirkt an der Entwicklung der Orion-Plattform von ABC PRO mit und unterstützt Lösungen für die tägliche Arbeit mit Dokumenten und Informationen.",
+      "Wir entwickeln auch Werkzeuge mit künstlicher Intelligenz. ITORG wirkt an der Entwicklung der Orion-Plattform von ABC PRO mit und unterstützt Lösungen für die tägliche Arbeit mit Dokumenten und Informationen.",
     ],
   },
   services: {
@@ -95,7 +95,7 @@ export const de: Site = {
   },
   orion: {
     eyebrow: "KI-Werkzeuge", title: "Die Zukunft mit Orion AI gestalten",
-    lead: "Krzysztof Radzimski wirkt an der Entwicklung der Orion-Plattform von ABC PRO mit — einer KI-Plattform für Verwaltung und Unternehmen.",
+    lead: "ITORG wirkt an der Entwicklung der Orion-Plattform von ABC PRO mit — einer KI-Plattform für Verwaltung und Unternehmen.",
     description: "Wir entwickeln KI-Werkzeuge für die Arbeit mit Dokumenten, die Analyse von Informationen und die Automatisierung von Aufgaben. Unsere Mitarbeit an Orion verbindet diese Kompetenzen mit unserer Erfahrung in Verwaltungssoftware.",
     cta: "Die Plattform Orion AI entdecken",
   },

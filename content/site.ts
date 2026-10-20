@@ -4,8 +4,11 @@
 //  bez dotykania komponentów.
 // ─────────────────────────────────────────────────────────────────────────
 
+import { cookies, privacy } from "./legal/pl";
+import type { Locale } from "@/lib/locales";
+
 export interface ServiceItem {
-  icon: "legislation" | "automation" | "integration" | "digitization";
+  icon: "legislation" | "automation" | "integration" | "digitization" | "ai";
   title: string;
   desc: string;
 }
@@ -74,13 +77,14 @@ export const site = {
     paragraphs: [
       "Specjalizujemy się w elektronizacji procesu legislacyjnego oraz automatyzacji obiegu dokumentów — obszarach, w których precyzja, zgodność z prawem i niezawodność mają znaczenie krytyczne.",
       "Łączymy wieloletnie doświadczenie w sektorze publicznym z nowoczesnym warsztatem inżynierskim. Dzięki partnerstwu z ABC PRO Sp. z o.o. dostarczamy sprawdzone, kompleksowe narzędzia prawne i wdrożenia na każdą skalę.",
+      "Tworzymy również narzędzia wykorzystujące sztuczną inteligencję. Krzysztof Radzimski współpracuje przy produkcji platformy Orion firmy ABC PRO, rozwijając rozwiązania wspierające codzienną pracę z dokumentami i informacją.",
     ],
   },
 
   services: {
     eyebrow: "Co robimy",
     title: "Nasze kompetencje",
-    subtitle: "Kompleksowe wsparcie cyfryzacji urzędów — od legislacji po integracje.",
+    subtitle: "Kompleksowe wsparcie cyfryzacji urzędów — od legislacji i integracji po narzędzia AI.",
     items: [
       {
         icon: "legislation",
@@ -101,6 +105,11 @@ export const site = {
         icon: "digitization",
         title: "Cyfryzacja państwa",
         desc: "Wdrażanie innowacyjnych technologii zwiększających dostępność usług dla obywateli oraz efektywność urzędów.",
+      },
+      {
+        icon: "ai",
+        title: "Tworzenie narzędzi AI",
+        desc: "Projektowanie i rozwój narzędzi sztucznej inteligencji wspierających pracę z dokumentami, analizę informacji i automatyzację codziennych zadań.",
       },
     ] as ServiceItem[],
   },
@@ -165,8 +174,16 @@ export const site = {
       "Wdrażasz nowy system albo modernizujesz urząd? Napisz lub zadzwoń — odpowiemy, jak możemy pomóc.",
   },
 
+  orion: {
+    eyebrow: "Narzędzia AI",
+    title: "Współtworzymy przyszłość z Orion AI",
+    lead: "Krzysztof Radzimski współpracuje przy produkcji platformy Orion firmy ABC PRO — platformy AI dla administracji i biznesu.",
+    description: "Tworzymy narzędzia AI, które pomagają pracować z dokumentami, analizować informacje i automatyzować zadania. Współpraca przy Orionie łączy te kompetencje z naszym doświadczeniem w oprogramowaniu dla sektora publicznego.",
+    cta: "Poznaj platformę Orion AI",
+  },
+
   footer: {
-    tagline: "Innowacyjne rozwiązania IT dla administracji publicznej.",
+    tagline: "Innowacyjne rozwiązania IT i narzędzia AI dla administracji publicznej.",
     privacy: "Polityka prywatności",
     cookieSettings: "Ustawienia plików cookie",
   },
@@ -174,7 +191,7 @@ export const site = {
   // Dane do polityki prywatności / ustawień cookie.
   legal: {
     privacyUrl: "/polityka-prywatnosci/",
-    updated: "15 czerwca 2026",
+    updated: "2026-10-20",
   },
 
   nav: [
@@ -182,15 +199,49 @@ export const site = {
     { label: "Usługi", href: "#uslugi" },
     { label: "Wartości", href: "#wartosci" },
     { label: "Partner", href: "#partner" },
+    { label: "Orion AI", href: "#orion" },
     { label: "Kontakt", href: "#kontakt" },
   ],
 
   seo: {
-    title: "ITORG — Innowacyjne rozwiązania dla administracji publicznej",
+    title: "ITORG — Rozwiązania IT i narzędzia AI dla administracji publicznej",
     description:
-      "ITORG Krzysztof Radzimski — od 2009 roku tworzymy systemy legislacyjne, automatyzację procesów i integracje IT dla administracji publicznej w Polsce. Partner ABC PRO.",
+      "ITORG Krzysztof Radzimski — systemy legislacyjne, automatyzacja, integracje i narzędzia AI. Partner ABC PRO, współpraca przy produkcji platformy Orion AI.",
     url: "https://itorg.pl",
   },
+
+  ui: {
+    skip: "Przejdź do treści",
+    home: "Strona główna",
+    mainNav: "Nawigacja główna",
+    footerNav: "Nawigacja w stopce",
+    navigation: "Nawigacja",
+    menu: "Menu",
+    languages: "Wybierz język",
+    language: "Język",
+    facts: "Firma w skrócie",
+    inBrief: "W skrócie",
+    founded: "Założona",
+    owner: "Właściciel",
+    headquarters: "Siedziba",
+    specialization: "Specjalizacja",
+    specializationValue: "Legislacja · EZD · integracje · AI",
+    partner: "Partner",
+    platform: "Platforma",
+    partnerCta: "Poznaj ofertę ABC PRO",
+    writeEmail: "Napisz e-mail",
+    address: "Adres",
+    phone: "Telefon",
+    email: "E-mail",
+    eDelivery: "e-Doręczenia",
+    registration: "Dane rejestrowe",
+    bank: "Konto bankowe",
+    rights: "Wszystkie prawa zastrzeżone.",
+    close: "Zamknij",
+  },
+  cookies,
+  privacy,
 };
 
 export type Site = typeof site;
+export type SiteProps = { site: Site; locale: Locale };

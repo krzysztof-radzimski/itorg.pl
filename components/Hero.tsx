@@ -1,15 +1,15 @@
-import { site } from "@/content/site";
+import type { SiteProps } from "@/content/site";
 import { yearsSince } from "@/lib/typography";
-import { ArrowRightIcon, ChevronDownIcon, CheckIcon } from "./Icons";
+import { ArrowRightIcon, CheckIcon } from "./Icons";
 
 // Komponent serwerowy — brak interaktywności. Tło (aurora + siatka) jest czysto
 // CSS-owe, więc liczba lat zostaje wyliczona i zapisana w statycznym HTML.
-export default function Hero() {
+export default function Hero({ site }: SiteProps) {
   const years = yearsSince(site.company.foundedYear);
   const subtitle = site.hero.subtitle.replace("{years}", String(years));
 
   return (
-    <section className="hero" id="top">
+    <section className="hero" id="top" tabIndex={-1} aria-labelledby="hero-title">
       <div className="hero__bg" aria-hidden="true">
         <div className="hero__aurora" />
         <div className="hero__grid" />
@@ -19,7 +19,7 @@ export default function Hero() {
         <div className="hero__content">
           <img className="hero__logo" src="/logo.svg" alt="" width={64} height={64} />
           <p className="eyebrow hero__eyebrow">{site.hero.eyebrow}</p>
-          <h1 className="hero__title">
+          <h1 className="hero__title" id="hero-title">
             {site.hero.titleLead}{" "}
             <span className="hero__title-accent">{site.hero.titleAccent}</span>
           </h1>
@@ -39,7 +39,7 @@ export default function Hero() {
           <div className="hero__panel">
             <div className="hero__panel-head">
               <img src="/logo.svg" alt="" width={26} height={26} />
-              <span className="hero__panel-name">ITORG · Platforma</span>
+              <span className="hero__panel-name">ITORG · {site.ui.platform}</span>
               <span className="hero__panel-dot" />
             </div>
             <ul className="hero__panel-list">
@@ -59,10 +59,6 @@ export default function Hero() {
         </div>
       </div>
 
-      <a className="scroll-cue" href="#o-firmie" aria-label={site.hero.scrollLabel}>
-        <span className="scroll-cue__line" />
-        <ChevronDownIcon className="scroll-cue__chev" />
-      </a>
     </section>
   );
 }

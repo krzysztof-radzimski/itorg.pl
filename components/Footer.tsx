@@ -1,11 +1,11 @@
-import { site } from "@/content/site";
+import type { SiteProps } from "@/content/site";
+import { homePath } from "@/lib/locales";
 import { currentYear } from "@/lib/typography";
 import CookieSettingsButton from "./CookieSettingsButton";
 import { CookieIcon } from "./Icons";
 
-const { company } = site;
-
-export default function Footer() {
+export default function Footer({ site, locale }: SiteProps) {
+  const { company } = site;
   return (
     <footer className="footer">
       <div className="footer__glow" aria-hidden="true" />
@@ -20,17 +20,17 @@ export default function Footer() {
             <p className="footer__legalname">{site.brand.legalName}</p>
           </div>
 
-          <nav className="footer__col" aria-label="Stopka — nawigacja">
-            <h2 className="footer__h">Nawigacja</h2>
+          <nav className="footer__col" aria-label={site.ui.footerNav}>
+            <h2 className="footer__h">{site.ui.navigation}</h2>
             {site.nav.map((n) => (
-              <a key={n.href} href={n.href}>
+              <a key={n.href} href={`${homePath(locale)}${n.href}`}>
                 {n.label}
               </a>
             ))}
           </nav>
 
           <div className="footer__col">
-            <h2 className="footer__h">Kontakt</h2>
+            <h2 className="footer__h">{site.contact.eyebrow}</h2>
             <a href={`tel:${company.phoneHref}`}>{company.phoneDisplay}</a>
             <a href={`mailto:${company.email}`}>{company.email}</a>
             <span className="footer__addr">
@@ -43,8 +43,7 @@ export default function Footer() {
       <div className="footer__bottom">
         <div className="container footer__bottom-row">
           <p>
-            © {company.foundedYear}–{currentYear()} {site.brand.legalName}. Wszystkie prawa
-            zastrzeżone.
+            © {company.foundedYear}–{currentYear()} {site.brand.legalName}. {site.ui.rights}
           </p>
           <p className="footer__legal">
             <a href={site.legal.privacyUrl}>{site.footer.privacy}</a>

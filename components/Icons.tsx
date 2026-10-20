@@ -55,11 +55,21 @@ export function DigitizationIcon({ className }: IconProps) {
   );
 }
 
+export function AiIcon({ className }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" {...STROKE} aria-hidden="true">
+      <path d="m12 3 2.8 6.2L21 12l-6.2 2.8L12 21l-2.8-6.2L3 12l6.2-2.8Z" />
+      <path d="M20 3v4M18 5h4" />
+    </svg>
+  );
+}
+
 const SERVICE_ICONS: Record<ServiceItem["icon"], (p: IconProps) => React.ReactElement> = {
   legislation: LegislationIcon,
   automation: AutomationIcon,
   integration: IntegrationIcon,
   digitization: DigitizationIcon,
+  ai: AiIcon,
 };
 
 export function ServiceIcon({ name, className }: { name: ServiceItem["icon"]; className?: string }) {

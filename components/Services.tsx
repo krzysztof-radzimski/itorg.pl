@@ -1,18 +1,18 @@
-import { site } from "@/content/site";
+import type { SiteProps } from "@/content/site";
 import { fixOrphans } from "@/lib/typography";
 import Reveal from "./Reveal";
 import { ServiceIcon } from "./Icons";
 
-export default function Services() {
+export default function Services({ site, locale }: SiteProps) {
   const { services } = site;
 
   return (
-    <section className="section section--light section--alt" id="uslugi">
+    <section className="section section--light section--alt" id="uslugi" tabIndex={-1} aria-labelledby="services-title">
       <div className="container">
         <div className="section-head section-head--center">
           <p className="eyebrow">{services.eyebrow}</p>
           <hr className="rule rule--center" />
-          <h2 className="section__title">{services.title}</h2>
+          <h2 className="section__title" id="services-title">{services.title}</h2>
           <p className="section__subtitle">{services.subtitle}</p>
         </div>
 
@@ -23,7 +23,7 @@ export default function Services() {
                 <ServiceIcon name={s.icon} />
               </span>
               <h3 className="service-card__title">{s.title}</h3>
-              <p className="service-card__desc">{fixOrphans(s.desc)}</p>
+              <p className="service-card__desc">{fixOrphans(s.desc, locale)}</p>
             </Reveal>
           ))}
         </ul>

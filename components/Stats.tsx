@@ -1,9 +1,9 @@
-import { site } from "@/content/site";
+import type { SiteProps } from "@/content/site";
 import { yearsSince } from "@/lib/typography";
 
 // Pasek statystyk „nachodzący" na dolną krawędź hero. Komponent serwerowy —
 // liczba lat doświadczenia wyliczana w czasie buildu.
-export default function Stats() {
+export default function Stats({ site }: SiteProps) {
   const years = yearsSince(site.company.foundedYear);
 
   return (

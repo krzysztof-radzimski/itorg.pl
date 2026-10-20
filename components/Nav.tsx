@@ -1,74 +1,29 @@
-"use client";
+import type { SiteProps } from "@/content/site";
+import { MenuIcon, ArrowRightIcon } from "./Icons";
+import Disclosure from "./Disclosure";
+import LanguageSwitcher from "./LanguageSwitcher";
 
-import { useEffect, useState } from "react";
-import { site } from "@/content/site";
-import { MenuIcon, CloseIcon, ArrowRightIcon } from "./Icons";
-
-export default function Nav() {
-  const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  // Zamknij menu mobilne klawiszem Escape.
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [open]);
-
-  // CTA „Kontakt" prowadzi do sekcji kontaktu, więc nie powtarzamy jej w linkach.
+export default function Nav({ site, locale }: SiteProps) {
   const links = site.nav.filter((item) => item.href !== "#kontakt");
-
   return (
-    <header className={`nav ${scrolled ? "is-scrolled" : ""}`}>
+    <header className="nav">
       <div className="container nav__inner">
-        <a className="nav__brand" href="#top" aria-label={`${site.brand.legalName} — strona główna`}>
+        <a className="nav__brand" href="#top" aria-label={`${site.brand.legalName} — ${site.ui.home}`}>
           <img src="/logo.svg" alt="" width={36} height={36} />
           <span className="nav__wordmark">{site.brand.name}</span>
         </a>
-
-        <nav className="nav__links" aria-label="Nawigacja główna">
-          {links.map((item) => (
-            <a key={item.href} className="nav__link" href={item.href}>
-              {item.label}
-            </a>
-          ))}
-          <a className="nav__cta" href="#kontakt">
-            Kontakt <ArrowRightIcon />
-          </a>
+        <nav className="nav__links" aria-label={site.ui.mainNav}>
+          {links.map((item) => <a key={item.href} className="nav__link" href={item.href}>{item.label}</a>)}
+          <a className="nav__cta" href="#kontakt">{site.contact.eyebrow} <ArrowRightIcon /></a>
         </nav>
-
-        <button
-          className="nav__toggle"
-          aria-label={open ? "Zamknij menu" : "Otwórz menu"}
-          aria-expanded={open}
-          aria-controls="nav-mobile"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <CloseIcon /> : <MenuIcon />}
-        </button>
-      </div>
-
-      <div
-        id="nav-mobile"
-        className={`nav__mobile ${open ? "is-open" : ""}`}
-        inert={open ? undefined : true}
-      >
-        {links.map((item) => (
-          <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
-            {item.label}
-          </a>
-        ))}
-        <a href="#kontakt" onClick={() => setOpen(false)}>
-          Kontakt
-        </a>
+        <div className="nav__tools">
+          <Disclosure className="nav__disclosure" summary={<><MenuIcon /><span>{site.ui.menu}</span></>}>
+            <nav className="nav__mobile" aria-label={site.ui.mainNav}>
+              {site.nav.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
+            </nav>
+          </Disclosure>
+          <LanguageSwitcher site={site} locale={locale} />
+        </div>
       </div>
     </header>
   );

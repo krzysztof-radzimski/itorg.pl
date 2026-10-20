@@ -10,8 +10,8 @@ const NBSP = " ";
 // sierotki („o i z Pisma") są obsługiwane wszystkie, a nie co druga.
 const ORPHAN_RE = /(?<=^|[\s(„"])([aiouwzAIOUWZ])[ \t]+/g;
 
-export function fixOrphans(text: string): string {
-  if (!text) return text;
+export function fixOrphans(text: string, locale = "pl"): string {
+  if (!text || locale !== "pl") return text;
   return text.replace(ORPHAN_RE, (_m, letter) => `${letter}${NBSP}`);
 }
 

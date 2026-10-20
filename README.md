@@ -1,81 +1,95 @@
 # ITORG — itorg.pl
 
-Strona firmowa **ITORG Krzysztof Radzimski** — innowacyjne rozwiązania IT dla
-administracji publicznej (systemy legislacyjne, automatyzacja procesów,
-integracje, cyfryzacja urzędów). Partner **ABC PRO Sp. z o.o.**
+Witryna **ITORG Krzysztof Radzimski**: oprogramowanie dla administracji publicznej,
+automatyzacja, integracje i tworzenie narzędzi AI. Partner ABC PRO Sp. z o.o.;
+współpraca Krzysztofa Radzimskiego przy produkcji platformy
+[Orion AI](https://orion.abcpro.pl/).
 
-Nowoczesny, w pełni responsywny serwis z obsługą **WCAG 2.1 AA**, **trybu
-jasnego/ciemnego** (wg preferencji przeglądarki) oraz **granularną zgodą na pliki
-cookie** wymaganą prawem.
+Next.js 15 (App Router), React 19, TypeScript i własny CSS. Eksport statyczny do
+`out/`, hosting na Cloudflare Pages. Bez backendu, zewnętrznych fontów i usług
+automatycznego tłumaczenia.
 
-## Stos technologiczny
+## Wersje językowe
 
-- **Next.js 15** (App Router) z `output: 'export'` → w pełni statyczna strona (`out/`)
-- **React 19** + **TypeScript**
-- **Cloudflare Pages** — hosting statyczny na brzegu sieci
-- Ręcznie pisany **CSS z custom properties** (bez Tailwind), systemowy stos fontów
-  (zero pobierania webfontów → szybkość i pełne wsparcie polskich znaków)
-- Brak bazy danych i backendu do utrzymania
+Każda wersja ma przetłumaczoną stronę główną, politykę prywatności, panel cookie,
+nawigację, etykiety dostępności oraz metadane SEO.
 
-## Dostępność i prywatność
+| Język | Strona główna | Polityka prywatności |
+| --- | --- | --- |
+| Polski | `/` | `/polityka-prywatnosci/` |
+| Angielski | `/en/` | `/en/privacy/` |
+| Niemiecki | `/de/` | `/de/privacy/` |
+| Hiszpański | `/es/` | `/es/privacy/` |
+| Francuski | `/fr/` | `/fr/privacy/` |
+| Rosyjski | `/ru/` | `/ru/privacy/` |
+| Czeski | `/cs/` | `/cs/privacy/` |
+| Słowacki | `/sk/` | `/sk/privacy/` |
 
-- Semantyczne znaczniki, punkt „Przejdź do treści", widoczny fokus klawiatury,
-  kontrast kolorów ≥ 4.5:1 (tekst) / 3:1 (elementy graficzne)
-- Tryb jasny/ciemny sterowany `prefers-color-scheme`; poszanowanie
-  `prefers-reduced-motion`
-- Panel cookie: równoważne „Akceptuj" / „Odrzuć", granularne kategorie, pułapka
-  fokusu, obsługa Escape — zgodny z RODO i dyrektywą ePrivacy
-- **Polityka prywatności**: `/polityka-prywatnosci/`
-
-## Struktura
-
-```
-app/
-  layout.tsx                  # metadane, SEO, theme-color (jasny/ciemny)
-  page.tsx                    # kompozycja strony głównej
-  globals.css                 # system projektowy „Aurora" (tokeny, tryb ciemny)
-  polityka-prywatnosci/page.tsx
-components/                    # Nav, Hero, Stats, About, Services, Values,
-                              # Partner, Contact, Footer, CookieConsent, …
-content/site.ts               # ⚙️ CAŁA EDYTOWALNA TREŚĆ — teksty i dane firmowe
-lib/
-  consent.ts                  # magazyn zgód cookie (localStorage)
-  typography.ts               # sierotki + wyliczanie lat działalności
-public/
-  logo.svg  _headers          # logotyp + nagłówki bezpieczeństwa (CSP itd.)
-```
+Przełącznik zachowuje rodzaj strony. Język wynika z adresu, bez przekierowania
+według przeglądarki i bez dodatkowego cookie. Atrybut `html[lang]` jest zapisany
+w HTML podczas kompilacji. Każda strona ma własny adres kanoniczny i komplet
+odnośników `hreflang`; wszystkie wersje są w `sitemap.xml`.
 
 ## Edycja treści
 
-Wszystkie teksty, dane rejestrowe, usługi i produkty partnera są w
-**[`content/site.ts`](content/site.ts)** — zmieniasz tam ofertę bez dotykania
-komponentów. Liczba lat działalności i rok w stopce wyliczają się automatycznie.
+- [content/site.ts](content/site.ts): teksty polskie oraz wspólne dane firmy.
+- [content/locales](content/locales): pełne słowniki pozostałych języków, sprawdzane
+  przez TypeScript względem polskiej struktury.
+- [content/legal](content/legal): teksty polityk prywatności i panelu cookie.
+- [lib/locales.ts](lib/locales.ts): lista języków, ich nazwy i adresy.
+- [lib/metadata.ts](lib/metadata.ts): metadane i alternatywne wersje stron.
+- [components](components): wspólne komponenty dla wszystkich języków.
+- [app/globals.css](app/globals.css): kolory, układ i motywy.
+- [public/_headers](public/_headers): nagłówki bezpieczeństwa Cloudflare.
 
-## Uruchomienie lokalne
+Polskie trasy znajdują się w grupie `app/(pl)`, a pozostałe w `app/[locale]`.
+Osobne układy główne zapewniają właściwy język dokumentu także bez JavaScriptu.
+Lata działalności i rok w stopce są wyliczane podczas kompilacji.
+
+## Dostępność i prywatność
+
+Celem wdrożenia jest **WCAG 2.2 na poziomie AA**. Wprowadzone rozwiązania obejmują
+semantyczne nagłówki i regiony, link pomijający nawigację, widoczny fokus,
+odpowiedni kontrast, elastyczny układ, duże cele interakcji, obsługę ograniczenia
+ruchu i kolorów wymuszonych. Treść jest widoczna bez JavaScriptu.
+
+Menu mobilne i wybór języka korzystają z natywnego `details/summary`. Panel cookie
+używa natywnego modalnego `dialog`, blokuje interakcję z tłem, obsługuje
+zamknięcie i przywraca fokus. Zgoda jest wspólna dla języków i zapisywana pod
+dotychczasowym kluczem `itorg-cookie-consent-v1`. Opcjonalne narzędzia nie są
+obecnie ładowane.
+
+Zakres kontroli, wyniki oraz elementy wymagające oceny manualnej opisuje
+[raport dostępności](docs/accessibility.md). Wyniki automatyczne nie stanowią
+certyfikatu pełnej zgodności.
+
+## Uruchomienie i weryfikacja
 
 ```bash
-npm install
-npm run dev            # http://localhost:3000
-
-# Podgląd produkcyjny (statyka jak na Cloudflare):
-npm run preview        # = next build + wrangler pages dev out
+npm ci
+npm run build
+npm run typecheck
+npm test
 ```
 
-## Deploy na Cloudflare Pages
+Testy sprawdzają wszystkie 16 wyeksportowanych stron, języki, metadane,
+przełączniki, odnośniki, kotwice, strukturę dostępności i kontrast kolorów.
+`npm test` wymaga aktualnego katalogu `out/` po kompilacji.
 
-**Wariant A — z linii poleceń (Wrangler):**
+Lokalnie: `npm run dev`. Podgląd statycznego eksportu z nagłówkami Cloudflare:
+`npm run preview`. W code-architect serwer uruchamia i restartuje narzędzie
+Podglądu; nie należy uruchamiać drugiego procesu serwera.
 
-```bash
-npm run deploy         # = next build + wrangler pages deploy out
-```
+## Publikacja na Cloudflare Pages
 
-**Wariant B — integracja z Git (zalecane):**
+Z terminala: `npm run deploy` (kompilacja i publikacja katalogu `out/`).
+Przy integracji z Git:
 
 | Ustawienie | Wartość |
-|---|---|
+| --- | --- |
 | Framework preset | Next.js (Static HTML Export) |
 | Build command | `npm run build` |
 | Build output directory | `out` |
 
-Plik `public/_headers` jest kopiowany do `out/` i ustawia nagłówki
-bezpieczeństwa (CSP, X-Frame-Options itd.) na Cloudflare Pages.
+Plik `public/_headers` jest kopiowany do eksportu. Publikacja nie wymaga
+serwera Next.js ani funkcji Cloudflare.

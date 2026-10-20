@@ -5,7 +5,7 @@ export const en: Site = {
   brand: { ...site.brand, eyebrow: "Digital public administration", tagline: "Software for public administration." },
   company: { ...site.company, country: "Poland" },
   hero: {
-    eyebrow: "Legislation · document workflows · AI", titleLead: "Software", titleAccent: "for public authorities",
+    eyebrow: "Legislation · document workflows · AI", titleLead: "Thoughtful solutions", titleAccent: "for public administration and business",
     subtitle: "For {years} years, we have been developing software for drafting legal acts, managing documents and automating work in Poland’s public sector.",
     primaryCta: "Get in touch", secondaryCta: "View our services", scrollLabel: "Scroll down",
   },

@@ -59,8 +59,8 @@ export const site = {
 
   hero: {
     eyebrow: "Legislacja · obieg dokumentów · AI",
-    titleLead: "Systemy IT",
-    titleAccent: "dla urzędów",
+    titleLead: "Przemyślane rozwiązania",
+    titleAccent: "dla administracji publicznej i biznesu",
     // {years} zostaje podmienione na liczbę lat działalności (od FOUNDED_YEAR).
     subtitle:
       "Od {years} lat tworzymy oprogramowanie do przygotowywania aktów prawnych, obiegu dokumentów i automatyzacji pracy urzędów.",

@@ -5,7 +5,7 @@ export const de: Site = {
   brand: { ...site.brand, eyebrow: "Digitalisierung der öffentlichen Verwaltung", tagline: "Software für die öffentliche Verwaltung." },
   company: { ...site.company, country: "Polen" },
   hero: {
-    eyebrow: "Rechtsetzung · Dokumentenabläufe · KI", titleLead: "Software", titleAccent: "für Behörden",
+    eyebrow: "Rechtsetzung · Dokumentenabläufe · KI", titleLead: "Durchdachte Lösungen", titleAccent: "für öffentliche Verwaltung und Unternehmen",
     subtitle: "Seit {years} Jahren entwickeln wir Software für die Erstellung von Rechtsakten, die Dokumentenverwaltung und die Automatisierung von Arbeitsabläufen in polnischen Behörden.",
     primaryCta: "Kontakt aufnehmen", secondaryCta: "Unsere Leistungen", scrollLabel: "Nach unten scrollen",
   },

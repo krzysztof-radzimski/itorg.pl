@@ -63,7 +63,7 @@ export const site = {
     titleAccent: "dla administracji publicznej i biznesu",
     // {years} zostaje podmienione na liczbę lat działalności (od FOUNDED_YEAR).
     subtitle:
-      "Od {years} lat tworzymy oprogramowanie do przygotowywania aktów prawnych, obiegu dokumentów i automatyzacji pracy urzędów.",
+      "Od {years} lat tworzymy oprogramowanie dopasowane do potrzeb administracji i firm — usprawniamy pracę z dokumentami, łączymy systemy i automatyzujemy procesy.",
     primaryCta: "Skontaktuj się z nami",
     secondaryCta: "Zobacz usługi",
     scrollLabel: "Przewiń niżej",

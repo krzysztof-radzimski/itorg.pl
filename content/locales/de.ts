@@ -6,7 +6,7 @@ export const de: Site = {
   company: { ...site.company, country: "Polen" },
   hero: {
     eyebrow: "Rechtsetzung · Dokumentenabläufe · KI", titleLead: "Durchdachte Lösungen", titleAccent: "für öffentliche Verwaltung und Unternehmen",
-    subtitle: "Seit {years} Jahren entwickeln wir Software für die Erstellung von Rechtsakten, die Dokumentenverwaltung und die Automatisierung von Arbeitsabläufen in polnischen Behörden.",
+    subtitle: "Seit {years} Jahren entwickeln wir Software für die Bedürfnisse von Verwaltung und Unternehmen — wir vereinfachen die Arbeit mit Dokumenten, verbinden Systeme und automatisieren Prozesse.",
     primaryCta: "Kontakt aufnehmen", secondaryCta: "Unsere Leistungen", scrollLabel: "Nach unten scrollen",
   },
   stats: [

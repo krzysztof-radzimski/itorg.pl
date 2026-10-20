@@ -6,7 +6,7 @@ export const en: Site = {
   company: { ...site.company, country: "Poland" },
   hero: {
     eyebrow: "Legislation · document workflows · AI", titleLead: "Thoughtful solutions", titleAccent: "for public administration and business",
-    subtitle: "For {years} years, we have been developing software for drafting legal acts, managing documents and automating work in Poland’s public sector.",
+    subtitle: "For {years} years, we have been building software tailored to public administration and businesses — streamlining document workflows, connecting systems and automating processes.",
     primaryCta: "Get in touch", secondaryCta: "View our services", scrollLabel: "Scroll down",
   },
   stats: [

@@ -6,7 +6,7 @@ export const fr: Site = {
   company: { ...site.company, country: "Pologne" },
   hero: {
     eyebrow: "Législation · gestion documentaire · IA", titleLead: "Des solutions bien pensées", titleAccent: "pour les administrations publiques et les entreprises",
-    subtitle: "Depuis {years} ans, nous développons des logiciels pour rédiger des actes juridiques, gérer les documents et automatiser le travail des administrations polonaises.",
+    subtitle: "Depuis {years} ans, nous créons des logiciels adaptés aux administrations et aux entreprises : nous simplifions le travail documentaire, connectons les systèmes et automatisons les processus.",
     primaryCta: "Nous contacter", secondaryCta: "Voir nos services", scrollLabel: "Faire défiler vers le bas",
   },
   stats: [

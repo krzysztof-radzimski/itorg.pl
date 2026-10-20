@@ -6,7 +6,7 @@ export const cs: Site = {
   company: { ...site.company, country: "Polsko" },
   hero: {
     eyebrow: "Legislativa · správa dokumentů · AI", titleLead: "Promyšlená řešení", titleAccent: "pro veřejnou správu a firmy",
-    subtitle: "Již {years} let vyvíjíme software pro přípravu právních aktů, správu dokumentů a automatizaci práce polských úřadů.",
+    subtitle: "Již {years} let vytváříme software přizpůsobený potřebám veřejné správy a firem — usnadňujeme práci s dokumenty, propojujeme systémy a automatizujeme procesy.",
     primaryCta: "Kontaktujte nás", secondaryCta: "Naše služby", scrollLabel: "Posunout níže",
   },
   stats: [

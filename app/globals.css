@@ -505,7 +505,82 @@ summary::-webkit-details-marker { display: none; }
 .brand-motif__violet { fill: var(--logo-violet); }
 .brand-motif__berry { fill: var(--logo-berry); }
 .brand-motif__leaf { fill: var(--logo-leaf); }
-.hero { position: relative; background: var(--bg); color: var(--ink); }
+.hero {
+  --hero-blue: rgba(0, 100, 155, 0.13);
+  --hero-violet: rgba(121, 72, 145, 0.09);
+  --hero-leaf: rgba(92, 143, 58, 0.07);
+  --hero-dot: rgba(0, 74, 127, 0.16);
+  --hero-band-opacity: 0.035;
+  --hero-edge-opacity: 0.14;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--ink);
+}
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.hero::before {
+  z-index: -3;
+  background:
+    radial-gradient(ellipse at 87% 38%, var(--hero-blue), transparent 58%),
+    radial-gradient(ellipse at 73% 88%, var(--hero-violet), transparent 52%),
+    radial-gradient(ellipse at 92% 0%, var(--hero-leaf), transparent 46%);
+  animation: hero-light-arrive 4.8s var(--ease-out) both;
+}
+.hero::after {
+  z-index: -2;
+  background-image: radial-gradient(circle, var(--hero-dot) 0.7px, transparent 1px);
+  background-size: 24px 24px;
+  -webkit-mask-image: radial-gradient(ellipse at 85% 50%, #000, transparent 68%);
+  mask-image: radial-gradient(ellipse at 85% 50%, #000, transparent 68%);
+}
+.hero__traces {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(90deg, transparent 32%, #000 68%);
+  mask-image: linear-gradient(90deg, transparent 32%, #000 68%);
+}
+.hero__ribbon {
+  stroke: currentColor;
+  animation: hero-ribbon-arrive 4.8s var(--ease-out) both;
+}
+.hero__ribbon--berry { color: var(--logo-berry); animation-duration: 4.2s; }
+.hero__ribbon--blue { color: var(--logo-blue); }
+.hero__ribbon--violet { color: var(--logo-violet); animation-duration: 4.5s; }
+.hero__ribbon--leaf { color: var(--logo-leaf); animation-duration: 3.8s; }
+.hero__ribbon-fill { stroke-width: 80px; opacity: var(--hero-band-opacity); }
+.hero__ribbon-edge { stroke-width: 1px; opacity: var(--hero-edge-opacity); }
+@keyframes hero-light-arrive {
+  from { opacity: 0.45; transform: scale(1.045); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes hero-ribbon-arrive {
+  from { opacity: 0; transform: translate(36px, -36px); }
+  to { opacity: 1; transform: translate(0, 0); }
+}
+@media (prefers-color-scheme: dark) {
+  .hero {
+    --hero-blue: rgba(25, 115, 174, 0.22);
+    --hero-violet: rgba(126, 69, 155, 0.19);
+    --hero-leaf: rgba(74, 112, 56, 0.08);
+    --hero-dot: rgba(159, 199, 228, 0.2);
+    --hero-band-opacity: 0.07;
+    --hero-edge-opacity: 0.25;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero::before, .hero__ribbon { animation: none; }
+}
 .hero__inner {
   display: grid;
   grid-template-columns: 1.25fr 0.8fr;
@@ -522,6 +597,7 @@ summary::-webkit-details-marker { display: none; }
 .hero__visual { min-width: 0; }
 @media (max-width: 860px) {
   .hero__inner { grid-template-columns: 1fr; }
+  .hero__traces { opacity: 0.6; }
   .hero__visual { display: none; }
   .hero__content { max-width: 43rem; }
 }
@@ -1304,6 +1380,7 @@ a.contact-item__value:hover {
   .contact__cards { grid-template-columns: 1fr; }
 }
 @media (forced-colors: active) {
+  .hero::before, .hero::after, .hero__traces { display: none; }
   .hero__title-accent, .value-item__num { color: CanvasText; }
   .brand-motif, .rule { display: none; }
   .btn, .nav__cta, .cc__toggle-track { border: 1px solid ButtonText; }

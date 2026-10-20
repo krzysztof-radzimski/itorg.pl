@@ -12,6 +12,8 @@ const localeFlags: Record<Locale, string> = {
   ru: "ru",
   cs: "cz",
   sk: "sk",
+  be: "by",
+  uk: "ua",
 };
 
 export default function LanguageSwitcher({ site, locale, page = "home" }: SiteProps & { page?: PageId }) {

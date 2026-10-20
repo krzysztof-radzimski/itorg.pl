@@ -1,4 +1,4 @@
-export const locales = ["pl", "en", "de", "es", "fr", "ru", "cs", "sk"] as const;
+export const locales = ["pl", "en", "de", "es", "fr", "ru", "cs", "sk", "be", "uk"] as const;
 export type Locale = (typeof locales)[number];
 
 export const productIds = ["eap-legislator", "orion-ai", "baza-aktow-wlasnych", "abc-anon", "abc-kancelaria"] as const;
@@ -9,11 +9,13 @@ export type PageId = (typeof pages)[number];
 export const localeNames: Record<Locale, string> = {
   pl: "Polski", en: "English", de: "Deutsch", es: "Español",
   fr: "Français", ru: "Русский", cs: "Čeština", sk: "Slovenčina",
+  be: "Беларуская", uk: "Українська",
 };
 
 export const openGraphLocales: Record<Locale, string> = {
   pl: "pl_PL", en: "en_GB", de: "de_DE", es: "es_ES",
   fr: "fr_FR", ru: "ru_RU", cs: "cs_CZ", sk: "sk_SK",
+  be: "be_BY", uk: "uk_UA",
 };
 
 export function isLocale(value: string): value is Locale {

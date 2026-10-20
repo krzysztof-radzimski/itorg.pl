@@ -3,7 +3,7 @@ import { readFileSync, existsSync } from "node:fs";
 import { resolve } from "node:path";
 import test from "node:test";
 
-const languages = ["pl", "en", "de", "es", "fr", "ru", "cs", "sk"];
+const languages = ["pl", "en", "de", "es", "fr", "ru", "cs", "sk", "be", "uk"];
 const root = resolve("out");
 const home = (language) => language === "pl" ? "/" : `/${language}/`;
 const privacy = (language) => language === "pl" ? "/polityka-prywatnosci/" : `/${language}/privacy/`;
@@ -104,7 +104,7 @@ for (const language of languages) {
   }
 }
 
-test("Mapa witryny zawiera wszystkie 64 strony i poprawny robots.txt", () => {
+test("Mapa witryny zawiera wszystkie 80 stron i poprawny robots.txt", () => {
   const sitemap = readFileSync(resolve(root, "sitemap.xml"), "utf8");
   assert.equal((sitemap.match(/<loc>/g) || []).length, languages.length * pageTypes.length);
   for (const language of languages) {

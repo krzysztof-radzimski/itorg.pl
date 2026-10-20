@@ -3,7 +3,7 @@
 Witryna **ITORG Krzysztof Radzimski**: oprogramowanie dla administracji publicznej,
 automatyzacja, obieg dokumentów, integracje i tworzenie narzędzi AI. Strona
 główna przedstawia firmę, usługi i współpracę. Katalog oraz opisy produktów
-znajdują się na osobnych podstronach we wszystkich ośmiu językach.
+znajdują się na osobnych podstronach we wszystkich dziesięciu językach.
 
 Podstrona **EAP Legislator** przedstawia edytor, wersję dla administracji rządowej
 oraz dodatek „Finanse Publiczne” do importu danych z Besti@, z odnośnikami do
@@ -34,11 +34,13 @@ politykę prywatności, panel cookie, nawigację, etykiety dostępności i metad
 | Rosyjski | `/ru/` | `/ru/privacy/` |
 | Czeski | `/cs/` | `/cs/privacy/` |
 | Słowacki | `/sk/` | `/sk/privacy/` |
+| Białoruski | `/be/` | `/be/privacy/` |
+| Ukraiński | `/uk/` | `/uk/privacy/` |
 
 Katalog: `/produkty/` po polsku i `/{locale}/products/` w pozostałych językach.
 Pod nim znajdują się podstrony `eap-legislator/`, `orion-ai/`,
 `baza-aktow-wlasnych/`, `abc-anon/` i `abc-kancelaria/`. Łącznie eksport obejmuje
-64 strony. Wersja GOV i dodatek Besti@ są opisane na podstronie EAP Legislator.
+80 stron. Wersja GOV i dodatek Besti@ są opisane na podstronie EAP Legislator.
 
 Menu: **Usługi, Produkty, O firmie, Współpraca, Kontakt**. Pozycja Produkty
 prowadzi do katalogu, a pozostałe do sekcji strony głównej w bieżącym języku.
@@ -109,7 +111,7 @@ npm run typecheck
 npm test
 ```
 
-Testy sprawdzają wszystkie 64 wyeksportowane strony, języki, metadane,
+Testy sprawdzają wszystkie 80 wyeksportowanych stron, języki, metadane,
 przełączniki zachowujące produkt, kolejność menu, odnośniki, kotwice,
 strukturę dostępności i kontrast kolorów.
 `npm test` wymaga aktualnego katalogu `out/` po kompilacji.

@@ -24,7 +24,7 @@ export default function ProductsPage({ locale }: { locale: Locale }) {
               <h1 className="section__title" id="products-title">{site.products.title}</h1>
               <p className="section__subtitle">{fixOrphans(site.products.intro, locale)}</p>
             </div>
-            <BrandMotif className="catalog-intro__motif" />
+            <BrandMotif className="catalog-intro__motif" dimensional />
           </div>
           {groups.map((group, index) => (
             <section className="products-group" key={group.title} aria-label={group.title}>

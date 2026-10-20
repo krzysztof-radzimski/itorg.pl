@@ -30,7 +30,7 @@ export default function Hero({ site }: SiteProps) {
         </div>
 
         <div className="hero__visual" aria-hidden="true">
-          <BrandMotif />
+          <BrandMotif dimensional />
         </div>
       </div>
 

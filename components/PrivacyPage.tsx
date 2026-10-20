@@ -1,8 +1,9 @@
-import { type Locale } from "@/lib/locales";
+import { homePath, type Locale } from "@/lib/locales";
 import { getSite } from "@/content/translations";
 import Footer from "./Footer";
 import Nav from "./Nav";
 import CookieSettingsButton from "./CookieSettingsButton";
+import { ArrowRightIcon } from "./Icons";
 
 export default function PrivacyPage({ locale }: { locale: Locale }) {
   const site = getSite(locale);
@@ -18,6 +19,7 @@ export default function PrivacyPage({ locale }: { locale: Locale }) {
       <main id="main" className="section section--light legal-page" tabIndex={-1}>
         <div className="container">
           <article className="legal">
+            <a className="legal__back" href={homePath(locale)}><ArrowRightIcon />{ui.home}</a>
             <p className="eyebrow">{privacy.document}</p>
             <h1 className="legal__title">{privacy.title}</h1>
             <p className="legal__updated">{privacy.updated}: <time dateTime={site.legal.updated}>
@@ -47,8 +49,10 @@ export default function PrivacyPage({ locale }: { locale: Locale }) {
                   </div>
                   <p>{privacy.settings}</p>
                   <p><CookieSettingsButton className="link link--btn">{site.footer.cookieSettings}</CookieSettingsButton></p>
+                  <p><a className="link" href="https://developers.cloudflare.com/fundamentals/reference/policies-compliances/cloudflare-cookies/">{privacy.cloudflareCookies}</a></p>
                 </>}
                 {section.id === "recipients" && <p><a className="link" href="https://www.cloudflare.com/privacypolicy/">{privacy.cloudflare}</a></p>}
+                {section.id === "transfers" && <p><a className="link" href="https://www.cloudflare.com/cloudflare-customer-dpa/">{privacy.cloudflareDpa}</a></p>}
                 {section.id === "rights" && <p><a className="link" href="https://uodo.gov.pl/">{privacy.authority}</a></p>}
                 {section.id === "contact" && <p>{contact}</p>}
               </section>

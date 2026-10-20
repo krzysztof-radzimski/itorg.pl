@@ -1242,6 +1242,30 @@ a.contact-item__value:hover {
   max-width: 760px;
   margin: 0 auto;
 }
+.legal__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  max-width: 100%;
+  margin-bottom: 1.25rem;
+  padding-block: 0.5rem;
+  color: var(--ink-3);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.legal__back svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+  transform: rotate(180deg);
+}
+.legal__back:hover,
+.legal__back:focus-visible {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
 .legal__title {
   font-size: clamp(2rem, 5vw, 2.8rem);
   font-weight: 800;

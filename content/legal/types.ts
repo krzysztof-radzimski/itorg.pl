@@ -28,5 +28,7 @@ export interface PrivacyCopy {
   tableRows: { name: string; purpose: string; basis: string }[];
   settings: string;
   cloudflare: string;
+  cloudflareCookies: string;
+  cloudflareDpa: string;
   authority: string;
 }

@@ -1,4 +1,4 @@
-import { site, type Site } from "../site";
+import { site, legislatorUrls, type Site } from "../site";
 import { cookies, privacy } from "../legal/es";
 
 export const es: Site = {
@@ -42,6 +42,46 @@ export const es: Site = {
       { num: "04", title: "Colaboración", desc: "Relaciones a largo plazo basadas en la comprensión del sector público y de sus necesidades reales." },
     ],
   },
+  legislator: {
+    eyebrow: "Producto principal",
+    title: "EAP Legislator",
+    lead: "El principal producto que Krzysztof Radzimski desarrolla para ABC PRO.",
+    description: "Un editor para trabajar con resoluciones, órdenes y otros actos jurídicos: desde el borrador estructurado en XML y su revisión hasta la firma electrónica y el envío para publicación o supervisión jurídica.",
+    features: [
+      {
+        title: "Actos jurídicos estructurados en XML",
+        desc: "Las plantillas y la conversión de contenido a una estructura XML facilitan la elaboración de los actos y la coherencia de su formato."
+      },
+      {
+        title: "Colaboración y seguimiento de cambios",
+        desc: "Los comentarios, el registro de cambios y los informes permiten seguir las propuestas y cómo se han resuelto."
+      },
+      {
+        title: "Firma y envío de los actos",
+        desc: "La firma desde el editor y el envío para publicación o supervisión jurídica respaldan el flujo electrónico de los documentos."
+      }
+    ],
+    editions: [
+      {
+        name: "EAP Legislator",
+        desc: "Ediciones Standard, Premium y Legalis para organismos e instituciones que elaboran actos jurídicos, con distintas funciones según las necesidades de la organización.",
+        cta: "Descubre EAP Legislator",
+        href: legislatorUrls.editor
+      },
+      {
+        name: "Legislator para la administración central",
+        desc: "Versión para ministerios y organismos centrales, basada en la plantilla del Centro de Legislación del Gobierno polaco (RCL), para actos destinados a Dziennik Ustaw y Monitor Polski.",
+        cta: "Descubre Legislator GOV",
+        href: legislatorUrls.government
+      },
+      {
+        name: "Finanzas Públicas — complemento Besti@",
+        desc: "Importa datos XML de Besti@ para resoluciones presupuestarias, modificaciones, previsiones financieras plurianuales e informes de ejecución. Genera tablas legibles para publicación y supervisión de las cámaras regionales de cuentas polacas (RIO).",
+        cta: "Descubre el complemento Besti@",
+        href: legislatorUrls.finance
+      }
+    ]
+  },
   partner: {
     eyebrow: "Colaboración", title: "Colaboramos con ABC PRO",
     intro: "Nuestra colaboración con ABC PRO Sp. z o.o. permite acceder a herramientas jurídicas profesionales e implantaciones integrales para la administración pública.",
@@ -63,10 +103,11 @@ export const es: Site = {
   footer: { tagline: "Soluciones informáticas y herramientas de IA para la administración pública.", privacy: "Política de privacidad", cookieSettings: "Configuración de cookies" },
   legal: { ...site.legal, privacyUrl: "/es/privacy/" },
   nav: [
-    { label: "Quiénes somos", href: "#o-firmie" }, { label: "Servicios", href: "#uslugi" }, { label: "Valores", href: "#wartosci" },
+    { label: "Quiénes somos", href: "#o-firmie" }, { label: "Servicios", href: "#uslugi" },
+    { label: "Legislator", href: "#legislator" }, { label: "Valores", href: "#wartosci" },
     { label: "Colaboración", href: "#partner" }, { label: "Orion AI", href: "#orion" }, { label: "Contacto", href: "#kontakt" },
   ],
-  seo: { ...site.seo, title: "ITORG — Soluciones informáticas e IA para la administración", description: "ITORG Krzysztof Radzimski: sistemas legislativos, automatización, integraciones y herramientas de IA. Socio de ABC PRO y colaborador de la plataforma Orion AI." },
+  seo: { ...site.seo, title: "ITORG — Soluciones informáticas e IA para la administración", description: "ITORG Krzysztof Radzimski: desarrollo de EAP Legislator para ABC PRO, sistemas legislativos, automatización y herramientas de IA. Colaboración en Orion AI." },
   ui: {
     skip: "Saltar al contenido", home: "Inicio", mainNav: "Navegación principal", footerNav: "Navegación del pie de página", navigation: "Navegación", menu: "Menú",
     languages: "Elegir idioma", language: "Idioma", facts: "La empresa en breve", inBrief: "En breve", founded: "Fundación", owner: "Propietario",

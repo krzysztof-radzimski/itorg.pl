@@ -5,6 +5,11 @@ prywatności w językach pl, en, de, es, fr, ru, cs i sk, a także panel cookie,
 menu mobilne i przełącznik języków. Celem jest poziom AA standardu
 [WCAG 2.2](https://www.w3.org/TR/WCAG22/).
 
+Zakres obejmuje również sekcję głównego produktu EAP Legislator, jego wersji
+dla administracji rządowej oraz dodatku Besti@, dodaną we wszystkich językach.
+Testy eksportu sprawdzają opis roli Krzysztofa Radzimskiego i komplet trzech
+odnośników do stron produktowych ABC PRO.
+
 ## Wdrożone rozwiązania
 
 - Właściwy `html[lang]` już w statycznym HTML; nazwy języków mają własne `lang`
@@ -81,7 +86,8 @@ i dekoracyjne warstwy. Nie są one liczone jako automatycznie potwierdzone.
 Testy kontrastu osobno sprawdzają kolory obu motywów i gradient przycisków.
 Dla hero wyliczają zachowawczą górną granicę jasności: wszystkie maksima aurory,
 przecięcie linii siatki i minimalne przyciemnienie tła. Teksty zachowują w tym
-wariancie co najmniej 4,5:1. Wygląd strony i sekcji Orion obejrzano na zrzutach.
+wariancie co najmniej 4,5:1. Wygląd strony oraz sekcji Legislator i Orion
+obejrzano na zrzutach.
 
 Nie wykonano pełnego audytu eksperckiego z czytnikiem ekranu ani testów na
 wszystkich kombinacjach urządzeń i technologii asystujących. Do manualnego

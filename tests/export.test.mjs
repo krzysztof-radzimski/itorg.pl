@@ -54,6 +54,13 @@ for (const language of languages) {
         }
       }
       if (kind === "home") {
+        assert.ok(ids.includes("legislator"), "Brak sekcji głównego produktu");
+        const product = html.match(/<section\b[^>]*id="legislator"[\s\S]*?<\/section>/i)?.[0];
+        assert.ok(product, "Opis EAP Legislator musi być w statycznym HTML");
+        assert.ok(product.includes("Krzysztof Radzimski") && product.includes("ABC PRO"), "Brak informacji o rozwoju produktu dla ABC PRO");
+        for (const url of ["https://abcpro.pl/eap-legislator", "https://abcpro.pl/legislator-gov", "https://abcpro.pl/dodatek-bestia"]) {
+          assert.ok(tags(product, "a").some((tag) => attr(tag, "href") === url), `Brak odnośnika do produktu: ${url}`);
+        }
         assert.ok(anchors.some((tag) => attr(tag, "href") === "https://orion.abcpro.pl/"));
         assert.ok(ids.includes("orion"));
         assert.equal((html.match(/class="service-card"/g) || []).length, 5);
@@ -66,7 +73,7 @@ for (const language of languages) {
       const switches = tags(html, "input").filter((tag) => attr(tag, "role") === "switch");
       assert.equal(switches.length, 4, "Pełny panel cookie w każdym języku");
       if (language !== "pl") {
-        for (const polish of ["Przejdź do treści", "Ustawienia plików cookie", "Szanujemy Twoją prywatność", "Wszystkie prawa zastrzeżone"]) assert.ok(!html.includes(polish), `Nieprzetłumaczony tekst: ${polish}`);
+        for (const polish of ["Przejdź do treści", "Ustawienia plików cookie", "Szanujemy Twoją prywatność", "Wszystkie prawa zastrzeżone", "Główny produkt", "Uporządkowana treść w XML"]) assert.ok(!html.includes(polish), `Nieprzetłumaczony tekst: ${polish}`);
       }
     });
   }

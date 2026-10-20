@@ -26,6 +26,12 @@ export interface PartnerProduct {
 
 export const FOUNDED_YEAR = 2009;
 
+export const legislatorUrls = {
+  editor: "https://abcpro.pl/eap-legislator",
+  government: "https://abcpro.pl/legislator-gov",
+  finance: "https://abcpro.pl/dodatek-bestia",
+};
+
 export const site = {
   brand: {
     name: "ITORG",
@@ -141,6 +147,23 @@ export const site = {
     ] as ValueItem[],
   },
 
+  legislator: {
+    eyebrow: "Główny produkt",
+    title: "EAP Legislator",
+    lead: "Główny produkt, który Krzysztof Radzimski rozwija dla ABC PRO.",
+    description: "Edytor wspiera pracę nad uchwałami, zarządzeniami i innymi aktami prawnymi — od przygotowania projektu w XML, przez uzgodnienia i podpis elektroniczny, po przekazanie dokumentu do ogłoszenia lub nadzoru prawnego.",
+    features: [
+      { title: "Uporządkowana treść w XML", desc: "Szablony aktów i konwersja treści do postaci strukturalnej pomagają przygotować dokument oraz zachować jego układ." },
+      { title: "Współpraca i śledzenie zmian", desc: "Komentarze, rejestrowanie zmian i raporty z prac pozwalają prześledzić propozycje oraz sposób ich rozpatrzenia." },
+      { title: "Podpis i przekazanie aktu", desc: "Podpisywanie dokumentów bezpośrednio w edytorze oraz wysyłka do publikacji i nadzoru prawnego wspierają elektroniczny obieg aktów." },
+    ],
+    editions: [
+      { name: "EAP Legislator", desc: "Edycje Standard, Premium i Legalis dla urzędów i instytucji przygotowujących akty prawne. Zakres funkcji można dopasować do potrzeb organizacji.", cta: "Poznaj EAP Legislator", href: legislatorUrls.editor },
+      { name: "Legislator dla administracji rządowej", desc: "Wersja dla ministerstw i urzędów centralnych, oparta na szablonie Rządowego Centrum Legislacji (RCL), do przygotowania aktów kierowanych do Dziennika Ustaw i Monitora Polskiego.", cta: "Poznaj Legislator GOV", href: legislatorUrls.government },
+      { name: "Finanse Publiczne — dodatek Besti@", desc: "Import danych XML z Besti@ do uchwał budżetowych, ich zmian, wieloletniej prognozy finansowej i sprawozdań. Dodatek tworzy czytelne tabele do dokumentów przekazywanych do publikacji i nadzoru RIO.", cta: "Poznaj dodatek Besti@", href: legislatorUrls.finance },
+    ],
+  },
+
   partner: {
     eyebrow: "Partnerstwo",
     title: "Współpraca z ABC PRO",
@@ -197,6 +220,7 @@ export const site = {
   nav: [
     { label: "O firmie", href: "#o-firmie" },
     { label: "Usługi", href: "#uslugi" },
+    { label: "Legislator", href: "#legislator" },
     { label: "Wartości", href: "#wartosci" },
     { label: "Partner", href: "#partner" },
     { label: "Orion AI", href: "#orion" },
@@ -206,7 +230,7 @@ export const site = {
   seo: {
     title: "ITORG — Rozwiązania IT i narzędzia AI dla administracji publicznej",
     description:
-      "ITORG Krzysztof Radzimski — systemy legislacyjne, automatyzacja, integracje i narzędzia AI. Partner ABC PRO, współpraca przy produkcji platformy Orion AI.",
+      "ITORG Krzysztof Radzimski — rozwój EAP Legislator dla ABC PRO, systemy legislacyjne, automatyzacja i narzędzia AI. Współpraca przy platformie Orion AI.",
     url: "https://itorg.pl",
   },
 

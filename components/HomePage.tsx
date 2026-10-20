@@ -5,6 +5,7 @@ import Hero from "./Hero";
 import Stats from "./Stats";
 import About from "./About";
 import Services from "./Services";
+import Legislator from "./Legislator";
 import Values from "./Values";
 import Partner from "./Partner";
 import Orion from "./Orion";
@@ -23,6 +24,7 @@ export default function HomePage({ locale }: { locale: Locale }) {
         <Stats {...props} />
         <About {...props} />
         <Services {...props} />
+        <Legislator {...props} />
         <Values {...props} />
         <Partner {...props} />
         <Orion {...props} />

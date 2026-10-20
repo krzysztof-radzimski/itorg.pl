@@ -1,8 +1,15 @@
 # ITORG — itorg.pl
 
 Witryna **ITORG Krzysztof Radzimski**: oprogramowanie dla administracji publicznej,
-automatyzacja, integracje i tworzenie narzędzi AI. Partner ABC PRO Sp. z o.o.;
-współpraca Krzysztofa Radzimskiego przy produkcji platformy
+automatyzacja, integracje i tworzenie narzędzi AI. Główny produkt rozwijany dla
+ABC PRO to **EAP Legislator**, opisany w sekcji `#legislator` we wszystkich
+ośmiu językach. Sekcja przedstawia edytor, wersję dla administracji rządowej
+oraz dodatek „Finanse Publiczne” do importu danych z Besti@, z odnośnikami do
+[EAP Legislator](https://abcpro.pl/eap-legislator),
+[Legislator GOV](https://abcpro.pl/legislator-gov) i
+[dodatku Besti@](https://abcpro.pl/dodatek-bestia).
+
+Partner ABC PRO Sp. z o.o.; współpraca Krzysztofa Radzimskiego przy produkcji platformy
 [Orion AI](https://orion.abcpro.pl/).
 
 Next.js 15 (App Router), React 19, TypeScript i własny CSS. Eksport statyczny do

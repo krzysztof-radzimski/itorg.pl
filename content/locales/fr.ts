@@ -1,4 +1,4 @@
-import { site, type Site } from "../site";
+import { site, legislatorUrls, type Site } from "../site";
 import { cookies, privacy } from "../legal/fr";
 
 export const fr: Site = {
@@ -42,6 +42,46 @@ export const fr: Site = {
       { num: "04", title: "Partenariat", desc: "Une collaboration durable fondée sur la compréhension du secteur public et de ses besoins concrets." },
     ],
   },
+  legislator: {
+    eyebrow: "Notre produit phare",
+    title: "EAP Legislator",
+    lead: "Le principal produit que Krzysztof Radzimski développe pour ABC PRO.",
+    description: "Un éditeur pour les délibérations, décisions et autres actes juridiques : de la rédaction structurée en XML et de la révision jusqu’à la signature électronique et à la transmission pour publication ou contrôle de légalité.",
+    features: [
+      {
+        title: "Des actes structurés en XML",
+        desc: "Les modèles et la conversion du contenu en texte structuré facilitent la préparation des actes et la cohérence de leur mise en page."
+      },
+      {
+        title: "Collaboration et suivi des modifications",
+        desc: "Les commentaires, l’historique des modifications et les rapports permettent de suivre les propositions et leur traitement."
+      },
+      {
+        title: "Signature et transmission des actes",
+        desc: "La signature directement dans l’éditeur et la transmission pour publication ou contrôle de légalité accompagnent le circuit documentaire électronique."
+      }
+    ],
+    editions: [
+      {
+        name: "EAP Legislator",
+        desc: "Les éditions Standard, Premium et Legalis s’adressent aux administrations et aux établissements qui préparent des actes juridiques, avec des fonctionnalités adaptées à leurs besoins.",
+        cta: "Découvrir EAP Legislator",
+        href: legislatorUrls.editor
+      },
+      {
+        name: "Legislator pour l’administration centrale",
+        desc: "Une version pour les ministères et les administrations centrales, fondée sur le modèle du Centre polonais de législation gouvernementale (RCL), pour les actes destinés au Dziennik Ustaw et au Monitor Polski.",
+        cta: "Découvrir Legislator GOV",
+        href: legislatorUrls.government
+      },
+      {
+        name: "Finances publiques — module Besti@",
+        desc: "Importe les données XML de Besti@ pour les délibérations budgétaires, leurs modifications, les prévisions financières pluriannuelles et les rapports d’exécution. Il produit des tableaux lisibles pour la publication et le contrôle financier régional polonais (RIO).",
+        cta: "Découvrir le module Besti@",
+        href: legislatorUrls.finance
+      }
+    ]
+  },
   partner: {
     eyebrow: "Partenariat", title: "Notre collaboration avec ABC PRO",
     intro: "Notre partenariat avec ABC PRO Sp. z o.o. donne accès à des outils juridiques professionnels et à des déploiements complets au service des administrations publiques.",
@@ -63,10 +103,11 @@ export const fr: Site = {
   footer: { tagline: "Des solutions informatiques et des outils d’IA pour les administrations publiques.", privacy: "Politique de confidentialité", cookieSettings: "Paramètres des cookies" },
   legal: { ...site.legal, privacyUrl: "/fr/privacy/" },
   nav: [
-    { label: "À propos", href: "#o-firmie" }, { label: "Services", href: "#uslugi" }, { label: "Valeurs", href: "#wartosci" },
+    { label: "À propos", href: "#o-firmie" }, { label: "Services", href: "#uslugi" },
+    { label: "Legislator", href: "#legislator" }, { label: "Valeurs", href: "#wartosci" },
     { label: "Partenaire", href: "#partner" }, { label: "Orion AI", href: "#orion" }, { label: "Contact", href: "#kontakt" },
   ],
-  seo: { ...site.seo, title: "ITORG — Solutions informatiques et IA pour le secteur public", description: "ITORG Krzysztof Radzimski : systèmes législatifs, automatisation, intégrations et outils d’IA. Partenaire d’ABC PRO et contributeur à la plateforme Orion AI." },
+  seo: { ...site.seo, title: "ITORG — Solutions informatiques et IA pour le secteur public", description: "ITORG Krzysztof Radzimski : développement d’EAP Legislator pour ABC PRO, systèmes législatifs, automatisation et outils d’IA. Contribution à Orion AI." },
   ui: {
     skip: "Aller au contenu", home: "Accueil", mainNav: "Navigation principale", footerNav: "Navigation du pied de page", navigation: "Navigation", menu: "Menu",
     languages: "Choisir une langue", language: "Langue", facts: "L’entreprise en bref", inBrief: "En bref", founded: "Création", owner: "Propriétaire",

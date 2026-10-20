@@ -1512,6 +1512,64 @@ a.contact-item__value:hover {
   }
 }
 
+/* ═══ EAP LEGISLATOR ═══════════════════════════════════════════════════ */
+.legislator__overview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+.legislator__overview > *,
+.legislator__feature > * { min-width: 0; }
+.legislator__lead {
+  margin-block: 1.2rem 1rem;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-weight: 600;
+  line-height: 1.55;
+}
+.legislator__features { list-style: none; padding: 0; display: grid; gap: 1.4rem; }
+.legislator__feature { display: flex; gap: 0.9rem; }
+.legislator__check {
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  flex: 0 0 auto;
+  border-radius: var(--r-sm);
+  background: var(--brand-soft);
+  color: var(--brand-strong);
+}
+.legislator__check svg { width: 1.25rem; height: 1.25rem; }
+.legislator__feature-title { font-size: 1.1rem; margin-bottom: 0.4rem; }
+.legislator__feature p { color: var(--ink-2); font-size: 0.98rem; }
+.legislator__editions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+  list-style: none;
+  padding: 0;
+  margin-top: clamp(2rem, 5vw, 3.5rem);
+}
+.legislator__edition {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: clamp(1.25rem, 3vw, 1.8rem);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--brand-strong);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-1);
+  min-width: 0;
+}
+.legislator__edition h3 { font-size: 1.2rem; }
+.legislator__edition p { color: var(--ink-2); font-size: 0.98rem; }
+.legislator__edition .link { min-height: 44px; margin-top: auto; align-self: flex-start; }
+.legislator__edition .link svg { flex-shrink: 0; }
+@media (max-width: 860px) {
+  .legislator__overview, .legislator__editions { grid-template-columns: 1fr; }
+}
+
 /* WCAG 2.2: elastyczny układ, widoczny fokus i większe cele interakcji. */
 :where(main, section)[tabindex="-1"] { scroll-margin-block: 1rem; }
 :where(.about__grid, .partner__grid, .contact__grid, .footer__grid, .hero__inner) > * { min-width: 0; }

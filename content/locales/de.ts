@@ -1,4 +1,4 @@
-import { site, type Site } from "../site";
+import { site, legislatorUrls, type Site } from "../site";
 import { cookies, privacy } from "../legal/de";
 
 export const de: Site = {
@@ -42,6 +42,46 @@ export const de: Site = {
       { num: "04", title: "Partnerschaft", desc: "Langfristige Zusammenarbeit auf Grundlage eines Verständnisses für die Besonderheiten und Bedürfnisse des öffentlichen Sektors." },
     ],
   },
+  legislator: {
+    eyebrow: "Unser Hauptprodukt",
+    title: "EAP Legislator",
+    lead: "Das Hauptprodukt, das Krzysztof Radzimski für ABC PRO entwickelt.",
+    description: "Ein Editor für Beschlüsse, Anordnungen und weitere Rechtsakte — vom strukturierten Entwurf in XML über die Abstimmung und elektronische Signatur bis zur Übermittlung zur Veröffentlichung oder Rechtsaufsicht.",
+    features: [
+      {
+        title: "Strukturierte Rechtsakte in XML",
+        desc: "Vorlagen und die Konvertierung in strukturierte Inhalte unterstützen die Erstellung von Rechtsakten mit einheitlichem Dokumentenaufbau."
+      },
+      {
+        title: "Zusammenarbeit und Änderungsverfolgung",
+        desc: "Kommentare, protokollierte Änderungen und Berichte machen Vorschläge und deren Bearbeitung nachvollziehbar."
+      },
+      {
+        title: "Signieren und Übermitteln",
+        desc: "Die elektronische Signatur direkt im Editor und die Übermittlung zur Veröffentlichung oder Rechtsaufsicht unterstützen den digitalen Dokumentenablauf."
+      }
+    ],
+    editions: [
+      {
+        name: "EAP Legislator",
+        desc: "Die Editionen Standard, Premium und Legalis für Behörden und Einrichtungen, die Rechtsakte erstellen. Der Funktionsumfang lässt sich an die Bedürfnisse der Organisation anpassen.",
+        cta: "EAP Legislator entdecken",
+        href: legislatorUrls.editor
+      },
+      {
+        name: "Legislator für die Regierungsverwaltung",
+        desc: "Eine Version für Ministerien und Zentralbehörden auf Basis der Vorlage des polnischen Gesetzgebungszentrums RCL, für Rechtsakte zur Veröffentlichung im Dziennik Ustaw und Monitor Polski.",
+        cta: "Legislator GOV entdecken",
+        href: legislatorUrls.government
+      },
+      {
+        name: "Öffentliche Finanzen — Besti@-Erweiterung",
+        desc: "Importiert XML-Daten aus Besti@ für Haushaltsbeschlüsse, Änderungen, mehrjährige Finanzprognosen und Haushaltsberichte. Daraus entstehen übersichtliche Tabellen für Veröffentlichung und Aufsicht durch die regionalen Rechnungskammern (RIO).",
+        cta: "Die Besti@-Erweiterung entdecken",
+        href: legislatorUrls.finance
+      }
+    ]
+  },
   partner: {
     eyebrow: "Partnerschaft", title: "Zusammenarbeit mit ABC PRO",
     intro: "Durch unsere Partnerschaft mit ABC PRO Sp. z o.o. bieten wir Zugang zu professionellen Rechtsanwendungen und umfassenden Systemimplementierungen für die öffentliche Verwaltung.",
@@ -63,10 +103,11 @@ export const de: Site = {
   footer: { tagline: "Innovative IT-Lösungen und KI-Werkzeuge für die öffentliche Verwaltung.", privacy: "Datenschutzerklärung", cookieSettings: "Cookie-Einstellungen" },
   legal: { ...site.legal, privacyUrl: "/de/privacy/" },
   nav: [
-    { label: "Über uns", href: "#o-firmie" }, { label: "Leistungen", href: "#uslugi" }, { label: "Werte", href: "#wartosci" },
+    { label: "Über uns", href: "#o-firmie" }, { label: "Leistungen", href: "#uslugi" },
+    { label: "Legislator", href: "#legislator" }, { label: "Werte", href: "#wartosci" },
     { label: "Partner", href: "#partner" }, { label: "Orion AI", href: "#orion" }, { label: "Kontakt", href: "#kontakt" },
   ],
-  seo: { ...site.seo, title: "ITORG — IT-Lösungen und KI für die öffentliche Verwaltung", description: "ITORG Krzysztof Radzimski — Gesetzgebungssysteme, Automatisierung, Integration und KI-Werkzeuge. Partner von ABC PRO und Mitwirkung an der Plattform Orion AI." },
+  seo: { ...site.seo, title: "ITORG — IT-Lösungen und KI für die öffentliche Verwaltung", description: "ITORG Krzysztof Radzimski — Entwicklung von EAP Legislator für ABC PRO, Gesetzgebungssysteme, Automatisierung und KI-Werkzeuge. Mitwirkung an Orion AI." },
   ui: {
     skip: "Zum Inhalt springen", home: "Startseite", mainNav: "Hauptnavigation", footerNav: "Fußzeilennavigation", navigation: "Navigation", menu: "Menü",
     languages: "Sprache auswählen", language: "Sprache", facts: "Unternehmen im Überblick", inBrief: "Im Überblick", founded: "Gegründet", owner: "Inhaber",

@@ -1,4 +1,4 @@
-import { site, type Site } from "../site";
+import { site, legislatorUrls, type Site } from "../site";
 import { cookies, privacy } from "../legal/cs";
 
 export const cs: Site = {
@@ -42,6 +42,46 @@ export const cs: Site = {
       { num: "04", title: "Partnerství", desc: "Dlouhodobá spolupráce založená na porozumění veřejnému sektoru a jeho skutečným potřebám." },
     ],
   },
+  legislator: {
+    eyebrow: "Hlavní produkt",
+    title: "EAP Legislator",
+    lead: "Hlavní produkt, který Krzysztof Radzimski vyvíjí pro ABC PRO.",
+    description: "Editor pro usnesení, nařízení a další právní akty — od strukturovaného návrhu v XML přes připomínkování a elektronický podpis až po předání ke zveřejnění nebo právnímu dohledu.",
+    features: [
+      {
+        title: "Strukturované právní akty v XML",
+        desc: "Šablony a převod obsahu do strukturované podoby pomáhají při přípravě aktů a zachování jednotného rozvržení dokumentu."
+      },
+      {
+        title: "Spolupráce a sledování změn",
+        desc: "Komentáře, zaznamenané změny a zprávy o práci umožňují sledovat návrhy i způsob jejich vypořádání."
+      },
+      {
+        title: "Podepisování a předávání aktů",
+        desc: "Podepisování přímo v editoru a odesílání ke zveřejnění či právnímu dohledu podporují elektronický oběh dokumentů."
+      }
+    ],
+    editions: [
+      {
+        name: "EAP Legislator",
+        desc: "Edice Standard, Premium a Legalis pro úřady a instituce připravující právní akty. Rozsah funkcí lze zvolit podle potřeb organizace.",
+        cta: "Poznejte EAP Legislator",
+        href: legislatorUrls.editor
+      },
+      {
+        name: "Legislator pro státní správu",
+        desc: "Verze pro ministerstva a ústřední úřady, založená na šabloně polského Vládního legislativního centra (RCL), pro akty předávané do Dziennik Ustaw a Monitor Polski.",
+        cta: "Poznejte Legislator GOV",
+        href: legislatorUrls.government
+      },
+      {
+        name: "Veřejné finance — doplněk Besti@",
+        desc: "Importuje data XML z Besti@ pro rozpočtová usnesení, jejich změny, víceleté finanční prognózy a zprávy o plnění rozpočtu. Vytváří přehledné tabulky pro zveřejnění a dohled polských regionálních účetních komor (RIO).",
+        cta: "Poznejte doplněk Besti@",
+        href: legislatorUrls.finance
+      }
+    ]
+  },
   partner: {
     eyebrow: "Partnerství", title: "Spolupráce s ABC PRO",
     intro: "Díky partnerství s ABC PRO Sp. z o.o. nabízíme přístup k profesionálním právním nástrojům a komplexní implementace systémů pro veřejnou správu.",
@@ -63,10 +103,11 @@ export const cs: Site = {
   footer: { tagline: "Inovativní IT řešení a nástroje AI pro veřejnou správu.", privacy: "Zásady ochrany osobních údajů", cookieSettings: "Nastavení cookies" },
   legal: { ...site.legal, privacyUrl: "/cs/privacy/" },
   nav: [
-    { label: "O společnosti", href: "#o-firmie" }, { label: "Služby", href: "#uslugi" }, { label: "Hodnoty", href: "#wartosci" },
+    { label: "O společnosti", href: "#o-firmie" }, { label: "Služby", href: "#uslugi" },
+    { label: "Legislator", href: "#legislator" }, { label: "Hodnoty", href: "#wartosci" },
     { label: "Partner", href: "#partner" }, { label: "Orion AI", href: "#orion" }, { label: "Kontakt", href: "#kontakt" },
   ],
-  seo: { ...site.seo, title: "ITORG — IT řešení a AI pro veřejnou správu", description: "ITORG Krzysztof Radzimski — legislativní systémy, automatizace, integrace a nástroje AI. Partner ABC PRO, spolupráce na vývoji platformy Orion AI." },
+  seo: { ...site.seo, title: "ITORG — IT řešení a AI pro veřejnou správu", description: "ITORG Krzysztof Radzimski — vývoj EAP Legislator pro ABC PRO, legislativní systémy, automatizace a nástroje AI. Spolupráce na platformě Orion AI." },
   ui: {
     skip: "Přejít k obsahu", home: "Úvodní stránka", mainNav: "Hlavní navigace", footerNav: "Navigace v zápatí", navigation: "Navigace", menu: "Menu",
     languages: "Vybrat jazyk", language: "Jazyk", facts: "Společnost v kostce", inBrief: "V kostce", founded: "Založeno", owner: "Majitel",

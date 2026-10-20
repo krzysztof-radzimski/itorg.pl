@@ -1,4 +1,4 @@
-import { site, type Site } from "../site";
+import { site, legislatorUrls, type Site } from "../site";
 import { cookies, privacy } from "../legal/sk";
 
 export const sk: Site = {
@@ -42,6 +42,46 @@ export const sk: Site = {
       { num: "04", title: "Partnerstvo", desc: "Dlhodobá spolupráca založená na porozumení verejnému sektoru a jeho skutočným potrebám." },
     ],
   },
+  legislator: {
+    eyebrow: "Hlavný produkt",
+    title: "EAP Legislator",
+    lead: "Hlavný produkt, ktorý Krzysztof Radzimski vyvíja pre ABC PRO.",
+    description: "Editor na prácu s uzneseniami, nariadeniami a ďalšími právnymi aktmi — od štruktúrovaného návrhu v XML cez pripomienkovanie a elektronický podpis až po odovzdanie na zverejnenie alebo právny dohľad.",
+    features: [
+      {
+        title: "Štruktúrované právne akty v XML",
+        desc: "Šablóny a prevod obsahu do štruktúrovanej podoby pomáhajú pri príprave aktov a zachovaní jednotného rozvrhnutia dokumentu."
+      },
+      {
+        title: "Spolupráca a sledovanie zmien",
+        desc: "Komentáre, zaznamenané zmeny a správy o práci umožňujú sledovať návrhy aj spôsob ich vyhodnotenia."
+      },
+      {
+        title: "Podpisovanie a odovzdávanie aktov",
+        desc: "Podpisovanie priamo v editore a odosielanie na zverejnenie alebo právny dohľad podporujú elektronický obeh dokumentov."
+      }
+    ],
+    editions: [
+      {
+        name: "EAP Legislator",
+        desc: "Edície Standard, Premium a Legalis pre úrady a inštitúcie pripravujúce právne akty. Rozsah funkcií možno zvoliť podľa potrieb organizácie.",
+        cta: "Spoznajte EAP Legislator",
+        href: legislatorUrls.editor
+      },
+      {
+        name: "Legislator pre štátnu správu",
+        desc: "Verzia pre ministerstvá a ústredné úrady, založená na šablóne poľského Vládneho legislatívneho centra (RCL), pre akty odovzdávané do Dziennik Ustaw a Monitor Polski.",
+        cta: "Spoznajte Legislator GOV",
+        href: legislatorUrls.government
+      },
+      {
+        name: "Verejné financie — doplnok Besti@",
+        desc: "Importuje údaje XML z Besti@ pre rozpočtové uznesenia, ich zmeny, viacročné finančné prognózy a správy o plnení rozpočtu. Vytvára prehľadné tabuľky na zverejnenie a dohľad poľských regionálnych účtovných komôr (RIO).",
+        cta: "Spoznajte doplnok Besti@",
+        href: legislatorUrls.finance
+      }
+    ]
+  },
   partner: {
     eyebrow: "Partnerstvo", title: "Spolupráca s ABC PRO",
     intro: "Vďaka partnerstvu s ABC PRO Sp. z o.o. ponúkame prístup k profesionálnym právnym nástrojom a komplexné implementácie systémov pre verejnú správu.",
@@ -63,10 +103,11 @@ export const sk: Site = {
   footer: { tagline: "Inovatívne IT riešenia a nástroje AI pre verejnú správu.", privacy: "Zásady ochrany osobných údajov", cookieSettings: "Nastavenia cookies" },
   legal: { ...site.legal, privacyUrl: "/sk/privacy/" },
   nav: [
-    { label: "O spoločnosti", href: "#o-firmie" }, { label: "Služby", href: "#uslugi" }, { label: "Hodnoty", href: "#wartosci" },
+    { label: "O spoločnosti", href: "#o-firmie" }, { label: "Služby", href: "#uslugi" },
+    { label: "Legislator", href: "#legislator" }, { label: "Hodnoty", href: "#wartosci" },
     { label: "Partner", href: "#partner" }, { label: "Orion AI", href: "#orion" }, { label: "Kontakt", href: "#kontakt" },
   ],
-  seo: { ...site.seo, title: "ITORG — IT riešenia a AI pre verejnú správu", description: "ITORG Krzysztof Radzimski — legislatívne systémy, automatizácia, integrácie a nástroje AI. Partner ABC PRO, spolupráca na vývoji platformy Orion AI." },
+  seo: { ...site.seo, title: "ITORG — IT riešenia a AI pre verejnú správu", description: "ITORG Krzysztof Radzimski — vývoj EAP Legislator pre ABC PRO, legislatívne systémy, automatizácia a nástroje AI. Spolupráca na platforme Orion AI." },
   ui: {
     skip: "Prejsť na obsah", home: "Úvodná stránka", mainNav: "Hlavná navigácia", footerNav: "Navigácia v päte", navigation: "Navigácia", menu: "Menu",
     languages: "Vybrať jazyk", language: "Jazyk", facts: "Spoločnosť v skratke", inBrief: "V skratke", founded: "Založené", owner: "Majiteľ",

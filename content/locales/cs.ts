@@ -2,69 +2,69 @@ import { site, legislatorUrls, type Site } from "../site";
 import { cookies, privacy } from "../legal/cs";
 
 export const cs: Site = {
-  brand: { ...site.brand, eyebrow: "Digitalizace veřejné správy", tagline: "Inovativní IT řešení pro veřejný sektor." },
+  brand: { ...site.brand, eyebrow: "Digitalizace veřejné správy", tagline: "Software pro veřejnou správu." },
   company: { ...site.company, country: "Polsko" },
   hero: {
-    eyebrow: "Digitalizace veřejné správy", titleLead: "Digitalizujeme", titleAccent: "veřejnou správu",
-    subtitle: "Již {years} let vyvíjíme pokročilá řešení pro elektronizaci legislativy a automatizaci procesů ve veřejném sektoru v Polsku.",
-    primaryCta: "Kontaktujte nás", secondaryCta: "Naše kompetence", scrollLabel: "Posunout níže",
+    eyebrow: "Legislativa · dokumenty · AI", titleLead: "Software", titleAccent: "pro úřady",
+    subtitle: "Již {years} let vyvíjíme software pro přípravu právních aktů, správu dokumentů a automatizaci práce polských úřadů.",
+    primaryCta: "Kontaktujte nás", secondaryCta: "Naše služby", scrollLabel: "Posunout níže",
   },
   stats: [
-    { kind: "years", number: "", suffix: "+", label: "Let zkušeností" },
-    { kind: "static", number: "100%", suffix: "", label: "Veřejný sektor" },
-    { kind: "static", number: "24/7", suffix: "", label: "Technická podpora" },
+    { kind: "years", number: "", suffix: "", label: "Let činnosti" },
+    { kind: "static", number: "XML", suffix: "", label: "Právní dokumenty" },
+    { kind: "static", number: "AI", suffix: "", label: "Práce s dokumenty" },
   ],
   about: {
-    eyebrow: "O společnosti", title: "Technologie ve službách společnosti",
-    lead: "ITORG je společnost Krzysztofa Radzimského. Od roku 2009 navrhujeme a zavádíme software pro úřady a veřejné instituce.",
+    eyebrow: "O společnosti", title: "Vyvíjíme a zavádíme software",
+    lead: "ITORG od roku 2009 navrhuje, vyvíjí a zavádí software pro úřady a veřejné instituce v Polsku.",
     paragraphs: [
-      "Specializujeme se na elektronizaci legislativního procesu a automatizaci oběhu dokumentů — oblasti, v nichž mají přesnost, soulad s právem a spolehlivost zásadní význam.",
-      "Spojujeme dlouholeté zkušenosti ve veřejném sektoru s moderním softwarovým inženýrstvím. Díky partnerství s ABC PRO Sp. z o.o. dodáváme osvědčené právní nástroje a komplexní implementace jakéhokoli rozsahu.",
-      "Vytváříme také nástroje umělé inteligence. Společnost ITORG spolupracuje na vývoji platformy Orion společnosti ABC PRO a řešení pro každodenní práci s dokumenty a informacemi.",
+      "Pomáháme s přípravou právních aktů, zpracováním agend a elektronickým oběhem dokumentů.",
+      "Pro ABC PRO vyvíjíme EAP Legislator, editor usnesení, nařízení a dalších právních aktů. Podílíme se také na zavádění systémů ABC PRO.",
+      "Vytváříme nástroje umělé inteligence pro práci s dokumenty a analýzu informací. Spolupracujeme na vývoji platformy Orion společnosti ABC PRO.",
     ],
   },
   services: {
-    eyebrow: "Co děláme", title: "Naše kompetence", subtitle: "Komplexní podpora digitalizace úřadů — od legislativy a integrací po nástroje AI.",
+    eyebrow: "Služby", title: "S čím vám můžeme pomoci", subtitle: "Navrhujeme, vyvíjíme a propojujeme systémy pro veřejnou správu.",
     items: [
-      { icon: "legislation", title: "Legislativní systémy", desc: "Komplexní platformy pro správu právních aktů a automatizaci oběhu legislativních dokumentů ve veřejné správě." },
-      { icon: "automation", title: "Automatizace procesů", desc: "Optimalizace správních postupů pomocí inteligentních nástrojů pro zpracování agend a dokumentů." },
-      { icon: "integration", title: "Systémové integrace", desc: "Propojení IT řešení se stávající infrastrukturou pro koordinované fungování veřejných systémů." },
-      { icon: "digitization", title: "Digitální veřejné služby", desc: "Zavádění inovativních technologií, které zvyšují dostupnost služeb občanům a efektivitu úřadů." },
-      { icon: "ai", title: "Vývoj nástrojů AI", desc: "Návrh a vývoj nástrojů umělé inteligence pro práci s dokumenty, analýzu informací a automatizaci každodenních úkolů." },
+      { icon: "legislation", title: "Legislativní systémy", desc: "Vyvíjíme nástroje pro přípravu, podepisování a předávání právních aktů." },
+      { icon: "automation", title: "Automatizace procesů", desc: "Automatizujeme opakující se úkony při zpracování agend a oběhu dokumentů." },
+      { icon: "integration", title: "Systémové integrace", desc: "Propojujeme systémy, aby si mohly vyměňovat data a sdílet informace." },
+      { icon: "digitization", title: "Software pro úřady", desc: "Navrhujeme a zavádíme aplikace pro zpracování agend, správu dokumentů a veřejné služby." },
+      { icon: "ai", title: "Vývoj nástrojů AI", desc: "Vytváříme nástroje umělé inteligence pro práci s dokumenty, analýzu informací a automatizaci úkolů." },
     ],
   },
   values: {
-    eyebrow: "Proč ITORG", title: "Co nás odlišuje",
+    eyebrow: "Spolupráce", title: "Jak pracujeme",
     items: [
-      { num: "01", title: "Inovace", desc: "Neustálé hledání technologických řešení odpovídajících výzvám moderní veřejné správy." },
-      { num: "02", title: "Spolehlivost", desc: "Stabilní a výkonné systémy podporující nepřetržitý provoz institucí." },
-      { num: "03", title: "Bezpečnost", desc: "Vysoké standardy ochrany dat v souladu s právními požadavky a osvědčenými postupy oboru." },
-      { num: "04", title: "Partnerství", desc: "Dlouhodobá spolupráce založená na porozumění veřejnému sektoru a jeho skutečným potřebám." },
+      { num: "01", title: "Zkušenosti s veřejnou správou", desc: "Vyvíjíme systémy pro legislativu a správu dokumentů. V projektech zohledňujeme postupy a způsob práce úřadů." },
+      { num: "02", title: "Vývoj a údržba", desc: "Software dále rozvíjíme a podporujeme jeho provoz po zavedení." },
+      { num: "03", title: "Ochrana dat", desc: "Při návrhu systémů zohledňujeme zabezpečení dat a pravidla přístupu k informacím." },
+      { num: "04", title: "Podle potřeb úřadu", desc: "Změny navrhujeme s ohledem na potřeby uživatelů a systémy, které již používají." },
     ],
   },
   legislator: {
-    eyebrow: "Hlavní produkt",
+    eyebrow: "Editor právních aktů",
     title: "EAP Legislator",
-    lead: "Hlavní produkt, který Krzysztof Radzimski vyvíjí pro ABC PRO.",
-    description: "Editor pro usnesení, nařízení a další právní akty — od strukturovaného návrhu v XML přes připomínkování a elektronický podpis až po předání ke zveřejnění nebo právnímu dohledu.",
+    lead: "Editor pro úřady, které připravují usnesení, nařízení a další právní akty.",
+    description: "ITORG vyvíjí EAP Legislator pro ABC PRO. Program podporuje přípravu návrhů v XML, připomínkování, elektronický podpis a předání ke zveřejnění nebo právnímu dohledu.",
     features: [
       {
-        title: "Strukturované právní akty v XML",
-        desc: "Šablony a převod obsahu do strukturované podoby pomáhají při přípravě aktů a zachování jednotného rozvržení dokumentu."
+        title: "Návrhy ve formátu XML",
+        desc: "Šablony a převod do XML pomáhají připravit právní akty se zachováním jejich struktury."
       },
       {
-        title: "Spolupráce a sledování změn",
-        desc: "Komentáře, zaznamenané změny a zprávy o práci umožňují sledovat návrhy i způsob jejich vypořádání."
+        title: "Připomínky a historie změn",
+        desc: "Komentáře, záznamy změn a přehledy umožňují ověřit předložené návrhy i způsob jejich vypořádání."
       },
       {
-        title: "Podepisování a předávání aktů",
-        desc: "Podepisování přímo v editoru a odesílání ke zveřejnění či právnímu dohledu podporují elektronický oběh dokumentů."
+        title: "Podepisování a odesílání",
+        desc: "Podepisujte dokumenty v editoru a předávejte je ke zveřejnění nebo právnímu dohledu."
       }
     ],
     editions: [
       {
         name: "EAP Legislator",
-        desc: "Edice Standard, Premium a Legalis pro úřady a instituce připravující právní akty. Rozsah funkcí lze zvolit podle potřeb organizace.",
+        desc: "Edice Standard, Premium a Legalis pro úřady a instituce připravující právní akty. Dostupné funkce závisejí na zvolené edici.",
         cta: "Poznejte EAP Legislator",
         href: legislatorUrls.editor
       },
@@ -84,34 +84,34 @@ export const cs: Site = {
   },
   partner: {
     eyebrow: "Partnerství", title: "Spolupráce s ABC PRO",
-    intro: "Díky partnerství s ABC PRO Sp. z o.o. nabízíme přístup k profesionálním právním nástrojům a komplexní implementace systémů pro veřejnou správu.",
-    note: "ABC PRO nabízí řešení především veřejné správě a velkým společnostem. Mezi klíčové produkty patří:",
+    intro: "S ABC PRO Sp. z o.o. spolupracujeme na vývoji a zavádění softwaru pro legislativu a správu dokumentů ve veřejné správě.",
+    note: "Příklady systémů ABC PRO:",
     products: [
-      { name: "EAP Legislator", desc: "Editor pro tvorbu právních aktů ve formátu XML, sledování změn, bezpečný elektronický podpis a předání aktu ke zveřejnění." },
+      { name: "EAP Legislator", desc: "Editor právních aktů v XML se sledováním změn, elektronickým podpisem a předáním ke zveřejnění." },
       { name: "Baza Aktów Własnych", desc: "Systém pro vlastní sbírky právních aktů organizace s vyhledáváním, rejstříky a integrací s legislativní databází." },
-      { name: "ABC ANON", desc: "Nástroj pro anonymizaci dokumentů PDF, DOCX a skenů prostřednictvím skrytí vybraných údajů v souladu s právními požadavky." },
+      { name: "ABC ANON", desc: "Nástroj pro skrytí vybraných údajů v souborech PDF, DOCX a skenech před jejich sdílením." },
       { name: "ABC Kancelaria", desc: "Systém elektronické správy dokumentů pro korespondenci, evidence a příchozí i odchozí dokumenty v papírové i elektronické podobě." },
     ],
   },
   orion: {
-    eyebrow: "Nástroje AI", title: "Tvoříme budoucnost s Orion AI",
-    lead: "Společnost ITORG spolupracuje na vývoji platformy Orion společnosti ABC PRO — platformy AI pro veřejnou správu a podniky.",
-    description: "Vytváříme nástroje AI pro práci s dokumenty, analýzu informací a automatizaci úkolů. Spolupráce na Orionu spojuje tyto kompetence s našimi zkušenostmi se softwarem pro veřejný sektor.",
+    eyebrow: "Nástroje AI", title: "Orion AI",
+    lead: "Platforma umělé inteligence společnosti ABC PRO pro veřejnou správu a podniky.",
+    description: "ITORG spolupracuje na vývoji Orionu a vytváří nástroje AI pro práci s dokumenty, analýzu informací a automatizaci úkolů.",
     cta: "Poznejte platformu Orion AI",
   },
-  contact: { eyebrow: "Kontakt", title: "Promluvme si o vašem projektu", subtitle: "Zavádíte nový systém nebo modernizujete úřad? Napište nám nebo zavolejte — probereme, jak vám můžeme pomoci." },
-  footer: { tagline: "Inovativní IT řešení a nástroje AI pro veřejnou správu.", privacy: "Zásady ochrany osobních údajů", cookieSettings: "Nastavení cookies" },
+  contact: { eyebrow: "Kontakt", title: "Promluvme si o vašem projektu", subtitle: "Potřebujete software pro správu dokumentů, propojení systémů nebo nástroj AI? Napište nám nebo zavolejte a popište, co chcete zlepšit." },
+  footer: { tagline: "Legislativní systémy, oběh dokumentů a nástroje AI.", privacy: "Zásady ochrany osobních údajů", cookieSettings: "Nastavení cookies" },
   legal: { ...site.legal, privacyUrl: "/cs/privacy/" },
   nav: [
     { label: "O společnosti", href: "#o-firmie" }, { label: "Služby", href: "#uslugi" },
-    { label: "Legislator", href: "#legislator" }, { label: "Hodnoty", href: "#wartosci" },
-    { label: "Partner", href: "#partner" }, { label: "Orion AI", href: "#orion" }, { label: "Kontakt", href: "#kontakt" },
+    { label: "Legislator", href: "#legislator" }, { label: "Přístup", href: "#wartosci" },
+    { label: "ABC PRO", href: "#partner" }, { label: "Orion AI", href: "#orion" }, { label: "Kontakt", href: "#kontakt" },
   ],
-  seo: { ...site.seo, title: "ITORG — IT řešení a AI pro veřejnou správu", description: "ITORG Krzysztof Radzimski — vývoj EAP Legislator pro ABC PRO, legislativní systémy, automatizace a nástroje AI. Spolupráce na platformě Orion AI." },
+  seo: { ...site.seo, title: "ITORG — Software pro veřejnou správu", description: "Vyvíjíme a zavádíme software pro úřady: legislativní systémy, oběh dokumentů, integrace a nástroje AI. Pro ABC PRO vyvíjíme EAP Legislator." },
   ui: {
     skip: "Přejít k obsahu", home: "Úvodní stránka", mainNav: "Hlavní navigace", footerNav: "Navigace v zápatí", navigation: "Navigace", menu: "Menu",
     languages: "Vybrat jazyk", language: "Jazyk", facts: "Společnost v kostce", inBrief: "V kostce", founded: "Založeno", owner: "Majitel",
-    headquarters: "Sídlo", specialization: "Specializace", specializationValue: "Legislativa · správa dokumentů · integrace · AI", partner: "Partner", platform: "Platforma",
+    headquarters: "Sídlo", specialization: "Specializace", specializationValue: "Legislativa · správa dokumentů · integrace · AI", partner: "Partner", platform: "Služby",
     partnerCta: "Poznejte řešení ABC PRO", writeEmail: "Napsat e-mail", address: "Adresa", phone: "Telefon", email: "E-mail", eDelivery: "Polské elektronické doručování",
     registration: "Registrační údaje", bank: "Bankovní účet", rights: "Všechna práva vyhrazena.", close: "Zavřít",
   },

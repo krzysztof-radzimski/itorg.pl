@@ -1,14 +1,14 @@
 import type { CookieCopy, PrivacyCopy } from "./types";
 
 export const cookies: CookieCopy = {
-  title: "Wir respektieren Ihre Privatsphäre",
-  intro: "Diese Website nutzt notwendige Technologien für ihren Betrieb. Derzeit verwenden wir keine Analyse-, Werbe- oder Social-Media-Werkzeuge. Optionale Kategorien benötigen Ihre Einwilligung, die Sie jederzeit ändern können.",
+  title: "Datenschutzeinstellungen",
+  intro: "Diese Website nutzt notwendige Technologien für ihren Betrieb und speichert Ihre Einstellungen. Derzeit verwenden wir keine Analyse- oder Werbewerkzeuge und keine Social-Media-Plugins. Optionale Funktionen benötigen Ihre Einwilligung.",
   privacy: "Datenschutzerklärung", always: "Immer aktiv", show: "Kategoriebeschreibung anzeigen", hide: "Kategoriebeschreibung ausblenden",
   accept: "Alle akzeptieren", reject: "Alle ablehnen", save: "Auswahl speichern",
   categories: [
-    { key: "necessary", name: "Notwendig", desc: "Diese Technologien speichern Ihre Cookie-Entscheidung und unterstützen die sichere Bereitstellung der Website. Sie lassen sich hier nicht deaktivieren." },
-    { key: "analytics", name: "Leistung und Analyse", desc: "Derzeit nicht im Einsatz. Bei einer Einführung dienen sie zur Nutzungsanalyse und benötigen Ihre vorherige Einwilligung." },
-    { key: "marketing", name: "Zielgruppen und Werbung", desc: "Derzeit nicht im Einsatz. Werkzeuge zur Personalisierung von Werbung oder Marketing werden nur mit Ihrer Einwilligung aktiviert." },
+    { key: "necessary", name: "Notwendig", desc: "Diese Technologien speichern Ihre Einstellungen und tragen zur Sicherheit der Website bei. Sie lassen sich hier nicht deaktivieren." },
+    { key: "analytics", name: "Analyse", desc: "Derzeit nicht im Einsatz. Bei einer Einführung dienen sie zur Nutzungsanalyse und benötigen Ihre vorherige Einwilligung." },
+    { key: "marketing", name: "Werbung", desc: "Derzeit nicht im Einsatz. Werkzeuge zur Personalisierung von Werbung oder Marketing werden nur mit Ihrer Einwilligung aktiviert." },
     { key: "social", name: "Soziale Medien", desc: "Derzeit nicht im Einsatz. Plugins und Funktionen externer sozialer Plattformen benötigen Ihre vorherige Einwilligung." },
   ],
 };

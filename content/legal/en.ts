@@ -1,14 +1,14 @@
 import type { CookieCopy, PrivacyCopy } from "./types";
 
 export const cookies: CookieCopy = {
-  title: "We respect your privacy",
-  intro: "This website uses essential technologies to operate correctly. We currently use no analytics, advertising or social media tools. Optional categories require your consent, which you can change at any time.",
+  title: "Privacy settings",
+  intro: "This website uses essential technologies to work and remember your preferences. We currently use no analytics, advertising or social media plugins. Any optional features require your consent.",
   privacy: "Privacy policy", always: "Always active", show: "Show category description", hide: "Hide category description",
   accept: "Accept all", reject: "Reject all", save: "Save selection",
   categories: [
-    { key: "necessary", name: "Essential", desc: "These remember your cookie decision and support secure delivery of the website. They cannot be disabled in this panel." },
-    { key: "analytics", name: "Performance and analytics", desc: "Not currently used. If introduced, these will help analyse website use and will require your prior consent." },
-    { key: "marketing", name: "Targeting and advertising", desc: "Not currently used. Tools for personalised advertising or marketing will only be activated with your consent." },
+    { key: "necessary", name: "Essential", desc: "These remember your preferences and help keep the website secure. They cannot be disabled in this panel." },
+    { key: "analytics", name: "Analytics", desc: "Not currently used. If introduced, these will help analyse website use and will require your prior consent." },
+    { key: "marketing", name: "Advertising", desc: "Not currently used. Tools for personalised advertising or marketing will only be activated with your consent." },
     { key: "social", name: "Social media", desc: "Not currently used. Plugins and features from external social platforms will require your prior consent." },
   ],
 };

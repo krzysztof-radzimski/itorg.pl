@@ -2,69 +2,69 @@ import { site, legislatorUrls, type Site } from "../site";
 import { cookies, privacy } from "../legal/de";
 
 export const de: Site = {
-  brand: { ...site.brand, eyebrow: "Digitalisierung der öffentlichen Verwaltung", tagline: "Innovative IT-Lösungen für den öffentlichen Sektor." },
+  brand: { ...site.brand, eyebrow: "Digitalisierung der öffentlichen Verwaltung", tagline: "Software für die öffentliche Verwaltung." },
   company: { ...site.company, country: "Polen" },
   hero: {
-    eyebrow: "Digitalisierung der öffentlichen Verwaltung", titleLead: "Wir digitalisieren", titleAccent: "die öffentliche Verwaltung",
-    subtitle: "Seit {years} Jahren entwickeln wir moderne Lösungen für digitale Gesetzgebung und Prozessautomatisierung im öffentlichen Sektor in Polen.",
-    primaryCta: "Kontakt aufnehmen", secondaryCta: "Unsere Kompetenzen", scrollLabel: "Nach unten scrollen",
+    eyebrow: "Rechtsetzung · Dokumente · KI", titleLead: "Software", titleAccent: "für Behörden",
+    subtitle: "Seit {years} Jahren entwickeln wir Software für die Erstellung von Rechtsakten, die Dokumentenverwaltung und die Automatisierung von Arbeitsabläufen in polnischen Behörden.",
+    primaryCta: "Kontakt aufnehmen", secondaryCta: "Unsere Leistungen", scrollLabel: "Nach unten scrollen",
   },
   stats: [
-    { kind: "years", number: "", suffix: "+", label: "Jahre Erfahrung" },
-    { kind: "static", number: "100%", suffix: "", label: "Fokus auf den öffentlichen Sektor" },
-    { kind: "static", number: "24/7", suffix: "", label: "Technischer Support" },
+    { kind: "years", number: "", suffix: "", label: "Jahre am Markt" },
+    { kind: "static", number: "XML", suffix: "", label: "Rechtsdokumente" },
+    { kind: "static", number: "KI", suffix: "", label: "Arbeit mit Dokumenten" },
   ],
   about: {
-    eyebrow: "Über uns", title: "Technologie im Dienst der Gesellschaft",
-    lead: "ITORG ist das Unternehmen von Krzysztof Radzimski. Seit 2009 entwickeln und implementieren wir Software für Behörden und öffentliche Einrichtungen.",
+    eyebrow: "Über uns", title: "Software entwickeln und einführen",
+    lead: "Seit 2009 konzipiert, entwickelt und implementiert ITORG Software für Behörden und öffentliche Einrichtungen in Polen.",
     paragraphs: [
-      "Wir sind auf digitale Gesetzgebungsverfahren und die Automatisierung von Dokumentenabläufen spezialisiert — Bereiche, in denen Präzision, Rechtskonformität und Zuverlässigkeit entscheidend sind.",
-      "Wir verbinden langjährige Erfahrung im öffentlichen Sektor mit moderner Softwareentwicklung. Gemeinsam mit ABC PRO Sp. z o.o. bieten wir bewährte Fachanwendungen und umfassende Implementierungen jeder Größenordnung.",
-      "Wir entwickeln auch Werkzeuge mit künstlicher Intelligenz. ITORG wirkt an der Entwicklung der Orion-Plattform von ABC PRO mit und unterstützt Lösungen für die tägliche Arbeit mit Dokumenten und Informationen.",
+      "Wir unterstützen die Erstellung von Rechtsakten, die Vorgangsbearbeitung und elektronische Dokumentenabläufe.",
+      "Für ABC PRO entwickeln wir EAP Legislator, einen Editor für Beschlüsse, Anordnungen und andere Rechtsakte. Wir wirken auch an der Einführung von ABC-PRO-Systemen mit.",
+      "Wir entwickeln KI-Werkzeuge für die Arbeit mit Dokumenten und die Analyse von Informationen. Außerdem wirken wir an der Entwicklung der Orion-Plattform von ABC PRO mit.",
     ],
   },
   services: {
-    eyebrow: "Unsere Leistungen", title: "Unsere Kompetenzen", subtitle: "Umfassende Unterstützung bei der Digitalisierung — von Gesetzgebung und Integration bis zu KI-Werkzeugen.",
+    eyebrow: "Leistungen", title: "Wie wir Sie unterstützen", subtitle: "Wir konzipieren, entwickeln und verbinden Systeme für die öffentliche Verwaltung.",
     items: [
-      { icon: "legislation", title: "Gesetzgebungssysteme", desc: "Umfassende Plattformen zur Verwaltung von Rechtsakten und zur Automatisierung legislativer Dokumentenabläufe." },
-      { icon: "automation", title: "Prozessautomatisierung", desc: "Optimierung von Verwaltungsabläufen durch intelligente Werkzeuge für die Bearbeitung von Vorgängen und Dokumenten." },
-      { icon: "integration", title: "Systemintegration", desc: "Anbindung von IT-Lösungen an bestehende Infrastrukturen für ein reibungsloses Zusammenspiel öffentlicher Systeme." },
-      { icon: "digitization", title: "Digitale Verwaltung", desc: "Einführung innovativer Technologien für besser zugängliche Bürgerdienste und effizientere Behörden." },
-      { icon: "ai", title: "Entwicklung von KI-Werkzeugen", desc: "Konzeption und Entwicklung von KI-Werkzeugen für Dokumentenarbeit, Informationsanalyse und die Automatisierung alltäglicher Aufgaben." },
+      { icon: "legislation", title: "Rechtsetzungssoftware", desc: "Wir entwickeln Werkzeuge zur Erstellung, Signierung und Übermittlung von Rechtsakten." },
+      { icon: "automation", title: "Prozessautomatisierung", desc: "Wir automatisieren wiederkehrende Aufgaben in der Vorgangsbearbeitung und in Dokumentenabläufen." },
+      { icon: "integration", title: "Systemintegration", desc: "Wir verbinden Systeme, damit sie Daten austauschen und Informationen gemeinsam nutzen können." },
+      { icon: "digitization", title: "Software für Behörden", desc: "Wir entwickeln und implementieren Anwendungen für Vorgänge, Dokumente und öffentliche Dienstleistungen." },
+      { icon: "ai", title: "Entwicklung von KI-Werkzeugen", desc: "Wir entwickeln KI-Werkzeuge für die Arbeit mit Dokumenten, die Analyse von Informationen und die Automatisierung von Aufgaben." },
     ],
   },
   values: {
-    eyebrow: "Warum ITORG", title: "Was uns auszeichnet",
+    eyebrow: "Zusammenarbeit", title: "So arbeiten wir",
     items: [
-      { num: "01", title: "Innovation", desc: "Kontinuierliche Suche nach technologischen Lösungen für die Herausforderungen einer modernen Verwaltung." },
-      { num: "02", title: "Zuverlässigkeit", desc: "Stabile, leistungsfähige Systeme, die den kontinuierlichen Betrieb öffentlicher Einrichtungen unterstützen." },
-      { num: "03", title: "Sicherheit", desc: "Hohe Datenschutzstandards im Einklang mit gesetzlichen Vorgaben und bewährten Branchenpraktiken." },
-      { num: "04", title: "Partnerschaft", desc: "Langfristige Zusammenarbeit auf Grundlage eines Verständnisses für die Besonderheiten und Bedürfnisse des öffentlichen Sektors." },
+      { num: "01", title: "Erfahrung mit Behörden", desc: "Wir entwickeln Systeme für Rechtsetzung und Dokumentenabläufe. Dabei berücksichtigen wir die Verfahren und Arbeitsweisen der Verwaltung." },
+      { num: "02", title: "Entwicklung und Wartung", desc: "Wir entwickeln Software weiter und unterstützen ihren Betrieb nach der Einführung." },
+      { num: "03", title: "Datenschutz", desc: "Bei der Systementwicklung berücksichtigen wir Datensicherheit und den Zugang zu Informationen." },
+      { num: "04", title: "Passend zu Ihrer Behörde", desc: "Wir richten Änderungen an den Bedürfnissen der Nutzer und den bereits eingesetzten Systemen aus." },
     ],
   },
   legislator: {
-    eyebrow: "Unser Hauptprodukt",
+    eyebrow: "Editor für Rechtsakte",
     title: "EAP Legislator",
-    lead: "Das Hauptprodukt, das Krzysztof Radzimski für ABC PRO entwickelt.",
-    description: "Ein Editor für Beschlüsse, Anordnungen und weitere Rechtsakte — vom strukturierten Entwurf in XML über die Abstimmung und elektronische Signatur bis zur Übermittlung zur Veröffentlichung oder Rechtsaufsicht.",
+    lead: "Ein Editor für Behörden, die Beschlüsse, Anordnungen und andere Rechtsakte erstellen.",
+    description: "ITORG entwickelt EAP Legislator für ABC PRO. Die Software unterstützt Entwürfe in XML, die Abstimmung, elektronische Signaturen und die Übermittlung zur Veröffentlichung oder Rechtsaufsicht.",
     features: [
       {
-        title: "Strukturierte Rechtsakte in XML",
-        desc: "Vorlagen und die Konvertierung in strukturierte Inhalte unterstützen die Erstellung von Rechtsakten mit einheitlichem Dokumentenaufbau."
+        title: "Entwürfe in XML",
+        desc: "Vorlagen und die Konvertierung in XML helfen bei der Erstellung von Rechtsakten mit einheitlicher Struktur."
       },
       {
-        title: "Zusammenarbeit und Änderungsverfolgung",
-        desc: "Kommentare, protokollierte Änderungen und Berichte machen Vorschläge und deren Bearbeitung nachvollziehbar."
+        title: "Kommentare und Änderungshistorie",
+        desc: "Kommentare, protokollierte Änderungen und Berichte zeigen, welche Vorschläge eingereicht und wie sie bearbeitet wurden."
       },
       {
-        title: "Signieren und Übermitteln",
-        desc: "Die elektronische Signatur direkt im Editor und die Übermittlung zur Veröffentlichung oder Rechtsaufsicht unterstützen den digitalen Dokumentenablauf."
+        title: "Signieren und übermitteln",
+        desc: "Signieren Sie Dokumente im Editor und übermitteln Sie sie zur Veröffentlichung oder Rechtsaufsicht."
       }
     ],
     editions: [
       {
         name: "EAP Legislator",
-        desc: "Die Editionen Standard, Premium und Legalis für Behörden und Einrichtungen, die Rechtsakte erstellen. Der Funktionsumfang lässt sich an die Bedürfnisse der Organisation anpassen.",
+        desc: "Die Editionen Standard, Premium und Legalis richten sich an Behörden und Einrichtungen, die Rechtsakte erstellen. Die verfügbaren Funktionen hängen von der gewählten Edition ab.",
         cta: "EAP Legislator entdecken",
         href: legislatorUrls.editor
       },
@@ -84,34 +84,34 @@ export const de: Site = {
   },
   partner: {
     eyebrow: "Partnerschaft", title: "Zusammenarbeit mit ABC PRO",
-    intro: "Durch unsere Partnerschaft mit ABC PRO Sp. z o.o. bieten wir Zugang zu professionellen Rechtsanwendungen und umfassenden Systemimplementierungen für die öffentliche Verwaltung.",
-    note: "ABC PRO entwickelt Lösungen vor allem für die öffentliche Verwaltung und größere Unternehmen. Zu den wichtigsten Produkten gehören:",
+    intro: "Mit ABC PRO Sp. z o.o. arbeiten wir an der Entwicklung und Einführung von Software für Rechtsetzung und Dokumentenverwaltung in Behörden.",
+    note: "Beispiele für Systeme von ABC PRO:",
     products: [
-      { name: "EAP Legislator", desc: "Ein Editor zum Erstellen von Rechtsakten in XML, zur Änderungsverfolgung, zur elektronischen Signatur und zur Übermittlung zur Veröffentlichung." },
+      { name: "EAP Legislator", desc: "Ein XML-Editor für Rechtsakte mit Änderungsverfolgung, elektronischer Signatur und Übermittlung zur Veröffentlichung." },
       { name: "Baza Aktów Własnych", desc: "Ein System für eigene Sammlungen von Rechtsakten einer Organisation mit Suchfunktionen, Verzeichnissen und Anbindung an eine Rechtsdatenbank." },
-      { name: "ABC ANON", desc: "Ein Werkzeug zur Anonymisierung von PDF- und DOCX-Dokumenten sowie Scans durch rechtskonformes Schwärzen ausgewählter Informationen." },
+      { name: "ABC ANON", desc: "Ein Werkzeug, um ausgewählte Angaben in PDF- und DOCX-Dateien sowie Scans vor der Weitergabe zu schwärzen." },
       { name: "ABC Kancelaria", desc: "Ein Dokumentenmanagementsystem für Korrespondenz, Register sowie ein- und ausgehende Dokumente in Papierform und elektronischer Form." },
     ],
   },
   orion: {
-    eyebrow: "KI-Werkzeuge", title: "Die Zukunft mit Orion AI gestalten",
-    lead: "ITORG wirkt an der Entwicklung der Orion-Plattform von ABC PRO mit — einer KI-Plattform für Verwaltung und Unternehmen.",
-    description: "Wir entwickeln KI-Werkzeuge für die Arbeit mit Dokumenten, die Analyse von Informationen und die Automatisierung von Aufgaben. Unsere Mitarbeit an Orion verbindet diese Kompetenzen mit unserer Erfahrung in Verwaltungssoftware.",
+    eyebrow: "KI-Werkzeuge", title: "Orion AI",
+    lead: "Die KI-Plattform von ABC PRO für Verwaltung und Unternehmen.",
+    description: "ITORG wirkt an der Entwicklung von Orion mit und entwickelt KI-Werkzeuge für die Arbeit mit Dokumenten, die Analyse von Informationen und die Automatisierung von Aufgaben.",
     cta: "Die Plattform Orion AI entdecken",
   },
-  contact: { eyebrow: "Kontakt", title: "Sprechen wir über Ihr Projekt", subtitle: "Planen Sie ein neues System oder die Modernisierung Ihrer Behörde? Schreiben Sie uns oder rufen Sie an — wir besprechen, wie wir helfen können." },
-  footer: { tagline: "Innovative IT-Lösungen und KI-Werkzeuge für die öffentliche Verwaltung.", privacy: "Datenschutzerklärung", cookieSettings: "Cookie-Einstellungen" },
+  contact: { eyebrow: "Kontakt", title: "Sprechen wir über Ihr Projekt", subtitle: "Benötigen Sie Software zur Dokumentenverwaltung, eine Systemintegration oder ein KI-Werkzeug? Schreiben Sie uns oder rufen Sie an und beschreiben Sie, was Sie verbessern möchten." },
+  footer: { tagline: "Rechtsetzungssoftware, Dokumentenabläufe und KI-Werkzeuge.", privacy: "Datenschutzerklärung", cookieSettings: "Cookie-Einstellungen" },
   legal: { ...site.legal, privacyUrl: "/de/privacy/" },
   nav: [
     { label: "Über uns", href: "#o-firmie" }, { label: "Leistungen", href: "#uslugi" },
-    { label: "Legislator", href: "#legislator" }, { label: "Werte", href: "#wartosci" },
-    { label: "Partner", href: "#partner" }, { label: "Orion AI", href: "#orion" }, { label: "Kontakt", href: "#kontakt" },
+    { label: "Legislator", href: "#legislator" }, { label: "Arbeitsweise", href: "#wartosci" },
+    { label: "ABC PRO", href: "#partner" }, { label: "Orion AI", href: "#orion" }, { label: "Kontakt", href: "#kontakt" },
   ],
-  seo: { ...site.seo, title: "ITORG — IT-Lösungen und KI für die öffentliche Verwaltung", description: "ITORG Krzysztof Radzimski — Entwicklung von EAP Legislator für ABC PRO, Gesetzgebungssysteme, Automatisierung und KI-Werkzeuge. Mitwirkung an Orion AI." },
+  seo: { ...site.seo, title: "ITORG — Software für die öffentliche Verwaltung", description: "Software für Behörden: Rechtsetzung, Dokumentenabläufe, Integrationen und KI-Werkzeuge. Wir entwickeln EAP Legislator für ABC PRO." },
   ui: {
     skip: "Zum Inhalt springen", home: "Startseite", mainNav: "Hauptnavigation", footerNav: "Fußzeilennavigation", navigation: "Navigation", menu: "Menü",
     languages: "Sprache auswählen", language: "Sprache", facts: "Unternehmen im Überblick", inBrief: "Im Überblick", founded: "Gegründet", owner: "Inhaber",
-    headquarters: "Sitz", specialization: "Schwerpunkte", specializationValue: "Gesetzgebung · Dokumentenmanagement · Integration · KI", partner: "Partner", platform: "Plattform",
+    headquarters: "Sitz", specialization: "Schwerpunkte", specializationValue: "Rechtsetzung · Dokumente · Integration · KI", partner: "Partner", platform: "Leistungen",
     partnerCta: "Die Lösungen von ABC PRO entdecken", writeEmail: "E-Mail schreiben", address: "Anschrift", phone: "Telefon", email: "E-Mail", eDelivery: "Polnische e-Zustellung",
     registration: "Registrierungsdaten", bank: "Bankkonto", rights: "Alle Rechte vorbehalten.", close: "Schließen",
   },

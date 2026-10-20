@@ -1,8 +1,8 @@
 import type { CookieCopy, PrivacyCopy } from "./types";
 
 export const cookies: CookieCopy = {
-  title: "Szanujemy Twoją prywatność",
-  intro: "Serwis korzysta z niezbędnych technologii do prawidłowego działania. Obecnie nie używamy narzędzi analitycznych, reklamowych ani społecznościowych. Opcjonalne kategorie wymagają Twojej zgody, którą możesz zmienić w każdej chwili.",
+  title: "Ustawienia prywatności",
+  intro: "Strona korzysta z technologii niezbędnych do działania i zapamiętuje Twój wybór ustawień. Nie używamy obecnie analityki, reklam ani wtyczek społecznościowych. Opcjonalne funkcje wymagają Twojej zgody.",
   privacy: "Polityka prywatności",
   always: "Zawsze aktywne",
   show: "Pokaż opis kategorii",
@@ -11,9 +11,9 @@ export const cookies: CookieCopy = {
   reject: "Odrzuć wszystkie",
   save: "Zapisz wybrane",
   categories: [
-    { key: "necessary", name: "Niezbędne", desc: "Zapamiętują Twoją decyzję dotyczącą plików cookie oraz wspierają bezpieczne dostarczenie strony. Nie można ich wyłączyć w tym panelu." },
-    { key: "analytics", name: "Wydajnościowe i analityczne", desc: "Obecnie niestosowane. Jeśli zostaną wprowadzone, będą służyć analizie korzystania ze strony i będą wymagać Twojej uprzedniej zgody." },
-    { key: "marketing", name: "Kierunkowe i reklamowe", desc: "Obecnie niestosowane. Narzędzia dopasowujące reklamy lub przekaz marketingowy zostaną uruchomione wyłącznie po uzyskaniu Twojej zgody." },
+    { key: "necessary", name: "Niezbędne", desc: "Zapamiętują wybrane ustawienia i pomagają chronić stronę. Nie można ich wyłączyć w tym panelu." },
+    { key: "analytics", name: "Analityczne", desc: "Obecnie niestosowane. Jeśli zostaną wprowadzone, będą służyć analizie korzystania ze strony i będą wymagać Twojej uprzedniej zgody." },
+    { key: "marketing", name: "Reklamowe", desc: "Obecnie niestosowane. Narzędzia dopasowujące reklamy lub przekaz marketingowy zostaną uruchomione wyłącznie po uzyskaniu Twojej zgody." },
     { key: "social", name: "Media społecznościowe", desc: "Obecnie niestosowane. Wtyczki i funkcje zewnętrznych platform społecznościowych będą wymagać Twojej uprzedniej zgody." },
   ],
 };
@@ -23,7 +23,7 @@ export const privacy: PrivacyCopy = {
   description: "Polityka prywatności i informacje o plikach cookie serwisu ITORG Krzysztof Radzimski.",
   document: "Dokument",
   updated: "Ostatnia aktualizacja",
-  intro: "Niniejsza polityka opisuje przetwarzanie danych oraz stosowanie plików cookie i podobnych technologii w serwisie itorg.pl. Serwis ma charakter informacyjny, prezentuje ofertę firmy i nie wymaga konta ani logowania.",
+  intro: "Ta polityka opisuje, jak przetwarzamy dane i korzystamy z plików cookie oraz podobnych technologii na itorg.pl. Strona przedstawia ofertę firmy. Nie wymaga konta ani logowania.",
   sections: [
     { id: "controller", title: "1. Administrator danych", paragraphs: ["Administratorem danych jest firma wskazana poniżej. W sprawach prywatności można skontaktować się przez e-mail, telefon lub e-Doręczenia."] },
     { id: "data", title: "2. Jakie dane przetwarzamy", paragraphs: ["Serwis nie zawiera formularzy ani narzędzi automatycznego zbierania danych do celów marketingowych."], items: ["Kontakt: gdy piszesz, dzwonisz lub korzystasz z e-Doręczeń, przetwarzamy podane przez Ciebie dane (np. imię, nazwisko, e-mail, telefon i treść wiadomości), aby odpowiedzieć i obsłużyć sprawę.", "Dane techniczne: dostawca hostingu (Cloudflare) przetwarza w logach dane niezbędne do dostarczenia strony i zapewnienia bezpieczeństwa, takie jak adres IP, przeglądarka, system operacyjny, czas żądania i adres odsyłający."] },
@@ -40,7 +40,7 @@ export const privacy: PrivacyCopy = {
   tableHeaders: ["Nazwa / technologia", "Cel", "Kategoria i podstawa"],
   tableRows: [
     { name: "itorg-cookie-consent-v1 (pamięć lokalna przeglądarki)", purpose: "Zapamiętanie Twojej decyzji dotyczącej cookie.", basis: "Niezbędne · uzasadniony interes" },
-    { name: "Techniczne cookie Cloudflare (np. ochrona przed botami)", purpose: "Bezpieczeństwo i prawidłowe dostarczenie strony.", basis: "Niezbędne · uzasadniony interes" },
+    { name: "Techniczne cookie Cloudflare (np. ochrona przed botami)", purpose: "Bezpieczeństwo i prawidłowe wyświetlanie strony.", basis: "Niezbędne · uzasadniony interes" },
     { name: "Analityka, reklama i media społecznościowe", purpose: "Obecnie niestosowane; wymagają uprzedniej zgody przed uruchomieniem.", basis: "Opcjonalne · zgoda" },
   ],
   settings: "Kategorie niezbędne są wymagane do działania serwisu. Decyzję o kategoriach opcjonalnych możesz zmienić w dowolnym momencie w panelu lub przez usunięcie danych przeglądarki.",

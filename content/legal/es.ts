@@ -1,14 +1,14 @@
 import type { CookieCopy, PrivacyCopy } from "./types";
 
 export const cookies: CookieCopy = {
-  title: "Respetamos tu privacidad",
-  intro: "Este sitio utiliza tecnologías necesarias para funcionar correctamente. Actualmente no usamos herramientas de análisis, publicidad ni redes sociales. Las categorías opcionales requieren tu consentimiento, que puedes cambiar en cualquier momento.",
+  title: "Configuración de privacidad",
+  intro: "Este sitio utiliza tecnologías necesarias para funcionar y recordar tus preferencias. Actualmente no usamos herramientas de análisis, publicidad ni complementos de redes sociales. Las funciones opcionales requieren tu consentimiento.",
   privacy: "Política de privacidad", always: "Siempre activas", show: "Mostrar descripción de la categoría", hide: "Ocultar descripción de la categoría",
   accept: "Aceptar todas", reject: "Rechazar todas", save: "Guardar selección",
   categories: [
-    { key: "necessary", name: "Necesarias", desc: "Recuerdan tu decisión sobre las cookies y ayudan a ofrecer el sitio de forma segura. No se pueden desactivar en este panel." },
-    { key: "analytics", name: "Rendimiento y análisis", desc: "No se utilizan actualmente. Si se incorporan, servirán para analizar el uso del sitio y requerirán tu consentimiento previo." },
-    { key: "marketing", name: "Segmentación y publicidad", desc: "No se utilizan actualmente. Las herramientas para personalizar anuncios o mensajes comerciales solo se activarán con tu consentimiento." },
+    { key: "necessary", name: "Necesarias", desc: "Recuerdan tus preferencias y ayudan a mantener la seguridad del sitio. No se pueden desactivar en este panel." },
+    { key: "analytics", name: "Análisis", desc: "No se utilizan actualmente. Si se incorporan, servirán para analizar el uso del sitio y requerirán tu consentimiento previo." },
+    { key: "marketing", name: "Publicidad", desc: "No se utilizan actualmente. Las herramientas para personalizar anuncios o mensajes comerciales solo se activarán con tu consentimiento." },
     { key: "social", name: "Redes sociales", desc: "No se utilizan actualmente. Los complementos y funciones de plataformas sociales externas requerirán tu consentimiento previo." },
   ],
 };
@@ -31,7 +31,7 @@ export const privacy: PrivacyCopy = {
   tableCaption: "Tecnologías utilizadas en este sitio", tableHeaders: ["Nombre / tecnología", "Finalidad", "Categoría y base"],
   tableRows: [
     { name: "itorg-cookie-consent-v1 (almacenamiento local del navegador)", purpose: "Recordar tu decisión sobre las cookies.", basis: "Necesarias · interés legítimo" },
-    { name: "Cookies técnicas de Cloudflare, como protección contra bots", purpose: "Seguridad y correcta entrega del sitio.", basis: "Necesarias · interés legítimo" },
+    { name: "Cookies técnicas de Cloudflare, como protección contra bots", purpose: "Seguridad y correcto funcionamiento del sitio.", basis: "Necesarias · interés legítimo" },
     { name: "Análisis, publicidad y redes sociales", purpose: "No se utilizan actualmente; requieren consentimiento previo a su activación.", basis: "Opcionales · consentimiento" },
   ],
   settings: "Las categorías necesarias permiten el funcionamiento del sitio. Puedes cambiar las preferencias opcionales en el panel o borrar los datos del navegador en cualquier momento.",

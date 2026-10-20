@@ -1,14 +1,14 @@
 import type { CookieCopy, PrivacyCopy } from "./types";
 
 export const cookies: CookieCopy = {
-  title: "Nous respectons votre vie privée",
-  intro: "Ce site utilise des technologies nécessaires à son fonctionnement. Nous n’utilisons actuellement aucun outil d’analyse, de publicité ou de réseau social. Les catégories facultatives nécessitent votre consentement, modifiable à tout moment.",
+  title: "Paramètres de confidentialité",
+  intro: "Ce site utilise des technologies nécessaires à son fonctionnement et mémorise vos préférences. Nous n’utilisons actuellement aucun outil d’analyse ou de publicité, ni de module de réseau social. Les fonctions facultatives nécessitent votre consentement.",
   privacy: "Politique de confidentialité", always: "Toujours actifs", show: "Afficher la description de la catégorie", hide: "Masquer la description de la catégorie",
   accept: "Tout accepter", reject: "Tout refuser", save: "Enregistrer le choix",
   categories: [
-    { key: "necessary", name: "Nécessaires", desc: "Ces technologies mémorisent votre choix concernant les cookies et contribuent à la sécurité du site. Elles ne peuvent pas être désactivées dans ce panneau." },
-    { key: "analytics", name: "Performance et analyse", desc: "Non utilisés actuellement. S’ils sont introduits, ils serviront à analyser l’utilisation du site et nécessiteront votre consentement préalable." },
-    { key: "marketing", name: "Ciblage et publicité", desc: "Non utilisés actuellement. Les outils de personnalisation publicitaire ou commerciale ne seront activés qu’avec votre consentement." },
+    { key: "necessary", name: "Nécessaires", desc: "Ces technologies mémorisent vos préférences et contribuent à la sécurité du site. Elles ne peuvent pas être désactivées dans ce panneau." },
+    { key: "analytics", name: "Analyse", desc: "Non utilisés actuellement. S’ils sont introduits, ils serviront à analyser l’utilisation du site et nécessiteront votre consentement préalable." },
+    { key: "marketing", name: "Publicité", desc: "Non utilisés actuellement. Les outils de personnalisation publicitaire ou commerciale ne seront activés qu’avec votre consentement." },
     { key: "social", name: "Réseaux sociaux", desc: "Non utilisés actuellement. Les modules et fonctions de plateformes sociales externes nécessiteront votre consentement préalable." },
   ],
 };

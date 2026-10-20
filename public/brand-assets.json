@@ -45,6 +45,6 @@
     "file": "partners/abc-pro.svg",
     "source": "https://abcpro.pl/build/images/abcpro/abc.svg",
     "retrieved": "2026-10-20",
-    "adaptation": "Grafika bez zmian; uporządkowany zapis XML i wymiary SVG."
+    "adaptation": "Oryginalny SVG; w components/AbcProLogo.tsx te same obrysy. Kolor napisu dopasowany do motywu strony, kolory sygnetu bez zmian."
   }
 ]

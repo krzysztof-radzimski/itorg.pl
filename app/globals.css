@@ -628,6 +628,16 @@ summary::-webkit-details-marker { display: none; }
 @media (max-width: 720px) { .values-grid { grid-template-columns: 1fr; } }
 
 /* ═══ PARTNER ══════════════════════════════════════════════════════════ */
+.partner__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--line-2);
+}
 .partner__grid {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -638,7 +648,7 @@ summary::-webkit-details-marker { display: none; }
   position: sticky;
   top: 96px;
 }
-.partner__logo { width: 200px; max-width: 100%; height: auto; background: #fff; padding: 0.5rem; margin-bottom: 1.5rem; border-radius: var(--r-sm); }
+.partner__logo { width: 8.5rem; height: auto; flex-shrink: 0; color: var(--ink); }
 .partner__lead {
   color: var(--ink);
   font-size: 1.08rem;

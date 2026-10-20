@@ -2,6 +2,7 @@ import type { SiteProps } from "@/content/site";
 import { fixOrphans } from "@/lib/typography";
 import { productsPath } from "@/lib/locales";
 import { ArrowRightIcon } from "./Icons";
+import AbcProLogo from "./AbcProLogo";
 
 export default function Partner({ site, locale }: SiteProps) {
   const { partner } = site;
@@ -9,11 +10,12 @@ export default function Partner({ site, locale }: SiteProps) {
   return (
     <section className="section section--tint" id="partner" tabIndex={-1} aria-labelledby="partner-title">
       <div className="container">
+        <div className="partner__header">
+          <p className="eyebrow">{partner.eyebrow}</p>
+          <AbcProLogo className="partner__logo" />
+        </div>
         <div className="partner__grid">
           <div>
-            <img className="partner__logo" src="/partners/abc-pro.svg" alt="ABC PRO" width={200} height={40} loading="lazy" />
-            <p className="eyebrow">{partner.eyebrow}</p>
-            <hr className="rule" />
             <h2 className="section__title" id="partner-title">{partner.title}</h2>
           </div>
           <div>

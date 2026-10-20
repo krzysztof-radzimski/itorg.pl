@@ -12,7 +12,7 @@ export default function Nav({ site, locale, page = "home" }: SiteProps & { page?
   return (
     <header className="nav">
       <div className="container nav__inner">
-        <a className="nav__brand" href={page === "home" ? "#top" : homePath(locale)} aria-label={`${site.brand.legalName} — ${site.ui.home}`}>
+        <a className="nav__brand" href={page === "home" ? "#top" : homePath(locale)} aria-label={`${site.brand.legalName}: ${site.ui.home}`}>
           <img src="/logo.svg" alt="" width={32} height={32} />
           <span className="nav__wordmark">{site.brand.name}</span>
         </a>

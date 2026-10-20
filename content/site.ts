@@ -160,7 +160,7 @@ export const site = {
     editions: [
       { name: "EAP Legislator", desc: "Edycje Standard, Premium i Legalis dla urzędów i instytucji przygotowujących akty prawne. Dostępne funkcje zależą od wybranej edycji.", cta: "Poznaj EAP Legislator", href: legislatorUrls.editor },
       { name: "Legislator dla administracji rządowej", desc: "Wersja dla ministerstw i urzędów centralnych, oparta na szablonie Rządowego Centrum Legislacji (RCL). Służy do przygotowania aktów kierowanych do Dziennika Ustaw i Monitora Polskiego.", cta: "Poznaj Legislator GOV", href: legislatorUrls.government },
-      { name: "Finanse Publiczne — dodatek Besti@", desc: "Importuje dane XML z Besti@ do uchwał budżetowych, ich zmian, wieloletnich prognoz finansowych i sprawozdań. Tworzy tabele do dokumentów przekazywanych do ogłoszenia w wojewódzkim dzienniku urzędowym oraz regionalnym izbom obrachunkowym (RIO).", cta: "Poznaj dodatek Besti@", href: legislatorUrls.finance },
+      { name: "Finanse Publiczne (dodatek Besti@)", desc: "Importuje dane XML z Besti@ do uchwał budżetowych, ich zmian, wieloletnich prognoz finansowych i sprawozdań. Tworzy tabele do dokumentów przekazywanych do ogłoszenia w wojewódzkim dzienniku urzędowym oraz regionalnym izbom obrachunkowym (RIO).", cta: "Poznaj dodatek Besti@", href: legislatorUrls.finance },
     ],
   },
 
@@ -237,7 +237,7 @@ export const site = {
   ],
 
   seo: {
-    title: "ITORG — Oprogramowanie dla administracji publicznej",
+    title: "ITORG: Oprogramowanie dla administracji publicznej",
     description:
       "Oprogramowanie dla samorządów, administracji rządowej i innych instytucji: legislacja, zarządzanie dokumentacją, integracje systemów i sztuczna inteligencja.",
     url: "https://itorg.pl",

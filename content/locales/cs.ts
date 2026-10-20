@@ -75,7 +75,7 @@ export const cs: Site = {
         href: legislatorUrls.government
       },
       {
-        name: "Veřejné finance — doplněk Besti@",
+        name: "Veřejné finance (doplněk Besti@)",
         desc: "Importuje data XML z Besti@ pro rozpočtová usnesení a jejich změny, víceleté finanční výhledy a zprávy. Vytváří tabulky pro dokumenty předávané do úředních věstníků vojvodství a regionálním účetním komorám (RIO) v Polsku.",
         cta: "Poznejte doplněk Besti@",
         href: legislatorUrls.finance
@@ -120,7 +120,7 @@ export const cs: Site = {
     { label: "Spolupráce", href: "#partner" },
     { label: "Kontakt", href: "#kontakt" },
   ],
-  seo: { ...site.seo, title: "ITORG — Software pro veřejnou správu", description: "Software pro samosprávy, státní správu a další instituce: legislativní procesy, správa dokumentů, integrace systémů a umělá inteligence." },
+  seo: { ...site.seo, title: "ITORG: Software pro veřejnou správu", description: "Software pro samosprávy, státní správu a další instituce: legislativní procesy, správa dokumentů, integrace systémů a umělá inteligence." },
   ui: {
     skip: "Přejít k obsahu", home: "Úvodní stránka", mainNav: "Hlavní navigace", footerNav: "Navigace v zápatí", navigation: "Navigace", menu: "Menu",
     languages: "Vybrat jazyk", language: "Jazyk", facts: "Společnost v kostce", inBrief: "V kostce", founded: "Založeno", owner: "Majitel",

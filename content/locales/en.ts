@@ -75,7 +75,7 @@ export const en: Site = {
         href: legislatorUrls.government
       },
       {
-        name: "Public Finance — Besti@ add-on",
+        name: "Public Finance (Besti@ add-on)",
         desc: "Imports XML data from Besti@ for budget resolutions and amendments, multiannual financial forecasts and reports. Generates tables for documents submitted to Poland’s regional official journals and regional chambers of audit (RIO).",
         cta: "Explore the Besti@ add-on",
         href: legislatorUrls.finance
@@ -123,7 +123,7 @@ export const en: Site = {
     { label: "Partnership", href: "#partner" },
     { label: "Contact", href: "#kontakt" },
   ],
-  seo: { ...site.seo, title: "ITORG — Software for public administration", description: "Software for local government, central government and other institutions: legislative processes, records management, system integration and artificial intelligence." },
+  seo: { ...site.seo, title: "ITORG: Software for public administration", description: "Software for local government, central government and other institutions: legislative processes, records management, system integration and artificial intelligence." },
   ui: {
     skip: "Skip to content", home: "Home", mainNav: "Main navigation", footerNav: "Footer navigation", navigation: "Navigation", menu: "Menu",
     languages: "Choose a language", language: "Language", facts: "Company at a glance", inBrief: "At a glance", founded: "Founded", owner: "Owner",

@@ -75,7 +75,7 @@ export const es: Site = {
         href: legislatorUrls.government
       },
       {
-        name: "Finanzas Públicas — complemento Besti@",
+        name: "Finanzas Públicas (complemento Besti@)",
         desc: "Importa datos XML de Besti@ para resoluciones presupuestarias y sus modificaciones, previsiones financieras plurianuales e informes. Genera tablas para documentos destinados a los diarios oficiales de los voivodatos y a las cámaras regionales de cuentas (RIO) de Polonia.",
         cta: "Descubre el complemento Besti@",
         href: legislatorUrls.finance
@@ -120,7 +120,7 @@ export const es: Site = {
     { label: "Colaboración", href: "#partner" },
     { label: "Contacto", href: "#kontakt" },
   ],
-  seo: { ...site.seo, title: "ITORG — Software para la administración pública", description: "Software para administraciones locales, la Administración del Estado y otras instituciones: elaboración normativa, gestión documental, integración de sistemas e inteligencia artificial." },
+  seo: { ...site.seo, title: "ITORG: Software para la administración pública", description: "Software para administraciones locales, la Administración del Estado y otras instituciones: elaboración normativa, gestión documental, integración de sistemas e inteligencia artificial." },
   ui: {
     skip: "Saltar al contenido", home: "Inicio", mainNav: "Navegación principal", footerNav: "Navegación del pie de página", navigation: "Navegación", menu: "Menú",
     languages: "Elegir idioma", language: "Idioma", facts: "La empresa en breve", inBrief: "En breve", founded: "Fundación", owner: "Propietario",

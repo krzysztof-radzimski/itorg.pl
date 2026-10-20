@@ -24,7 +24,7 @@ export default function LanguageSwitcher({ site, locale, page = "home" }: SitePr
           <GlobeIcon className="languages__globe" />
           <span className="sr-only">{site.ui.language}: </span>
           <span className="languages__code">{locale.toUpperCase()}</span>
-          <span className="sr-only" lang={locale}> — {localeNames[locale]}</span>
+          <span className="sr-only" lang={locale}>, {localeNames[locale]}</span>
           <ChevronDownIcon className="languages__chevron" />
         </>
       }>

@@ -75,7 +75,7 @@ export const de: Site = {
         href: legislatorUrls.government
       },
       {
-        name: "Öffentliche Finanzen — Besti@-Erweiterung",
+        name: "Öffentliche Finanzen (Besti@-Erweiterung)",
         desc: "Importiert XML-Daten aus Besti@ für Haushaltsbeschlüsse und deren Änderungen, mehrjährige Finanzprognosen und Berichte. Erstellt Tabellen für Dokumente zur Veröffentlichung in den Amtsblättern der Woiwodschaften und zur Vorlage bei den regionalen Rechnungskammern (RIO) in Polen.",
         cta: "Die Besti@-Erweiterung entdecken",
         href: legislatorUrls.finance
@@ -120,7 +120,7 @@ export const de: Site = {
     { label: "Zusammenarbeit", href: "#partner" },
     { label: "Kontakt", href: "#kontakt" },
   ],
-  seo: { ...site.seo, title: "ITORG — Software für die öffentliche Verwaltung", description: "Software für Kommunalverwaltung, staatliche Verwaltung und andere Institutionen: Rechtsetzung, Schriftgutverwaltung, Systemintegration und künstliche Intelligenz." },
+  seo: { ...site.seo, title: "ITORG: Software für die öffentliche Verwaltung", description: "Software für Kommunalverwaltung, staatliche Verwaltung und andere Institutionen: Rechtsetzung, Schriftgutverwaltung, Systemintegration und künstliche Intelligenz." },
   ui: {
     skip: "Zum Inhalt springen", home: "Startseite", mainNav: "Hauptnavigation", footerNav: "Fußzeilennavigation", navigation: "Navigation", menu: "Menü",
     languages: "Sprache auswählen", language: "Sprache", facts: "Unternehmen im Überblick", inBrief: "Im Überblick", founded: "Gegründet", owner: "Inhaber",

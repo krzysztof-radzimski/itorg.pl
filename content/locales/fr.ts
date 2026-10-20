@@ -75,7 +75,7 @@ export const fr: Site = {
         href: legislatorUrls.government
       },
       {
-        name: "Finances publiques — module Besti@",
+        name: "Finances publiques (module Besti@)",
         desc: "Importe les données XML de Besti@ pour les délibérations budgétaires et leurs modifications, les prévisions financières pluriannuelles et les rapports. Génère des tableaux pour les documents destinés aux journaux officiels des voïvodies et aux chambres régionales des comptes (RIO) en Pologne.",
         cta: "Découvrir le module Besti@",
         href: legislatorUrls.finance
@@ -120,7 +120,7 @@ export const fr: Site = {
     { label: "Partenariat", href: "#partner" },
     { label: "Contact", href: "#kontakt" },
   ],
-  seo: { ...site.seo, title: "ITORG — Logiciels pour les administrations publiques", description: "Logiciels pour les collectivités territoriales, les administrations de l’État et d’autres institutions : actes juridiques, gestion documentaire, intégration de systèmes et IA." },
+  seo: { ...site.seo, title: "ITORG: Logiciels pour les administrations publiques", description: "Logiciels pour les collectivités territoriales, les administrations de l’État et d’autres institutions : actes juridiques, gestion documentaire, intégration de systèmes et IA." },
   ui: {
     skip: "Aller au contenu", home: "Accueil", mainNav: "Navigation principale", footerNav: "Navigation du pied de page", navigation: "Navigation", menu: "Menu",
     languages: "Choisir une langue", language: "Langue", facts: "L’entreprise en bref", inBrief: "En bref", founded: "Création", owner: "Propriétaire",

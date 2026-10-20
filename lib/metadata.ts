@@ -15,9 +15,9 @@ export function pageMetadata(locale: Locale, page: PageId = "home"): Metadata {
   const site = getSite(locale);
   const path = (language: Locale) => pagePath(language, page);
   const product = page !== "home" && page !== "privacy" && page !== "products" ? getProduct(site, page) : undefined;
-  const title = page === "privacy" ? `${site.privacy.title} — ${site.brand.legalName}`
-    : page === "products" ? `${site.products.title} — ${site.brand.name}`
-    : product ? `${product.name} — ${site.brand.name}` : site.seo.title;
+  const title = page === "privacy" ? `${site.privacy.title}: ${site.brand.legalName}`
+    : page === "products" ? `${site.products.title}: ${site.brand.name}`
+    : product ? `${product.name}: ${site.brand.name}` : site.seo.title;
   const description = page === "privacy" ? site.privacy.description
     : page === "products" ? site.products.intro : product ? product.summary : site.seo.description;
   return {

@@ -21,7 +21,7 @@ automatycznego tłumaczenia.
 
 ## Wersje językowe
 
-Każda wersja ma przetłumaczoną stronę główną, katalog, pięć opisów produktów,
+Każda wersja ma przetłumaczoną stronę główną, katalog, sześć opisów produktów,
 politykę prywatności, panel cookie, nawigację, etykiety dostępności i metadane SEO.
 
 | Język | Strona główna | Polityka prywatności |
@@ -39,8 +39,16 @@ politykę prywatności, panel cookie, nawigację, etykiety dostępności i metad
 
 Katalog: `/produkty/` po polsku i `/{locale}/products/` w pozostałych językach.
 Pod nim znajdują się podstrony `eap-legislator/`, `orion-ai/`,
-`baza-aktow-wlasnych/`, `abc-anon/` i `abc-kancelaria/`. Łącznie eksport obejmuje
-80 stron. Wersja GOV i dodatek Besti@ są opisane na podstronie EAP Legislator.
+`baza-aktow-wlasnych/`, `abc-anon/` i `abc-kancelaria/`. NetUnstick ma osobny adres
+`/NetUnstick/` oraz `/{locale}/NetUnstick/`. Łącznie eksport obejmuje 90 stron
+językowych. Wersja GOV i dodatek Besti@ są opisane na podstronie EAP Legislator.
+
+Prezentacja NetUnstick dotyczy odczytowej wersji Mac App Store: krótki opis,
+jeden rzeczywisty zrzut okna, wymaganie macOS 14 i planowana cena 0,99 USD.
+Status „wkrótce” należy zmienić po publikacji aplikacji, dodając wtedy odnośnik
+do jej karty w sklepie. Materiały PL/EN ze źródłowego repozytorium aplikacji
+są dostępne pod `/NetUnstick/{pl,en}/{support,privacy}.html`, zgodnie z adresami
+przygotowanymi w jej metadanych App Store Connect.
 
 Menu: **Usługi, Produkty, O firmie, Współpraca, Kontakt**. Pozycja Produkty
 prowadzi do katalogu, a pozostałe do sekcji strony głównej w bieżącym języku.
@@ -56,6 +64,7 @@ odnośników `hreflang`; wszystkie wersje są w `sitemap.xml`.
 - [content/locales](content/locales): pełne słowniki pozostałych języków, sprawdzane
   przez TypeScript względem polskiej struktury.
 - [content/legal](content/legal): teksty polityk prywatności i panelu cookie.
+- [content/netunstick.ts](content/netunstick.ts): krótki opis i status NetUnstick w dziesięciu językach.
 - [lib/locales.ts](lib/locales.ts): lista języków, ich nazwy i adresy.
 - [lib/metadata.ts](lib/metadata.ts): metadane i alternatywne wersje stron.
 - [lib/products.ts](lib/products.ts): powiązanie opisów produktów z ich adresami.
@@ -111,7 +120,7 @@ npm run typecheck
 npm test
 ```
 
-Testy sprawdzają wszystkie 80 wyeksportowanych stron, języki, metadane,
+Testy sprawdzają wszystkie 90 wyeksportowanych stron językowych, metadane,
 przełączniki zachowujące produkt, kolejność menu, odnośniki, kotwice,
 strukturę dostępności i kontrast kolorów.
 `npm test` wymaga aktualnego katalogu `out/` po kompilacji.

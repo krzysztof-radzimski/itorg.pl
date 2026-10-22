@@ -10,8 +10,9 @@ const privacy = (language) => language === "pl" ? "/polityka-prywatnosci/" : `/$
 const products = (language) => language === "pl" ? "/produkty/" : `/${language}/products/`;
 const productIds = ["eap-legislator", "orion-ai", "baza-aktow-wlasnych", "abc-anon", "abc-kancelaria"];
 const pageTypes = [["home", home], ["privacy", privacy], ["products", products],
+  ["netunstick", (language) => language === "pl" ? "/NetUnstick/" : `/${language}/NetUnstick/`],
   ...productIds.map((id) => [id, (language) => `${products(language)}${id}/`])];
-const file = (path) => resolve(root, `.${path}`, "index.html");
+const file = (path) => path.endsWith(".html") ? resolve(root, `.${path}`) : resolve(root, `.${path}`, "index.html");
 const clean = (html) => html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
 const tags = (html, name) => [...html.matchAll(new RegExp(`<${name}\\b[^>]*>`, "gi"))].map((match) => match[0]);
 const attr = (tag, name) => tag.match(new RegExp(`(?:^|\\s)${name}="([^"]*)"`, "i"))?.[1];
@@ -80,6 +81,13 @@ for (const language of languages) {
         assert.ok(!html.includes("{years}"), "Lata muszą być wyliczone podczas eksportu");
       } else if (kind === "products") {
         for (const id of productIds) assert.ok(anchors.some((tag) => attr(tag, "href") === `${products(language)}${id}/`), `Brak linku do produktu: ${id}`);
+        assert.ok(anchors.some((tag) => attr(tag, "href") === (language === "pl" ? "/NetUnstick/" : `/${language}/NetUnstick/`)), "Katalog musi prowadzić do NetUnstick");
+      } else if (kind === "netunstick") {
+        assert.equal(tags(html, "img").filter((tag) => attr(tag, "src") === "/NetUnstick/screenshot.png").length, 1, "Dokładnie jeden zrzut aplikacji");
+        assert.match(html, /0[,.]99/);
+        assert.match(html, /USD/);
+        assert.match(html, /macOS 14/);
+        assert.ok(!anchors.some((tag) => /apps\.apple\.com/.test(attr(tag, "href"))), "Przed premierą nie reklamujemy nieaktywnego zakupu");
       } else if (kind === "eap-legislator") {
         const product = html.match(/<section\b[^>]*id="legislator"[\s\S]*?<\/section>/i)?.[0];
         assert.ok(product, "Opis EAP Legislator musi być w statycznym HTML");
@@ -104,7 +112,7 @@ for (const language of languages) {
   }
 }
 
-test("Mapa witryny zawiera wszystkie 80 stron i poprawny robots.txt", () => {
+test("Mapa witryny zawiera wszystkie strony językowe i poprawny robots.txt", () => {
   const sitemap = readFileSync(resolve(root, "sitemap.xml"), "utf8");
   assert.equal((sitemap.match(/<loc>/g) || []).length, languages.length * pageTypes.length);
   for (const language of languages) {

@@ -1,5 +1,6 @@
 import { getSite } from "@/content/translations";
-import { productPath, type Locale } from "@/lib/locales";
+import { netunstick } from "@/content/netunstick";
+import { pagePath, productPath, type Locale } from "@/lib/locales";
 import { getProducts } from "@/lib/products";
 import { fixOrphans } from "@/lib/typography";
 import ProductLayout from "./ProductLayout";
@@ -43,6 +44,17 @@ export default function ProductsPage({ locale }: { locale: Locale }) {
               </ul>
             </section>
           ))}
+          <section className="products-group" aria-labelledby="mac-apps-title">
+            <h2 className="products-group__title" id="mac-apps-title">{netunstick[locale].category}</h2>
+            <a className="netunstick-card" href={pagePath(locale, "netunstick")}>
+              <img src="/NetUnstick/icon.png" alt="" width={64} height={64} />
+              <div>
+                <h3 className="product-card__name">NetUnstick</h3>
+                <p className="product-card__desc">{netunstick[locale].tagline}</p>
+              </div>
+              <span className="netunstick-card__action">{site.products.details} <ArrowRightIcon /></span>
+            </a>
+          </section>
         </div>
       </section>
     </ProductLayout>

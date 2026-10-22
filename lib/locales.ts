@@ -3,7 +3,7 @@ export type Locale = (typeof locales)[number];
 
 export const productIds = ["eap-legislator", "orion-ai", "baza-aktow-wlasnych", "abc-anon", "abc-kancelaria"] as const;
 export type ProductId = (typeof productIds)[number];
-export const pages = ["home", "privacy", "products", ...productIds] as const;
+export const pages = ["home", "privacy", "products", "netunstick", ...productIds] as const;
 export type PageId = (typeof pages)[number];
 
 export const localeNames: Record<Locale, string> = {
@@ -46,6 +46,7 @@ export function pagePath(locale: Locale, page: PageId = "home"): string {
   if (page === "home") return homePath(locale);
   if (page === "privacy") return privacyPath(locale);
   if (page === "products") return productsPath(locale);
+  if (page === "netunstick") return locale === "pl" ? "/NetUnstick/" : `/${locale}/NetUnstick/`;
   return productPath(locale, page);
 }
 

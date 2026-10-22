@@ -84,6 +84,10 @@ for (const language of languages) {
         assert.ok(anchors.some((tag) => attr(tag, "href") === (language === "pl" ? "/NetUnstick/" : `/${language}/NetUnstick/`)), "Katalog musi prowadzić do NetUnstick");
       } else if (kind === "netunstick") {
         assert.equal(tags(html, "img").filter((tag) => attr(tag, "src") === "/NetUnstick/screenshot.png").length, 1, "Dokładnie jeden zrzut aplikacji");
+        const documentLanguage = ["pl", "en", "es"].includes(language) ? language : "en";
+        for (const document of ["support", "privacy"]) {
+          assert.ok(anchors.some((tag) => attr(tag, "href") === `/NetUnstick/${documentLanguage}/${document}.html` && attr(tag, "hreflang") === documentLanguage), `Niepoprawny język odnośnika do ${document}`);
+        }
         assert.match(html, /0[,.]99/);
         assert.match(html, /USD/);
         assert.match(html, /macOS 14/);
@@ -108,6 +112,31 @@ for (const language of languages) {
       if (language !== "pl") {
         for (const polish of ["Przejdź do treści", "Ustawienia plików cookie", "Szanujemy Twoją prywatność", "Wszystkie prawa zastrzeżone", "Główny produkt", "Uporządkowana treść w XML"]) assert.ok(!html.includes(polish), `Nieprzetłumaczony tekst: ${polish}`);
       }
+    });
+  }
+}
+
+for (const language of ["pl", "en", "es"]) {
+  for (const document of ["support", "privacy"]) {
+    test(`${language}: NetUnstick ${document}, komplet materiałów App Store i poprawne odnośniki`, () => {
+      const path = `/NetUnstick/${language}/${document}.html`;
+      const html = readFileSync(file(path), "utf8");
+      assert.equal(attr(tags(html, "html")[0], "lang"), language);
+      assert.equal(tags(html, "h1").length, 1);
+      assert.match(html, /<title>NetUnstick: [^<]+<\/title>/);
+      assert.equal(tags(html, "script").length, 0, "Strony wsparcia i prywatności pozostają statyczne");
+      assert.ok(!html.includes("\u2014"), "Materiały nie przywracają długich myślników");
+      const anchors = tags(html, "a");
+      const landing = language === "pl" ? "/NetUnstick/" : `/${language}/NetUnstick/`;
+      assert.ok(anchors.some((tag) => attr(tag, "href") === landing), "Powrót do prezentacji w tym samym języku");
+      assert.ok(anchors.some((tag) => attr(tag, "href") === "mailto:kr@itorg.pl"), "Kontakt z wydawcą jest dostępny");
+      for (const anchor of anchors) {
+        const href = attr(anchor, "href");
+        assert.ok(href, "Link musi mieć cel");
+        const destination = new URL(href, `https://itorg.pl${path}`);
+        if (destination.origin === "https://itorg.pl") assert.ok(existsSync(file(destination.pathname)), `Nieistniejący odnośnik z ${path}: ${href}`);
+      }
+      for (const sibling of ["support", "privacy"]) assert.ok(anchors.some((tag) => attr(tag, "href") === `${sibling}.html`));
     });
   }
 }

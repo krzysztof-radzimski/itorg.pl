@@ -46,9 +46,13 @@ językowych. Wersja GOV i dodatek Besti@ są opisane na podstronie EAP Legislato
 Prezentacja NetUnstick dotyczy odczytowej wersji Mac App Store: krótki opis,
 jeden rzeczywisty zrzut okna, wymaganie macOS 14 i planowana cena 0,99 USD.
 Status „wkrótce” należy zmienić po publikacji aplikacji, dodając wtedy odnośnik
-do jej karty w sklepie. Materiały PL/EN ze źródłowego repozytorium aplikacji
-są dostępne pod `/NetUnstick/{pl,en}/{support,privacy}.html`, zgodnie z adresami
-przygotowanymi w jej metadanych App Store Connect.
+do jej karty w sklepie. Materiały PL/EN/ES z pakietu `Artifacts/Distribution/NetUnstick-Website.zip`
+projektu NetUnstick są dostępne pod `/NetUnstick/{pl,en,es}/{support,privacy}.html`,
+zgodnie z adresami przygotowanymi w jej metadanych App Store Connect. Treści
+strony `index.html` z pakietu uzupełniają istniejącą prezentację: zakres wersji
+sklepowej, jednorazowy zakup bez abonamentu i zakupów w aplikacji, przyszłe
+aktualizacje bez dopłat oraz zasady korzystania na urządzeniach. Osobny plik
+`public/NetUnstick/index.html` nie jest potrzebny, ponieważ ten adres generuje Next.js.
 
 Menu: **Usługi, Produkty, O firmie, Współpraca, Kontakt**. Pozycja Produkty
 prowadzi do katalogu, a pozostałe do sekcji strony głównej w bieżącym języku.

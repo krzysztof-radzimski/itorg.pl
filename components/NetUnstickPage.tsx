@@ -8,7 +8,8 @@ import Footer from "./Footer";
 export default function NetUnstickPage({ locale }: { locale: Locale }) {
   const site = getSite(locale);
   const copy = netunstick[locale];
-  const documents = `/NetUnstick/${locale === "pl" ? "pl" : "en"}`;
+  const documentLocale = locale === "pl" || locale === "es" ? locale : "en";
+  const documents = `/NetUnstick/${documentLocale}`;
   return (
     <>
       <a href="#main" className="skip-link">{site.ui.skip}</a>
@@ -36,15 +37,17 @@ export default function NetUnstickPage({ locale }: { locale: Locale }) {
               <ul className="netunstick__features">
                 {copy.features.map((feature) => <li key={feature}>{fixOrphans(feature, locale)}</li>)}
               </ul>
+              <p className="netunstick__description">{fixOrphans(copy.scope, locale)}</p>
               <div className="netunstick__purchase">
                 <p className="netunstick__availability">{copy.availability}</p>
                 <p className="netunstick__price">{new Intl.NumberFormat(locale, { minimumFractionDigits: 2 }).format(0.99)} <span>USD</span></p>
                 <p>{copy.purchase}</p>
+                <p>{copy.devices}</p>
                 <p>{copy.requirement}</p>
               </div>
               <div className="netunstick__links">
-                <a href={`${documents}/support.html`} hrefLang={locale === "pl" ? "pl" : "en"}>{copy.support}</a>
-                <a href={`${documents}/privacy.html`} hrefLang={locale === "pl" ? "pl" : "en"}>{copy.privacy}</a>
+                <a href={`${documents}/support.html`} hrefLang={documentLocale}>{copy.support}</a>
+                <a href={`${documents}/privacy.html`} hrefLang={documentLocale}>{copy.privacy}</a>
               </div>
             </div>
             <figure className="netunstick__screen">

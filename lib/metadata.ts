@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { getSite } from "@/content/translations";
-import { netunstick } from "@/content/netunstick";
+import { getNetUnstickScreenshot, netunstick } from "@/content/netunstick";
 import { pagePath, locales, openGraphLocales, isProductId, type Locale, type PageId } from "./locales";
 import { getProduct } from "./products";
 
@@ -24,7 +24,7 @@ export function pageMetadata(locale: Locale, page: PageId = "home"): Metadata {
     : page === "netunstick" ? netunstick[locale].description
     : page === "products" ? site.products.intro : product ? product.summary : site.seo.description;
   const image = page === "netunstick"
-    ? { url: "/NetUnstick/screenshot.png", width: 1800, height: 1208, alt: netunstick[locale].screenshot }
+    ? { url: getNetUnstickScreenshot(locale).src, width: 1800, height: 1208, alt: netunstick[locale].screenshot }
     : { url: "/logo.svg", width: 512, height: 512, alt: site.brand.name };
   return {
     metadataBase: new URL(site.seo.url), title, description,

@@ -83,7 +83,19 @@ for (const language of languages) {
         for (const id of productIds) assert.ok(anchors.some((tag) => attr(tag, "href") === `${products(language)}${id}/`), `Brak linku do produktu: ${id}`);
         assert.ok(anchors.some((tag) => attr(tag, "href") === (language === "pl" ? "/NetUnstick/" : `/${language}/NetUnstick/`)), "Katalog musi prowadzić do NetUnstick");
       } else if (kind === "netunstick") {
-        assert.equal(tags(html, "img").filter((tag) => attr(tag, "src") === "/NetUnstick/screenshot.png").length, 1, "Dokładnie jeden zrzut aplikacji");
+        const screenshotLanguage = ["pl", "en", "de", "es", "fr", "cs", "sk"].includes(language) ? language : "en";
+        const screenshotPath = `/NetUnstick/screenshots/${screenshotLanguage}.png`;
+        const screenshots = tags(html, "img").filter((tag) => attr(tag, "src")?.startsWith("/NetUnstick/screenshots/"));
+        assert.equal(screenshots.length, 1, "Dokładnie jeden zrzut aplikacji");
+        assert.equal(attr(screenshots[0], "src"), screenshotPath, "Język obrazu odpowiada dostępnej wersji aplikacji");
+        for (const key of ["og:image", "twitter:image"]) {
+          assert.ok(tags(html, "meta").some((tag) => (attr(tag, "property") === key || attr(tag, "name") === key) && attr(tag, "content") === `https://itorg.pl${screenshotPath}`), `Niepoprawny język obrazu w ${key}`);
+        }
+        assert.equal(tags(html, "figcaption").length, screenshotLanguage === language ? 0 : 1, "Zastępczy zrzut angielski wymaga widocznego podpisu");
+        const png = readFileSync(resolve(root, `.${screenshotPath}`));
+        assert.equal(png.subarray(0, 8).toString("hex"), "89504e470d0a1a0a", "Zrzut musi być poprawnym plikiem PNG");
+        assert.equal(png.readUInt32BE(16), Number(attr(screenshots[0], "width")), "Szerokość zrzutu odpowiada plikowi");
+        assert.equal(png.readUInt32BE(20), Number(attr(screenshots[0], "height")), "Wysokość zrzutu odpowiada plikowi");
         const documentLanguage = ["pl", "en", "es"].includes(language) ? language : "en";
         for (const document of ["support", "privacy"]) {
           assert.ok(anchors.some((tag) => attr(tag, "href") === `/NetUnstick/${documentLanguage}/${document}.html` && attr(tag, "hreflang") === documentLanguage), `Niepoprawny język odnośnika do ${document}`);

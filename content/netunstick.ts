@@ -11,8 +11,16 @@ interface NetUnstickCopy {
   devices: string;
   requirement: string;
   screenshot: string;
+  screenshotNote?: string;
   support: string;
   privacy: string;
+}
+
+const screenshotLanguages = ["pl", "en", "de", "es", "fr", "cs", "sk"] as const;
+
+export function getNetUnstickScreenshot(locale: Locale) {
+  const language = screenshotLanguages.find((language) => language === locale) ?? "en";
+  return { src: `/NetUnstick/screenshots/${language}.png`, language, width: 1800, height: 1208 };
 }
 
 // Zakres wydania Mac App Store, zgodny z materiałami źródłowymi NetUnstick.
@@ -92,7 +100,8 @@ export const netunstick: Record<Locale, NetUnstickCopy> = {
     purchase: "Разовая покупка, без подписки и встроенных покупок. Будущие обновления этого приложения включены без доплаты.",
     devices: "NetUnstick не ограничивает количество активаций или устройств. Использование и повторные загрузки регулируются условиями App Store Apple.",
     requirement: "Требуется macOS 14 или новее.",
-    screenshot: "NetUnstick: главное окно версии Mac App Store с результатами диагностики сети.",
+    screenshot: "NetUnstick: главное окно версии Mac App Store на английском языке с результатами диагностики сети.",
+    screenshotNote: "Интерфейс приложения на английском языке.",
     support: "Поддержка (на английском)", privacy: "Конфиденциальность приложения (на английском)",
   },
   cs: {
@@ -131,7 +140,8 @@ export const netunstick: Record<Locale, NetUnstickCopy> = {
     purchase: "Аднаразовая купля, без падпіскі і пакупак у праграме. Будучыя абнаўленні гэтай праграмы ўключаны без даплат.",
     devices: "NetUnstick не абмяжоўвае колькасць актывацый або прылад. Выкарыстанне і паўторныя спампоўкі рэгулююцца ўмовамі App Store Apple.",
     requirement: "Патрабуецца macOS 14 або навейшая версія.",
-    screenshot: "NetUnstick: галоўнае акно версіі Mac App Store з вынікамі дыягностыкі сеткі.",
+    screenshot: "NetUnstick: галоўнае акно версіі Mac App Store на англійскай мове з вынікамі дыягностыкі сеткі.",
+    screenshotNote: "Інтэрфейс праграмы на англійскай мове.",
     support: "Падтрымка (па-англійску)", privacy: "Прыватнасць праграмы (па-англійску)",
   },
   uk: {
@@ -144,7 +154,8 @@ export const netunstick: Record<Locale, NetUnstickCopy> = {
     purchase: "Одноразова купівля, без передплати та покупок у програмі. Майбутні оновлення цієї програми включено без доплати.",
     devices: "NetUnstick не обмежує кількість активацій або пристроїв. Використання й повторні завантаження регулюються умовами App Store Apple.",
     requirement: "Потрібна macOS 14 або новіша версія.",
-    screenshot: "NetUnstick: головне вікно версії Mac App Store з результатами діагностики мережі.",
+    screenshot: "NetUnstick: головне вікно версії Mac App Store англійською мовою з результатами діагностики мережі.",
+    screenshotNote: "Інтерфейс програми англійською мовою.",
     support: "Підтримка (англійською)", privacy: "Приватність програми (англійською)",
   },
 };

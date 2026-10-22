@@ -1,4 +1,4 @@
-import { netunstick } from "@/content/netunstick";
+import { getNetUnstickScreenshot, netunstick } from "@/content/netunstick";
 import { getSite } from "@/content/translations";
 import { homePath, productsPath, type Locale } from "@/lib/locales";
 import { fixOrphans } from "@/lib/typography";
@@ -8,6 +8,7 @@ import Footer from "./Footer";
 export default function NetUnstickPage({ locale }: { locale: Locale }) {
   const site = getSite(locale);
   const copy = netunstick[locale];
+  const screenshot = getNetUnstickScreenshot(locale);
   const documentLocale = locale === "pl" || locale === "es" ? locale : "en";
   const documents = `/NetUnstick/${documentLocale}`;
   return (
@@ -51,7 +52,8 @@ export default function NetUnstickPage({ locale }: { locale: Locale }) {
               </div>
             </div>
             <figure className="netunstick__screen">
-              <img src="/NetUnstick/screenshot.png" alt={copy.screenshot} width={1800} height={1208} fetchPriority="high" />
+              <img src={screenshot.src} alt={copy.screenshot} width={screenshot.width} height={screenshot.height} fetchPriority="high" />
+              {copy.screenshotNote && <figcaption>{copy.screenshotNote}</figcaption>}
             </figure>
           </div>
         </section>

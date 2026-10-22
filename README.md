@@ -45,6 +45,10 @@ językowych. Wersja GOV i dodatek Besti@ są opisane na podstronie EAP Legislato
 
 Prezentacja NetUnstick dotyczy odczytowej wersji Mac App Store: krótki opis,
 jeden rzeczywisty zrzut okna, wymaganie macOS 14 i planowana cena 0,99 USD.
+Zrzuty w `public/NetUnstick/screenshots/` pochodzą z uruchomionego wydania
+Mac App Store w językach PL, EN, DE, ES, FR, CS i SK. Ten sam obraz trafia do
+prezentacji i metadanych udostępniania linku. Wersje RU, BE i UK pokazują zrzut
+angielski z podpisem, ponieważ aplikacja nie obsługuje tych trzech języków.
 Status „wkrótce” należy zmienić po publikacji aplikacji, dodając wtedy odnośnik
 do jej karty w sklepie. Materiały PL/EN/ES z pakietu `Artifacts/Distribution/NetUnstick-Website.zip`
 projektu NetUnstick są dostępne pod `/NetUnstick/{pl,en,es}/{support,privacy}.html`,

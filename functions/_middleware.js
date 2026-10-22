@@ -1,9 +1,12 @@
 import { preferredLanguage, languageDestination, languageResponseHeaders, defaultPage } from "../lib/language-preference.mjs";
+import { isNetunstickStorePath } from "../lib/netunstick-store.mjs";
 
 // Automatyka obejmuje wejścia bez prefiksu języka, w tym bezpośrednie linki do produktów.
 // Jawne prefiksy językowe i materiały App Store pozostają bez przekierowań.
 export async function onRequest({ request, next }) {
-  const page = defaultPage(new URL(request.url).pathname);
+  const pathname = new URL(request.url).pathname;
+  if (isNetunstickStorePath(pathname)) return next();
+  const page = defaultPage(pathname);
   if (!page) return next();
   if (!["GET", "HEAD"].includes(request.method)) return new Response(null, { status: 405, headers: { Allow: "GET, HEAD" } });
   const headers = languageResponseHeaders();

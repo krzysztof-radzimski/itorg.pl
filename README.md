@@ -85,8 +85,8 @@ Atrybut `html[lang]` jest zapisany w HTML podczas kompilacji. Każda strona ma
 własny adres kanoniczny i komplet odnośników `hreflang`; wszystkie wersje są
 w `sitemap.xml`.
 
-Przy wejściu na adres bez prefiksu językowego (`/`, polskie adresy produktów,
-`/NetUnstick/` i polityka prywatności) funkcja Cloudflare wybiera język w kolejności:
+Przy wejściu na adres bez prefiksu językowego (`/`, polskie adresy produktów
+ABC PRO i polityka prywatności) funkcja Cloudflare wybiera język w kolejności:
 
 1. Ręczny wybór zapisany w cookie `itorg-language`.
 2. Kraj z zaufanego `request.cf.country`. Dla państw wielojęzycznych preferowany
@@ -95,6 +95,8 @@ Przy wejściu na adres bez prefiksu językowego (`/`, polskie adresy produktów,
 4. Angielski jako język zastępczy.
 
 Jawne adresy z prefiksem języka oraz materiały App Store są zawsze respektowane.
+Dotyczy to również `/NetUnstick/`, którego polski język jest częścią adresu
+prezentacji zapisanego w metadanych App Store.
 Roboty wyszukiwarek otrzymują stabilną polską wersję adresów bez prefiksu.
 Przekierowania 302 zachowują parametry wejścia, a odpowiedzi zależne od odwiedzającego
 mają `private, no-store`. Automatyczny dobór nie zapisuje preferencji. Nie ma GPS,
@@ -105,6 +107,27 @@ Cel jest wybierany wyłącznie ze znanych stron i języków. Cookie obowiązuje 
 ma `SameSite=Lax`, `HttpOnly` i na HTTPS także `Secure`. Nowy wybór odnawia termin.
 Po wyłączeniu cookies można otwierać bezpośrednie adresy językowe; polski wybór
 na adresie bez prefiksu wymaga zachowania cookie, aby uniknąć ponownego automatycznego doboru.
+
+### Stałe adresy NetUnstick w App Store
+
+Poniższe dziewięć adresów jest używane w 19 lokalizacjach metadanych aplikacji.
+Ścieżki i języki są zachowywane niezależnie od kraju odwiedzającego i zapisanego
+wyboru języka witryny. Ręczny przełącznik na tych stronach pozostaje dostępny.
+
+| Język | Prezentacja | Wsparcie | Prywatność aplikacji |
+| --- | --- | --- | --- |
+| PL | `/NetUnstick/` | `/NetUnstick/pl/support` | `/NetUnstick/pl/privacy` |
+| EN | `/en/NetUnstick/` | `/NetUnstick/en/support` | `/NetUnstick/en/privacy` |
+| ES | `/es/NetUnstick/` | `/NetUnstick/es/support` | `/NetUnstick/es/privacy` |
+
+Pełne adresy HTTPS przechowuje [lib/netunstick-store.mjs](lib/netunstick-store.mjs).
+Linki wsparcia i prywatności w prezentacji prowadzą bezpośrednio do tych samych
+adresów bez `.html`. Dotychczasowe pliki `.html` pozostają dostępne; Cloudflare
+może przekierować je na adres bez rozszerzenia. Wykluczenia w `_routes.json`
+oraz osobny warunek middleware chronią strony sklepu przed automatyczną zmianą
+języka. Testy [tests/netunstick-store.test.mjs](tests/netunstick-store.test.mjs)
+utrwalają dziewięć adresów, zawartość eksportu oraz zachowanie GET i HEAD z innym
+krajem, preferencjami przeglądarki i cookie.
 
 ## Edycja treści
 

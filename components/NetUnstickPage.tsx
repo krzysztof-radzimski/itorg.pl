@@ -2,6 +2,7 @@ import { getNetUnstickScreenshot, netunstick } from "@/content/netunstick";
 import { getSite } from "@/content/translations";
 import { homePath, productsPath, type Locale } from "@/lib/locales";
 import { fixOrphans } from "@/lib/typography";
+import { netunstickStoreUrls } from "@/lib/netunstick-store.mjs";
 import Nav from "./Nav";
 import Footer from "./Footer";
 
@@ -10,7 +11,7 @@ export default function NetUnstickPage({ locale }: { locale: Locale }) {
   const copy = netunstick[locale];
   const screenshot = getNetUnstickScreenshot(locale);
   const documentLocale = locale === "pl" || locale === "es" ? locale : "en";
-  const documents = `/NetUnstick/${documentLocale}`;
+  const documents = netunstickStoreUrls[documentLocale];
   return (
     <>
       <a href="#main" className="skip-link">{site.ui.skip}</a>
@@ -47,8 +48,8 @@ export default function NetUnstickPage({ locale }: { locale: Locale }) {
                 <p>{copy.requirement}</p>
               </div>
               <div className="netunstick__links">
-                <a href={`${documents}/support.html`} hrefLang={documentLocale}>{copy.support}</a>
-                <a href={`${documents}/privacy.html`} hrefLang={documentLocale}>{copy.privacy}</a>
+                <a href={new URL(documents.support).pathname} hrefLang={documentLocale}>{copy.support}</a>
+                <a href={new URL(documents.privacy).pathname} hrefLang={documentLocale}>{copy.privacy}</a>
               </div>
             </div>
             <figure className="netunstick__screen">

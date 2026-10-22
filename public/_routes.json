@@ -1,12 +1,16 @@
 {
   "version": 1,
   "include": [
-    "/", "/language", "/NetUnstick", "/NetUnstick/",
+    "/", "/language",
     "/polityka-prywatnosci", "/polityka-prywatnosci/", "/produkty", "/produkty/",
     "/produkty/eap-legislator", "/produkty/eap-legislator/",
     "/produkty/orion-ai", "/produkty/orion-ai/",
     "/produkty/baza-aktow-wlasnych", "/produkty/baza-aktow-wlasnych/",
     "/produkty/abc-anon", "/produkty/abc-anon/", "/produkty/abc-kancelaria", "/produkty/abc-kancelaria/"
   ],
-  "exclude": []
+  "exclude": [
+    "/NetUnstick", "/NetUnstick/*",
+    "/en/NetUnstick", "/en/NetUnstick/*",
+    "/es/NetUnstick", "/es/NetUnstick/*"
+  ]
 }

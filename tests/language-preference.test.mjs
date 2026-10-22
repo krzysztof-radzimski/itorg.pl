@@ -44,7 +44,7 @@ function context(path, { country, cookie, acceptLanguage, userAgent, method = "G
 }
 
 test("Automatyczne przekierowanie zachowuje podstronę i parametry, nie zapisuje automatycznego wyboru", async () => {
-  for (const [source, destination] of [["/?ref=entry", "/it/?ref=entry"], ["/NetUnstick/", "/it/NetUnstick/"], ["/produkty/abc-anon/", "/it/products/abc-anon/"], ["/polityka-prywatnosci/", "/it/privacy/"]]) {
+  for (const [source, destination] of [["/?ref=entry", "/it/?ref=entry"], ["/produkty/abc-anon/", "/it/products/abc-anon/"], ["/polityka-prywatnosci/", "/it/privacy/"]]) {
     const ctx = context(source, { country: "IT" });
     const response = await autoLanguage(ctx);
     assert.equal(response.status, 302);
@@ -111,7 +111,7 @@ test("Automatyka obsługuje HEAD i odrzuca metody zmieniające dane", async () =
 test("Funkcje Cloudflare obejmują wyłącznie wejścia bez prefiksu i wybór języka", () => {
   const config = JSON.parse(readFileSync("public/_routes.json", "utf8"));
   assert.ok(config.include.includes("/language"));
-  for (const page of ["home", "privacy", "products", "netunstick", "eap-legislator", "orion-ai", "baza-aktow-wlasnych", "abc-anon", "abc-kancelaria"]) {
+  for (const page of ["home", "privacy", "products", "eap-legislator", "orion-ai", "baza-aktow-wlasnych", "abc-anon", "abc-kancelaria"]) {
     const path = languageDestination("pl", page);
     assert.ok(config.include.includes(path));
     if (path !== "/") assert.ok(config.include.includes(path.slice(0, -1)));

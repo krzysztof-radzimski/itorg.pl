@@ -14,7 +14,11 @@ const productIds = ["eap-legislator", "orion-ai", "baza-aktow-wlasnych", "abc-an
 const pageTypes = [["home", home], ["privacy", privacy], ["products", products],
   ["netunstick", (language) => language === "pl" ? "/NetUnstick/" : `/${language}/NetUnstick/`],
   ...productIds.map((id) => [id, (language) => `${products(language)}${id}/`])];
-const file = (path) => path.endsWith(".html") ? resolve(root, `.${path}`) : resolve(root, `.${path}`, "index.html");
+const file = (path) => {
+  if (path.endsWith(".html")) return resolve(root, `.${path}`);
+  const document = resolve(root, `.${path.replace(/\/$/, "")}.html`);
+  return existsSync(document) ? document : resolve(root, `.${path}`, "index.html");
+};
 const clean = (html) => html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
 const tags = (html, name) => [...html.matchAll(new RegExp(`<${name}\\b[^>]*>`, "gi"))].map((match) => match[0]);
 const attr = (tag, name) => tag.match(new RegExp(`(?:^|\\s)${name}="([^"]*)"`, "i"))?.[1]?.replaceAll("&amp;", "&");
@@ -105,7 +109,7 @@ for (const language of languages) {
         assert.equal(png.readUInt32BE(20), Number(attr(screenshots[0], "height")), "Wysokość zrzutu odpowiada plikowi");
         const documentLanguage = ["pl", "en", "es"].includes(language) ? language : "en";
         for (const document of ["support", "privacy"]) {
-          assert.ok(anchors.some((tag) => attr(tag, "href") === `/NetUnstick/${documentLanguage}/${document}.html` && attr(tag, "hreflang") === documentLanguage), `Niepoprawny język odnośnika do ${document}`);
+          assert.ok(anchors.some((tag) => attr(tag, "href") === `/NetUnstick/${documentLanguage}/${document}` && attr(tag, "hreflang") === documentLanguage), `Niepoprawny język odnośnika do ${document}`);
         }
         assert.match(html, /0[,.]99/);
         assert.match(html, /USD/);

@@ -3,7 +3,7 @@
 Witryna **ITORG Krzysztof Radzimski**: oprogramowanie dla administracji publicznej,
 automatyzacja, obieg dokumentów, integracje i tworzenie narzędzi AI. Strona
 główna przedstawia firmę, usługi i współpracę. Katalog oraz opisy produktów
-znajdują się na osobnych podstronach we wszystkich dziesięciu językach.
+znajdują się na osobnych podstronach we wszystkich 27 językach.
 
 Podstrona **EAP Legislator** przedstawia edytor, wersję dla administracji rządowej
 oraz dodatek „Finanse Publiczne” do importu danych z Besti@, z odnośnikami do
@@ -16,7 +16,8 @@ platformy [Orion AI](https://orion.abcpro.pl/). Katalog zawiera również opisy
 systemów partnera: Baza Aktów Własnych, ABC ANON i ABC Kancelaria.
 
 Next.js 15 (App Router), React 19, TypeScript i własny CSS. Eksport statyczny do
-`out/`, hosting na Cloudflare Pages. Bez backendu, zewnętrznych fontów i usług
+`out/`, hosting na Cloudflare Pages. Dwie niewielkie funkcje Pages dobierają język
+wejścia i zapisują wybór ręczny. Bez serwera Next.js, zewnętrznych fontów i usług
 automatycznego tłumaczenia.
 
 ## Wersje językowe
@@ -31,6 +32,23 @@ politykę prywatności, panel cookie, nawigację, etykiety dostępności i metad
 | Niemiecki | `/de/` | `/de/privacy/` |
 | Hiszpański | `/es/` | `/es/privacy/` |
 | Francuski | `/fr/` | `/fr/privacy/` |
+| Bułgarski | `/bg/` | `/bg/privacy/` |
+| Duński | `/da/` | `/da/privacy/` |
+| Grecki | `/el/` | `/el/privacy/` |
+| Estoński | `/et/` | `/et/privacy/` |
+| Fiński | `/fi/` | `/fi/privacy/` |
+| Irlandzki | `/ga/` | `/ga/privacy/` |
+| Chorwacki | `/hr/` | `/hr/privacy/` |
+| Węgierski | `/hu/` | `/hu/privacy/` |
+| Włoski | `/it/` | `/it/privacy/` |
+| Litewski | `/lt/` | `/lt/privacy/` |
+| Łotewski | `/lv/` | `/lv/privacy/` |
+| Maltański | `/mt/` | `/mt/privacy/` |
+| Niderlandzki | `/nl/` | `/nl/privacy/` |
+| Portugalski | `/pt/` | `/pt/privacy/` |
+| Rumuński | `/ro/` | `/ro/privacy/` |
+| Słoweński | `/sl/` | `/sl/privacy/` |
+| Szwedzki | `/sv/` | `/sv/privacy/` |
 | Rosyjski | `/ru/` | `/ru/privacy/` |
 | Czeski | `/cs/` | `/cs/privacy/` |
 | Słowacki | `/sk/` | `/sk/privacy/` |
@@ -40,13 +58,13 @@ politykę prywatności, panel cookie, nawigację, etykiety dostępności i metad
 Katalog: `/produkty/` po polsku i `/{locale}/products/` w pozostałych językach.
 Pod nim znajdują się podstrony `eap-legislator/`, `orion-ai/`,
 `baza-aktow-wlasnych/`, `abc-anon/` i `abc-kancelaria/`. NetUnstick ma osobny adres
-`/NetUnstick/` oraz `/{locale}/NetUnstick/`. Łącznie eksport obejmuje 90 stron
+`/NetUnstick/` oraz `/{locale}/NetUnstick/`. Łącznie eksport obejmuje 243 strony
 językowych. Wersja GOV i dodatek Besti@ są opisane na podstronie EAP Legislator.
 
 Prezentacja NetUnstick dotyczy odczytowej wersji Mac App Store: krótki opis,
 jeden rzeczywisty zrzut okna, wymaganie macOS 14 i planowana cena 0,99 USD.
 Zrzuty w `public/NetUnstick/screenshots/` pochodzą z uruchomionego wydania
-Mac App Store w językach PL, EN, DE, ES, FR, CS i SK. Ten sam obraz trafia do
+Mac App Store we wszystkich 24 językach urzędowych UE. Ten sam obraz trafia do
 prezentacji i metadanych udostępniania linku. Wersje RU, BE i UK pokazują zrzut
 angielski z podpisem, ponieważ aplikacja nie obsługuje tych trzech języków.
 Status „wkrótce” należy zmienić po publikacji aplikacji, dodając wtedy odnośnik
@@ -61,19 +79,47 @@ aktualizacje bez dopłat oraz zasady korzystania na urządzeniach. Osobny plik
 Menu: **Usługi, Produkty, O firmie, Współpraca, Kontakt**. Pozycja Produkty
 prowadzi do katalogu, a pozostałe do sekcji strony głównej w bieżącym języku.
 
-Przełącznik zachowuje rodzaj strony i konkretny produkt. Język wynika z adresu, bez przekierowania
-według przeglądarki i bez dodatkowego cookie. Atrybut `html[lang]` jest zapisany
-w HTML podczas kompilacji. Każda strona ma własny adres kanoniczny i komplet
-odnośników `hreflang`; wszystkie wersje są w `sitemap.xml`.
+Przełącznik zachowuje rodzaj strony i konkretny produkt. Obsługuje wszystkie 24
+języki urzędowe UE oraz dotychczasowe wersje białoruską, rosyjską i ukraińską.
+Atrybut `html[lang]` jest zapisany w HTML podczas kompilacji. Każda strona ma
+własny adres kanoniczny i komplet odnośników `hreflang`; wszystkie wersje są
+w `sitemap.xml`.
+
+Przy wejściu na adres bez prefiksu językowego (`/`, polskie adresy produktów,
+`/NetUnstick/` i polityka prywatności) funkcja Cloudflare wybiera język w kolejności:
+
+1. Ręczny wybór zapisany w cookie `itorg-language`.
+2. Kraj z zaufanego `request.cf.country`. Dla państw wielojęzycznych preferowany
+   jest pasujący język z `Accept-Language`, z uwzględnieniem wag i wariantów regionalnych.
+3. Gdy kraju nie znamy lub nie ma go w mapie, obsługiwany język przeglądarki.
+4. Angielski jako język zastępczy.
+
+Jawne adresy z prefiksem języka oraz materiały App Store są zawsze respektowane.
+Roboty wyszukiwarek otrzymują stabilną polską wersję adresów bez prefiksu.
+Przekierowania 302 zachowują parametry wejścia, a odpowiedzi zależne od odwiedzającego
+mają `private, no-store`. Automatyczny dobór nie zapisuje preferencji. Nie ma GPS,
+pytania przeglądarki o lokalizację ani połączenia z zewnętrzną usługą IP.
+
+Ręczna zmiana przechodzi przez `/language?locale=…&page=…`, również bez JavaScriptu.
+Cel jest wybierany wyłącznie ze znanych stron i języków. Cookie obowiązuje rok,
+ma `SameSite=Lax`, `HttpOnly` i na HTTPS także `Secure`. Nowy wybór odnawia termin.
+Po wyłączeniu cookies można otwierać bezpośrednie adresy językowe; polski wybór
+na adresie bez prefiksu wymaga zachowania cookie, aby uniknąć ponownego automatycznego doboru.
 
 ## Edycja treści
 
 - [content/site.ts](content/site.ts): teksty polskie oraz wspólne dane firmy.
 - [content/locales](content/locales): pełne słowniki pozostałych języków, sprawdzane
   przez TypeScript względem polskiej struktury.
+- [content/eu](content/eu): 17 dodatkowych kompletnych słowników z typowanym
+  składaniem wspólnej struktury strony, polityką, panelem cookie i opisem NetUnstick.
 - [content/legal](content/legal): teksty polityk prywatności i panelu cookie.
-- [content/netunstick.ts](content/netunstick.ts): krótki opis i status NetUnstick w dziesięciu językach.
-- [lib/locales.ts](lib/locales.ts): lista języków, ich nazwy i adresy.
+- [content/netunstick.ts](content/netunstick.ts): krótki opis, status i dobór zrzutu NetUnstick.
+- [lib/language-data.mjs](lib/language-data.mjs): wspólna lista języków, nazw, flag i kodów Open Graph.
+- [lib/locales.ts](lib/locales.ts): typy języków i adresy.
+- [lib/language-preference.mjs](lib/language-preference.mjs): wybór języka, mapa państw,
+  parsowanie preferencji, cookie i bezpieczne cele przekierowań.
+- [functions](functions): obsługa wejść bez prefiksu i ręcznego wyboru języka.
 - [lib/metadata.ts](lib/metadata.ts): metadane i alternatywne wersje stron.
 - [lib/products.ts](lib/products.ts): powiązanie opisów produktów z ich adresami.
 - [components](components): wspólne komponenty dla wszystkich języków.
@@ -128,9 +174,12 @@ npm run typecheck
 npm test
 ```
 
-Testy sprawdzają wszystkie 90 wyeksportowanych stron językowych, metadane,
+Testy sprawdzają wszystkie 243 wyeksportowane strony językowe, metadane,
 przełączniki zachowujące produkt, kolejność menu, odnośniki, kotwice,
-strukturę dostępności i kontrast kolorów.
+strukturę dostępności i kontrast kolorów. Dodatkowo obejmują wybór kraju i języka,
+preferencje ręczne, brak pętli, wszystkie cele przełącznika, błędne dane i ochronę
+przed przekierowaniem na obcą domenę. Dane krajów są kontrolowanymi scenariuszami
+w testach funkcji; lokalny Podgląd nie symuluje prawdziwych wizyt z 27 państw.
 `npm test` wymaga aktualnego katalogu `out/` po kompilacji.
 
 Lokalnie: `npm run dev`. Podgląd statycznego eksportu z nagłówkami Cloudflare:
@@ -149,4 +198,12 @@ Przy integracji z Git:
 | Build output directory | `out` |
 
 Plik `public/_headers` jest kopiowany do eksportu. Publikacja nie wymaga
-serwera Next.js ani funkcji Cloudflare.
+serwera Next.js. Katalog `functions/` jest wykrywany przez Pages CI i Wrangler.
+`public/_routes.json` ogranicza wywołania funkcji do adresów bez prefiksu i `/language`;
+pozostałe strony i zasoby pozostają statyczne. Samo wgranie `out/` na hosting bez
+Pages Functions wyświetli tłumaczenia, ale nie uruchomi automatyki i zapisu wyboru.
+
+Implementacja korzysta z [geodanych żądania Cloudflare](https://developers.cloudflare.com/workers/runtime-apis/request/)
+i [tras Pages Functions](https://developers.cloudflare.com/pages/functions/routing/).
+Do kontroli całego przepływu lokalnie służy `npm run preview`; sam `next dev` nie
+obsługuje endpointu `/language` ani middleware Cloudflare.

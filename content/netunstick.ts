@@ -1,6 +1,7 @@
-import type { Locale } from "@/lib/locales";
+import { euLocales, type Locale } from "@/lib/locales";
+import { euCopies } from "./eu";
 
-interface NetUnstickCopy {
+export interface NetUnstickCopy {
   category: string;
   tagline: string;
   description: string;
@@ -16,7 +17,7 @@ interface NetUnstickCopy {
   privacy: string;
 }
 
-const screenshotLanguages = ["pl", "en", "de", "es", "fr", "cs", "sk"] as const;
+const screenshotLanguages = euLocales;
 
 export function getNetUnstickScreenshot(locale: Locale) {
   const language = screenshotLanguages.find((language) => language === locale) ?? "en";
@@ -25,6 +26,7 @@ export function getNetUnstickScreenshot(locale: Locale) {
 
 // Zakres wydania Mac App Store, zgodny z materiałami źródłowymi NetUnstick.
 export const netunstick: Record<Locale, NetUnstickCopy> = {
+  ...Object.fromEntries(Object.entries(euCopies).map(([locale, copy]) => [locale, copy.netunstick])) as Record<keyof typeof euCopies, NetUnstickCopy>,
   pl: {
     category: "Aplikacje dla macOS",
     tagline: "Sprawdź swoje połączenie sieciowe.",

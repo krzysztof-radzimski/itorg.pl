@@ -1,22 +1,18 @@
-export const locales = ["pl", "en", "de", "es", "fr", "ru", "cs", "sk", "be", "uk"] as const;
-export type Locale = (typeof locales)[number];
+import languages from "./language-data.mjs";
+import { languageDestination } from "./language-preference.mjs";
+
+export type Locale = keyof typeof languages;
+export const locales = Object.keys(languages) as Locale[];
+export const euLocales = locales.filter((locale) => !["be", "ru", "uk"].includes(locale));
 
 export const productIds = ["eap-legislator", "orion-ai", "baza-aktow-wlasnych", "abc-anon", "abc-kancelaria"] as const;
 export type ProductId = (typeof productIds)[number];
 export const pages = ["home", "privacy", "products", "netunstick", ...productIds] as const;
 export type PageId = (typeof pages)[number];
 
-export const localeNames: Record<Locale, string> = {
-  pl: "Polski", en: "English", de: "Deutsch", es: "Español",
-  fr: "Français", ru: "Русский", cs: "Čeština", sk: "Slovenčina",
-  be: "Беларуская", uk: "Українська",
-};
-
-export const openGraphLocales: Record<Locale, string> = {
-  pl: "pl_PL", en: "en_GB", de: "de_DE", es: "es_ES",
-  fr: "fr_FR", ru: "ru_RU", cs: "cs_CZ", sk: "sk_SK",
-  be: "be_BY", uk: "uk_UA",
-};
+export const localeNames = Object.fromEntries(locales.map((locale) => [locale, languages[locale].name])) as Record<Locale, string>;
+export const openGraphLocales = Object.fromEntries(locales.map((locale) => [locale, languages[locale].og])) as Record<Locale, string>;
+export const localeFlags = Object.fromEntries(locales.map((locale) => [locale, languages[locale].flag])) as Record<Locale, string>;
 
 export function isLocale(value: string): value is Locale {
   return locales.includes(value as Locale);
@@ -43,11 +39,7 @@ export function isProductId(value: string): value is ProductId {
 }
 
 export function pagePath(locale: Locale, page: PageId = "home"): string {
-  if (page === "home") return homePath(locale);
-  if (page === "privacy") return privacyPath(locale);
-  if (page === "products") return productsPath(locale);
-  if (page === "netunstick") return locale === "pl" ? "/NetUnstick/" : `/${locale}/NetUnstick/`;
-  return productPath(locale, page);
+  return languageDestination(locale, page)!;
 }
 
 export function navigationHref(href: string, locale: Locale, onHome = false): string {

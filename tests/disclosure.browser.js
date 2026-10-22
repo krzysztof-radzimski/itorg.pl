@@ -45,7 +45,8 @@
       summary.click();
       summary.focus();
       summary.dispatchEvent(new win.FocusEvent("focusout", { bubbles: true, relatedTarget: null }));
-      const link = [...menu.querySelectorAll("a")].find((item) => item.getAttribute("href") === target);
+      const targetLanguage = /^\/([a-z]{2})\//.exec(target)?.[1] ?? "pl";
+      const link = [...menu.querySelectorAll("a")].find((item) => item.lang === targetLanguage);
       if (!link) throw new Error(`Brak wersji językowej: ${target}`);
       await loaded(() => link.click());
       check("Wybrany język zachowuje rodzaj podstrony", frame.contentWindow.location.pathname === target);

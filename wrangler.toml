@@ -1,5 +1,5 @@
 name = "itorg-pl"
 compatibility_date = "2025-01-01"
 
-# Cloudflare Pages: w pełni statyczne zasoby z katalogu ./out.
+# Cloudflare Pages: zasoby statyczne z ./out i Functions dobierające język.
 pages_build_output_dir = "out"

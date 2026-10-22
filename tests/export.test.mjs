@@ -2,8 +2,10 @@ import assert from "node:assert/strict";
 import { readFileSync, existsSync } from "node:fs";
 import { resolve } from "node:path";
 import test from "node:test";
+import languageData from "../lib/language-data.mjs";
+import { languageSelectionPath } from "../lib/language-preference.mjs";
 
-const languages = ["pl", "en", "de", "es", "fr", "ru", "cs", "sk", "be", "uk"];
+const languages = Object.keys(languageData);
 const root = resolve("out");
 const home = (language) => language === "pl" ? "/" : `/${language}/`;
 const privacy = (language) => language === "pl" ? "/polityka-prywatnosci/" : `/${language}/privacy/`;
@@ -15,7 +17,7 @@ const pageTypes = [["home", home], ["privacy", privacy], ["products", products],
 const file = (path) => path.endsWith(".html") ? resolve(root, `.${path}`) : resolve(root, `.${path}`, "index.html");
 const clean = (html) => html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
 const tags = (html, name) => [...html.matchAll(new RegExp(`<${name}\\b[^>]*>`, "gi"))].map((match) => match[0]);
-const attr = (tag, name) => tag.match(new RegExp(`(?:^|\\s)${name}="([^"]*)"`, "i"))?.[1];
+const attr = (tag, name) => tag.match(new RegExp(`(?:^|\\s)${name}="([^"]*)"`, "i"))?.[1]?.replaceAll("&amp;", "&");
 
 for (const language of languages) {
   for (const [kind, pathFor] of pageTypes) {
@@ -59,13 +61,18 @@ for (const language of languages) {
         assert.equal(attr(brand, "href"), home(language), "Logo podstrony prowadzi do strony głównej we właściwym języku");
       }
       for (const alternate of languages) {
-        assert.ok(anchors.some((tag) => attr(tag, "hreflang") === alternate && attr(tag, "lang") === alternate && attr(tag, "href") === pathFor(alternate)), `Przełącznik nie zachowuje rodzaju strony: ${alternate}`);
+        assert.ok(anchors.some((tag) => attr(tag, "hreflang") === alternate && attr(tag, "lang") === alternate && attr(tag, "href") === languageSelectionPath(alternate, kind)), `Przełącznik nie zachowuje rodzaju strony: ${alternate}`);
       }
       for (const anchor of anchors) {
         const href = attr(anchor, "href");
         assert.ok(href, "Link musi mieć cel");
         if (!href.startsWith("/") && !href.startsWith("#")) continue;
         const target = new URL(href, `https://itorg.pl${path}`);
+        if (target.pathname === "/language") {
+          assert.ok(languages.includes(target.searchParams.get("locale")));
+          assert.equal(target.searchParams.get("page"), kind);
+          continue;
+        }
         const targetFile = file(target.pathname);
         assert.ok(existsSync(targetFile), `Nieistniejący link: ${href}`);
         if (target.hash) {
@@ -83,7 +90,7 @@ for (const language of languages) {
         for (const id of productIds) assert.ok(anchors.some((tag) => attr(tag, "href") === `${products(language)}${id}/`), `Brak linku do produktu: ${id}`);
         assert.ok(anchors.some((tag) => attr(tag, "href") === (language === "pl" ? "/NetUnstick/" : `/${language}/NetUnstick/`)), "Katalog musi prowadzić do NetUnstick");
       } else if (kind === "netunstick") {
-        const screenshotLanguage = ["pl", "en", "de", "es", "fr", "cs", "sk"].includes(language) ? language : "en";
+        const screenshotLanguage = ["be", "ru", "uk"].includes(language) ? "en" : language;
         const screenshotPath = `/NetUnstick/screenshots/${screenshotLanguage}.png`;
         const screenshots = tags(html, "img").filter((tag) => attr(tag, "src")?.startsWith("/NetUnstick/screenshots/"));
         assert.equal(screenshots.length, 1, "Dokładnie jeden zrzut aplikacji");
@@ -118,6 +125,8 @@ for (const language of languages) {
         assert.equal((html.match(/id="legal-[^"]+"/g) || []).length, 10);
         assert.equal(tags(html, "caption").length, 1);
         assert.ok(tags(html, "th").every((tag) => ["col", "row"].includes(attr(tag, "scope"))));
+        assert.ok(html.includes("itorg-language (cookie)"), "Polityka opisuje zapis preferencji języka");
+        assert.ok(html.includes("Cloudflare") && html.includes("GPS"), "Polityka wyjaśnia dobór języka bez GPS");
       }
       const switches = tags(html, "input").filter((tag) => attr(tag, "role") === "switch");
       assert.equal(switches.length, 4, "Pełny panel cookie w każdym języku");

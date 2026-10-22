@@ -1,6 +1,6 @@
 # Dostępność — WCAG 2.2 AA
 
-Stan kontroli: 20 października 2026 r. Zakres obejmuje stronę główną, katalog,
+Stan kontroli historycznej: 20 października 2026 r. Zakres obejmuje stronę główną, katalog,
 pięć podstron produktów i politykę prywatności w językach pl, en, de, es, fr,
 ru, cs i sk (64 strony), a także panel cookie, menu mobilne i przełącznik
 języków. Celem jest poziom AA standardu
@@ -10,6 +10,49 @@ Szczegóły EAP Legislator, w tym wersja dla administracji rządowej i dodatek
 Besti@, są na jego podstronie. Osobne podstrony mają Orion AI, Baza Aktów
 Własnych, ABC ANON i ABC Kancelaria. Testy eksportu sprawdzają rolę ITORG,
 odnośniki do ABC PRO, kolejność menu i przełącznik zachowujący wybrany produkt.
+
+## Rozszerzenie językowe: 22 października 2026 r.
+
+Witryna obsługuje obecnie 27 języków: wszystkie 24 języki urzędowe UE oraz
+białoruski, rosyjski i ukraiński. Eksport obejmuje 243 strony językowe oraz
+dotychczasowe materiały wsparcia i prywatności NetUnstick w PL/EN/ES.
+Kompilacja, TypeScript i **265 testów** zakończyły się poprawnie. Testy obejmują
+również reguły doboru języka, pierwszeństwo wyboru ręcznego, poprawność wszystkich
+celów przełącznika i brak pętli przekierowań.
+
+W lokalnym Podglądzie Cloudflare Pages sprawdzono axe-core 4.14.0:
+
+| Scenariusz | Warianty | Wynik |
+| --- | ---: | --- |
+| Strony główne 17 nowych języków, 320 px, wybrany motyw jasny lub ciemny | 17 | Brak poziomego przewijania i zgłoszonych naruszeń |
+| NetUnstick w 17 nowych językach, 320 px, motyw ciemny | 17 | Brak poziomego przewijania i zgłoszonych naruszeń |
+| Polityki EL i MT, 320 px, w tym modal cookie EL | 2 | Brak naruszeń; poprawny powrót fokusu po zamknięciu modalu |
+| Strona główna EL i EAP Legislator GA, 1200 px | 2 | Brak poziomego przewijania i zgłoszonych naruszeń |
+
+Razem **38 wariantów**. Szerokości pochodzą z rzeczywistych dokumentów iframe
+w Podglądzie, nie z symulatora iPhone'a. Zachowano metody pomiaru i zakres tagów
+axe opisane w historycznej kontroli poniżej. Obejrzano też układ mobilny greckiej
+strony głównej, włoskiej prezentacji NetUnstick i przewijaną listę 27 języków.
+
+Harness menu sprawdził **26 warunków w czterech scenariuszach** (320 i 402 px):
+Escape, opuszczanie menu, kliknięcie poza nim, brak `relatedTarget` spotykany
+w Safari, zmianę języka z zachowaniem podstrony oraz przejście do sekcji strony.
+Wszystkie warunki przeszły. To programowa regresja DOM, nie fizyczne stuknięcia w iOS.
+Rzeczywistymi kliknięciami w Podglądzie potwierdzono EL → IT na NetUnstick,
+pamiętanie IT przy powrocie na `/`, respektowanie jawnego adresu FI i wybór PL
+na tej samej podstronie ABC ANON. Powrót na `/` po wyborze PL nie przekierował ponownie.
+
+Geolokalizację krajów weryfikowano kontrolowanymi danymi żądań w testach funkcji.
+Nie były to wizyty z zagranicznych sieci. Automatyka nie nadpisuje jawnych adresów
+z prefiksem, a ręczny wybór działa przez zwykłe odnośniki i endpoint Pages także bez JS.
+
+Prezentacja NetUnstick ma rzeczywiste zrzuty wydania Mac App Store we wszystkich
+24 językach UE. Nowe 17 plików uzyskano z uruchomionej aplikacji macOS przez
+`abc-desktop` i natywne przechwycenie okna. Każdy plik ma 1800 × 1208 px.
+Tymczasowe ustawienie języka aplikacji usunięto po wykonaniu zrzutów.
+
+Wyniki historyczne poniżej dotyczą wcześniejszej wersji i nie oznaczają
+ponowienia całej ówczesnej macierzy 336 wariantów dla 27 języków.
 
 ## Wdrożone rozwiązania
 

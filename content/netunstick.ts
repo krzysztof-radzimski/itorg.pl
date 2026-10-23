@@ -5,6 +5,7 @@ export interface NetUnstickCopy {
   category: string;
   tagline: string;
   description: string;
+  recovery: string;
   scope: string;
   features: [string, string, string];
   availability: string;
@@ -24,13 +25,14 @@ export function getNetUnstickScreenshot(locale: Locale) {
   return { src: `/NetUnstick/screenshots/${language}.png`, language, width: 1800, height: 1208 };
 }
 
-// Zakres wydania Mac App Store, zgodny z materiałami źródłowymi NetUnstick.
+// Naprawy pełnego wydania Developer ID i odczytowy zakres Mac App Store.
 export const netunstick: Record<Locale, NetUnstickCopy> = {
   ...Object.fromEntries(Object.entries(euCopies).map(([locale, copy]) => [locale, copy.netunstick])) as Record<keyof typeof euCopies, NetUnstickCopy>,
   pl: {
     category: "Aplikacje dla macOS",
-    tagline: "Sprawdź swoje połączenie sieciowe.",
-    description: "NetUnstick pomaga ustalić przyczynę problemów z połączeniem na Macu. Przedstawia wyniki diagnostyki bez zmieniania ustawień sieci.",
+    tagline: "Odzyskaj połączenie z innymi Makami po VPN.",
+    description: "NetUnstick pomaga, gdy po rozłączeniu VPN inny Mac jest widoczny przez Bonjour w Finderze, ale nie można się z nim połączyć.",
+    recovery: "Pełne wydanie Developer ID może przywrócić dostęp do plików, udostępniania ekranu i innych usług bez restartu Maca, jeśli przyczyną są trasy pozostałe po VPN, np. FortiClient. Usuwa je po potwierdzeniu użytkownika i z uprawnieniami administratora, a następnie ponawia diagnostykę.",
     scope: "Wersja Mac App Store działa tylko odczytowo. Nie instaluje uprzywilejowanego komponentu pomocniczego ani nie naprawia tras systemowych, DHCP lub ustawień VPN.",
     features: ["Kontrola połączenia z internetem i rozwiązywania nazw DNS.", "Wykrywanie usług Bonjour AirPlay i test połączenia TCP z wybranym urządzeniem.", "Lokalna historia i eksport raportu. Bez konta, reklam i telemetrii."],
     availability: "Wkrótce w Mac App Store",
@@ -42,8 +44,9 @@ export const netunstick: Record<Locale, NetUnstickCopy> = {
   },
   en: {
     category: "Apps for macOS",
-    tagline: "Check your network connection.",
-    description: "NetUnstick helps identify connection problems on your Mac. View diagnostic results without changing your network settings.",
+    tagline: "Reconnect to other Macs after VPN.",
+    description: "NetUnstick helps when another Mac is visible through Bonjour in Finder after disconnecting a VPN, but you cannot connect to it.",
+    recovery: "The full Developer ID edition can restore file sharing, screen sharing and other local connections without restarting your Mac when leftover VPN routes, for example after FortiClient, are the cause. It removes those routes with your confirmation and administrator privileges, then runs diagnostics again.",
     scope: "The Mac App Store edition is read-only. It does not install a privileged helper or repair system routes, DHCP or VPN settings.",
     features: ["Check internet connectivity and DNS resolution.", "Discover Bonjour AirPlay services and test a TCP connection to a chosen device.", "Local history and report export. No account, ads or telemetry."],
     availability: "Coming soon to the Mac App Store",
@@ -55,8 +58,9 @@ export const netunstick: Record<Locale, NetUnstickCopy> = {
   },
   de: {
     category: "Apps für macOS",
-    tagline: "Prüfen Sie Ihre Netzwerkverbindung.",
-    description: "NetUnstick hilft, Verbindungsprobleme auf Ihrem Mac einzugrenzen. Die Diagnose verändert keine Netzwerkeinstellungen.",
+    tagline: "Nach dem VPN wieder mit anderen Macs verbinden.",
+    description: "NetUnstick hilft, wenn nach dem Trennen eines VPN ein anderer Mac über Bonjour im Finder sichtbar ist, sich aber keine Verbindung herstellen lässt.",
+    recovery: "Die vollständige Developer-ID-Version kann Dateifreigabe, Bildschirmfreigabe und andere lokale Verbindungen ohne Neustart des Mac wiederherstellen, wenn zurückgebliebene VPN-Routen, etwa nach FortiClient, die Ursache sind. Sie entfernt diese Routen nach Ihrer Bestätigung und mit Administratorrechten und führt anschließend die Diagnose erneut aus.",
     scope: "Die Mac-App-Store-Version arbeitet ausschließlich lesend. Sie installiert keinen privilegierten Hilfsdienst und repariert weder Systemrouten noch DHCP- oder VPN-Einstellungen.",
     features: ["Internetverbindung und DNS-Namensauflösung prüfen.", "Bonjour-AirPlay-Dienste finden und eine TCP-Verbindung zu einem gewählten Gerät testen.", "Lokaler Verlauf und Berichtsexport. Ohne Konto, Werbung oder Telemetrie."],
     availability: "Bald im Mac App Store",
@@ -68,8 +72,9 @@ export const netunstick: Record<Locale, NetUnstickCopy> = {
   },
   es: {
     category: "Aplicaciones para macOS",
-    tagline: "Comprueba tu conexión de red.",
-    description: "NetUnstick ayuda a identificar problemas de conexión en tu Mac. Consulta los resultados del diagnóstico sin modificar los ajustes de red.",
+    tagline: "Vuelve a conectar con otros Mac después de la VPN.",
+    description: "NetUnstick ayuda cuando, tras desconectar una VPN, otro Mac aparece mediante Bonjour en el Finder, pero no puedes conectarte a él.",
+    recovery: "La edición completa Developer ID puede restablecer el acceso a archivos, la pantalla compartida y otras conexiones locales sin reiniciar el Mac cuando la causa son rutas que quedan tras la VPN, por ejemplo con FortiClient. Las elimina con tu confirmación y permisos de administrador, y después repite el diagnóstico.",
     scope: "La edición del Mac App Store es de solo lectura. No instala un componente privilegiado ni repara rutas del sistema, DHCP o ajustes de VPN.",
     features: ["Comprueba la conexión a internet y la resolución DNS.", "Descubre servicios Bonjour AirPlay y prueba una conexión TCP con un dispositivo elegido.", "Historial local y exportación de informes. Sin cuenta, anuncios ni telemetría."],
     availability: "Próximamente en Mac App Store",
@@ -81,8 +86,9 @@ export const netunstick: Record<Locale, NetUnstickCopy> = {
   },
   fr: {
     category: "Applications pour macOS",
-    tagline: "Vérifiez votre connexion réseau.",
-    description: "NetUnstick aide à identifier les problèmes de connexion de votre Mac. Consultez les résultats du diagnostic sans modifier les réglages réseau.",
+    tagline: "Retrouvez la connexion aux autres Mac après un VPN.",
+    description: "NetUnstick vous aide si, après la déconnexion d’un VPN, un autre Mac reste visible via Bonjour dans le Finder, mais que vous ne pouvez pas vous y connecter.",
+    recovery: "La version complète Developer ID peut rétablir le partage de fichiers, le partage d’écran et d’autres connexions locales sans redémarrer le Mac lorsque des routes laissées par le VPN, par exemple FortiClient, sont en cause. Elle les supprime après votre confirmation et avec les droits d’administration, puis relance le diagnostic.",
     scope: "La version Mac App Store fonctionne uniquement en lecture. Elle n’installe aucun service auxiliaire privilégié et ne répare ni les routes système, ni DHCP, ni les réglages VPN.",
     features: ["Vérification de la connexion Internet et de la résolution DNS.", "Détection des services Bonjour AirPlay et test de connexion TCP à un appareil choisi.", "Historique local et export des rapports. Sans compte, publicité ni télémétrie."],
     availability: "Bientôt sur le Mac App Store",
@@ -94,8 +100,9 @@ export const netunstick: Record<Locale, NetUnstickCopy> = {
   },
   ru: {
     category: "Приложения для macOS",
-    tagline: "Проверьте сетевое подключение.",
-    description: "NetUnstick помогает определить причины проблем с подключением на Mac. Результаты диагностики доступны без изменения сетевых настроек.",
+    tagline: "Восстановите связь с другими Mac после VPN.",
+    description: "NetUnstick помогает, когда после отключения VPN другой Mac виден через Bonjour в Finder, но подключиться к нему не удаётся.",
+    recovery: "Полная версия Developer ID может восстановить доступ к файлам, общему экрану и другим локальным службам без перезагрузки Mac, если причиной стали маршруты, оставшиеся после VPN, например FortiClient. Она удаляет их после вашего подтверждения и с правами администратора, а затем повторяет диагностику.",
     scope: "Версия Mac App Store работает только в режиме чтения. Она не устанавливает привилегированную вспомогательную службу и не исправляет системные маршруты, DHCP или настройки VPN.",
     features: ["Проверка подключения к интернету и разрешения имён DNS.", "Обнаружение служб Bonjour AirPlay и проверка TCP-подключения к выбранному устройству.", "Локальная история и экспорт отчёта. Без учётной записи, рекламы и телеметрии."],
     availability: "Скоро в Mac App Store",
@@ -108,8 +115,9 @@ export const netunstick: Record<Locale, NetUnstickCopy> = {
   },
   cs: {
     category: "Aplikace pro macOS",
-    tagline: "Zkontrolujte své síťové připojení.",
-    description: "NetUnstick pomáhá zjistit příčinu problémů s připojením na Macu. Zobrazuje výsledky diagnostiky bez změny nastavení sítě.",
+    tagline: "Obnovte spojení s dalšími Macy po VPN.",
+    description: "NetUnstick pomáhá, když je po odpojení VPN jiný Mac viditelný přes Bonjour ve Finderu, ale nelze se k němu připojit.",
+    recovery: "Plná verze Developer ID může obnovit přístup k souborům, sdílení obrazovky a další místní spojení bez restartu Macu, pokud jsou příčinou trasy zbylé po VPN, například FortiClient. Odstraní je po vašem potvrzení a s oprávněním správce a poté zopakuje diagnostiku.",
     scope: "Verze Mac App Store funguje pouze pro čtení. Neinstaluje privilegovanou pomocnou službu ani neopravuje systémové trasy, DHCP nebo nastavení VPN.",
     features: ["Kontrola připojení k internetu a překladu názvů DNS.", "Vyhledávání služeb Bonjour AirPlay a test připojení TCP k vybranému zařízení.", "Místní historie a export zprávy. Bez účtu, reklam a telemetrie."],
     availability: "Již brzy v Mac App Storu",
@@ -121,8 +129,9 @@ export const netunstick: Record<Locale, NetUnstickCopy> = {
   },
   sk: {
     category: "Aplikácie pre macOS",
-    tagline: "Skontrolujte svoje sieťové pripojenie.",
-    description: "NetUnstick pomáha zistiť príčinu problémov s pripojením na Macu. Zobrazuje výsledky diagnostiky bez zmeny nastavení siete.",
+    tagline: "Obnovte spojenie s ďalšími Macmi po VPN.",
+    description: "NetUnstick pomáha, keď je po odpojení VPN iný Mac viditeľný cez Bonjour vo Finderi, ale nedá sa k nemu pripojiť.",
+    recovery: "Plná verzia Developer ID môže obnoviť prístup k súborom, zdieľanie obrazovky a ďalšie miestne spojenia bez reštartu Macu, ak sú príčinou trasy zostávajúce po VPN, napríklad FortiClient. Odstráni ich po vašom potvrdení a s oprávneniami správcu a potom zopakuje diagnostiku.",
     scope: "Verzia Mac App Store funguje iba na čítanie. Neinštaluje privilegovanú pomocnú službu ani neopravuje systémové trasy, DHCP alebo nastavenia VPN.",
     features: ["Kontrola pripojenia k internetu a prekladu názvov DNS.", "Vyhľadávanie služieb Bonjour AirPlay a test pripojenia TCP k vybranému zariadeniu.", "Miestna história a export správy. Bez účtu, reklám a telemetrie."],
     availability: "Čoskoro v Mac App Store",
@@ -134,8 +143,9 @@ export const netunstick: Record<Locale, NetUnstickCopy> = {
   },
   be: {
     category: "Праграмы для macOS",
-    tagline: "Праверце сваё сеткавае злучэнне.",
-    description: "NetUnstick дапамагае вызначыць прычыны праблем са злучэннем на Mac. Вынікі дыягностыкі даступныя без змены сеткавых налад.",
+    tagline: "Аднавіце злучэнне з іншымі Mac пасля VPN.",
+    description: "NetUnstick дапамагае, калі пасля адключэння VPN іншы Mac бачны праз Bonjour у Finder, але злучыцца з ім не ўдаецца.",
+    recovery: "Поўная версія Developer ID можа аднавіць доступ да файлаў, супольнага экрана і іншых лакальных службаў без перазапуску Mac, калі прычынай сталі маршруты, што засталіся пасля VPN, напрыклад FortiClient. Яна выдаляе іх пасля вашага пацвярджэння і з правамі адміністратара, а затым паўтарае дыягностыку.",
     scope: "Версія Mac App Store працуе толькі ў рэжыме чытання. Яна не ўсталёўвае прывілеяваную дапаможную службу і не выпраўляе сістэмныя маршруты, DHCP або налады VPN.",
     features: ["Праверка злучэння з інтэрнэтам і вызначэння імёнаў DNS.", "Пошук сэрвісаў Bonjour AirPlay і праверка TCP-злучэння з выбранай прыладай.", "Лакальная гісторыя і экспарт справаздачы. Без уліковага запісу, рэкламы і тэлеметрыі."],
     availability: "Неўзабаве ў Mac App Store",
@@ -148,8 +158,9 @@ export const netunstick: Record<Locale, NetUnstickCopy> = {
   },
   uk: {
     category: "Програми для macOS",
-    tagline: "Перевірте своє мережеве з’єднання.",
-    description: "NetUnstick допомагає визначити причини проблем зі з’єднанням на Mac. Переглядайте результати діагностики без зміни мережевих налаштувань.",
+    tagline: "Відновіть з’єднання з іншими Mac після VPN.",
+    description: "NetUnstick допомагає, коли після від’єднання VPN інший Mac видно через Bonjour у Finder, але під’єднатися до нього не вдається.",
+    recovery: "Повна версія Developer ID може відновити доступ до файлів, спільного екрана та інших локальних служб без перезапуску Mac, якщо причиною стали маршрути, що залишилися після VPN, наприклад FortiClient. Вона видаляє їх після вашого підтвердження та з правами адміністратора, а потім повторює діагностику.",
     scope: "Версія Mac App Store працює лише в режимі читання. Вона не встановлює привілейовану допоміжну службу й не виправляє системні маршрути, DHCP або налаштування VPN.",
     features: ["Перевірка з’єднання з інтернетом і розпізнавання імен DNS.", "Пошук служб Bonjour AirPlay і перевірка TCP-з’єднання з вибраним пристроєм.", "Локальна історія та експорт звіту. Без облікового запису, реклами й телеметрії."],
     availability: "Незабаром у Mac App Store",

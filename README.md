@@ -61,8 +61,16 @@ Pod nim znajdują się podstrony `eap-legislator/`, `orion-ai/`,
 `/NetUnstick/` oraz `/{locale}/NetUnstick/`. Łącznie eksport obejmuje 243 strony
 językowych. Wersja GOV i dodatek Besti@ są opisane na podstronie EAP Legislator.
 
-Prezentacja NetUnstick dotyczy odczytowej wersji Mac App Store: krótki opis,
-jeden rzeczywisty zrzut okna, wymaganie macOS 14 i planowana cena 0,99 USD.
+Prezentacja NetUnstick opisuje odzyskiwanie połączeń między Makami wykrywanymi
+przez Bonjour po rozłączeniu VPN. Pełne wydanie Developer ID może usunąć
+kolidujące trasy pozostałe po VPN (np. FortiClient), przywracając dostęp do
+plików i udostępniania ekranu bez restartu, gdy to te trasy są przyczyną awarii.
+Wymaga potwierdzenia użytkownika i uprawnień administratora, a po naprawie
+ponawia diagnostykę. Zachowanie potwierdzają kod planowania napraw oraz opis
+rzeczywistego incydentu z 29 września 2026 w `docs/verification.md` projektu
+NetUnstick. Opis oddziela tę funkcję od odczytowej wersji Mac App Store,
+której dotyczą lista kontroli, zrzut okna i planowana cena 0,99 USD.
+Wspólne wymaganie to macOS 14.
 Zrzuty w `public/NetUnstick/screenshots/` pochodzą z uruchomionego wydania
 Mac App Store we wszystkich 24 językach urzędowych UE. Ten sam obraz trafia do
 prezentacji i metadanych udostępniania linku. Wersje RU, BE i UK pokazują zrzut

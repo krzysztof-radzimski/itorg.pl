@@ -36,10 +36,11 @@ export default function NetUnstickPage({ locale }: { locale: Locale }) {
               </div>
               <p className="netunstick__tagline">{fixOrphans(copy.tagline, locale)}</p>
               <p className="netunstick__description">{fixOrphans(copy.description, locale)}</p>
+              <p className="netunstick__description">{fixOrphans(copy.recovery, locale)}</p>
+              <p className="netunstick__description">{fixOrphans(copy.scope, locale)}</p>
               <ul className="netunstick__features">
                 {copy.features.map((feature) => <li key={feature}>{fixOrphans(feature, locale)}</li>)}
               </ul>
-              <p className="netunstick__description">{fixOrphans(copy.scope, locale)}</p>
               <div className="netunstick__purchase">
                 <p className="netunstick__availability">{copy.availability}</p>
                 <p className="netunstick__price">{new Intl.NumberFormat(locale, { minimumFractionDigits: 2 }).format(0.99)} <span>USD</span></p>

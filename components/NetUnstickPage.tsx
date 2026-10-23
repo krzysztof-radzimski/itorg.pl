@@ -3,8 +3,11 @@ import { getSite } from "@/content/translations";
 import { homePath, productsPath, type Locale } from "@/lib/locales";
 import { fixOrphans } from "@/lib/typography";
 import { netunstickStoreUrls } from "@/lib/netunstick-store.mjs";
+import updateManifest from "@/public/NetUnstick/updates/latest.json";
 import Nav from "./Nav";
 import Footer from "./Footer";
+
+const downloadPath = new URL(updateManifest.release.packageURL).pathname;
 
 export default function NetUnstickPage({ locale }: { locale: Locale }) {
   const site = getSite(locale);
@@ -40,6 +43,10 @@ export default function NetUnstickPage({ locale }: { locale: Locale }) {
               <ul className="netunstick__features">
                 {copy.features.map((feature) => <li key={feature}>{fixOrphans(feature, locale)}</li>)}
               </ul>
+              <div className="netunstick__download">
+                <a className="btn btn--brand" href={downloadPath} download>{copy.download}</a>
+                <p>NetUnstick {updateManifest.release.version} · PKG · Apple silicon</p>
+              </div>
               <p className="netunstick__description">{copy.requirement}</p>
               <div className="netunstick__links">
                 <a href={new URL(documents.support).pathname} hrefLang={documentLocale}>{copy.support}</a>

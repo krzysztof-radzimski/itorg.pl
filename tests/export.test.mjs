@@ -15,7 +15,7 @@ const pageTypes = [["home", home], ["privacy", privacy], ["products", products],
   ["netunstick", (language) => language === "pl" ? "/NetUnstick/" : `/${language}/NetUnstick/`],
   ...productIds.map((id) => [id, (language) => `${products(language)}${id}/`])];
 const file = (path) => {
-  if (path.endsWith(".html")) return resolve(root, `.${path}`);
+  if (/\.(?:html|pkg|json|sha256)$/.test(path)) return resolve(root, `.${path}`);
   const document = resolve(root, `.${path.replace(/\/$/, "")}.html`);
   return existsSync(document) ? document : resolve(root, `.${path}`, "index.html");
 };

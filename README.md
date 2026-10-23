@@ -73,8 +73,9 @@ Zrzuty w `public/NetUnstick/screenshots/` przedstawiają diagnostykę
 we wszystkich 24 językach urzędowych UE. Ten sam obraz trafia do
 prezentacji i metadanych udostępniania linku. Wersje RU, BE i UK pokazują zrzut
 angielski z podpisem, ponieważ aplikacja nie obsługuje tych trzech języków.
-Prezentacja nie zawiera ceny, oferty sklepowej, zapowiedzi premiery ani
-odnośnika do pobierania. Dane o dystrybucji wymagają osobnego ustalenia.
+Przycisk pobierania w 27 językach prowadzi do wersjonowanego instalatora PKG
+wskazanego w podpisanym `public/NetUnstick/updates/latest.json`.
+Obok są widoczne numer wersji i architektura Apple silicon.
 Materiały wsparcia i prywatności PL/EN/ES są dostępne pod
 `/NetUnstick/{pl,en,es}/{support,privacy}.html`. Osobny plik
 `public/NetUnstick/index.html` nie jest potrzebny, ponieważ ten adres generuje Next.js.
@@ -132,6 +133,37 @@ języka. Testy [tests/netunstick-store.test.mjs](tests/netunstick-store.test.mjs
 utrwalają dziewięć adresów, zawartość eksportu oraz zachowanie GET i HEAD z innym
 krajem, preferencjami przeglądarki i cookie.
 
+### Aktualizacje NetUnstick
+
+Zasoby aktualizacji są statyczne w `public/NetUnstick/updates/`:
+
+- `latest.json`: podpisany manifest aktualnego wydania, bez cache przeglądarki.
+- `NetUnstick-<wersja>-<build>-arm64.pkg`: wersjonowany instalator, cache przez rok.
+- `*.pkg.sha256`: sumy SHA-256 dla bieżącego i wcześniejszych instalatorów.
+
+Podczas kolejnego wydania skopiuj przygotowane zasoby z paczki publikacyjnej
+NetUnstick, zachowując dokładne bajty manifestu i PKG. Zastępuj tylko
+`latest.json`; wcześniej opublikowanych instalatorów i sum kontrolnych nie
+zmieniaj ani nie usuwaj. Nie używaj Git LFS. Przycisk pobierania odczytuje URL
+i wersję z manifestu podczas eksportu strony, więc nie wymaga ręcznego
+przepisywania nazwy instalatora. Manifest i PKG muszą trafić do tego samego
+wdrożenia Cloudflare Pages.
+
+Reguły `public/_headers` ustawiają typy MIME i cache; istniejące wykluczenie
+`/NetUnstick/*` w `public/_routes.json` zapewnia dostęp do zasobów bez doboru
+języka. `tests/netunstick-updates.test.mjs` sprawdza podpis Ed25519 kluczem
+publicznym klienta, sumy i rozmiary plików, dokładność eksportu, nagłówki,
+ochronę przed przekierowaniem językowym oraz odnośniki we wszystkich językach.
+Polityki prywatności PL/EN/ES wyjaśniają sprawdzanie wersji przy starcie,
+możliwość jego wyłączenia, pobieranie po kliknięciu i metadane HTTP hostingu.
+
+Po publikacji sprawdź HTTP 200, typ MIME i cache dla
+`https://itorg.pl/NetUnstick/updates/latest.json` oraz wskazanego w nim PKG,
+a następnie porównaj pobrane pliki z lokalnym manifestem i sumą SHA-256.
+Nie edytuj ani nie podpisuj manifestu w ITORG; klucz prywatny pozostaje
+w projekcie wydawniczym NetUnstick. Wydania do 0.3.1 (14) wymagają ręcznego
+przejścia na PKG obsługujący aktualizacje.
+
 ## Edycja treści
 
 - [content/site.ts](content/site.ts): teksty polskie oraz wspólne dane firmy.
@@ -140,7 +172,7 @@ krajem, preferencjami przeglądarki i cookie.
 - [content/eu](content/eu): 17 dodatkowych kompletnych słowników z typowanym
   składaniem wspólnej struktury strony, polityką, panelem cookie i opisem NetUnstick.
 - [content/legal](content/legal): teksty polityk prywatności i panelu cookie.
-- [content/netunstick.ts](content/netunstick.ts): krótki opis, status i dobór zrzutu NetUnstick.
+- [content/netunstick.ts](content/netunstick.ts): opis, etykieta pobierania i dobór zrzutu NetUnstick.
 - [lib/language-data.mjs](lib/language-data.mjs): wspólna lista języków, nazw, flag i kodów Open Graph.
 - [lib/locales.ts](lib/locales.ts): typy języków i adresy.
 - [lib/language-preference.mjs](lib/language-preference.mjs): wybór języka, mapa państw,

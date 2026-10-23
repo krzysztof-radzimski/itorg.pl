@@ -62,26 +62,21 @@ Pod nim znajdują się podstrony `eap-legislator/`, `orion-ai/`,
 językowych. Wersja GOV i dodatek Besti@ są opisane na podstronie EAP Legislator.
 
 Prezentacja NetUnstick opisuje odzyskiwanie połączeń między Makami wykrywanymi
-przez Bonjour po rozłączeniu VPN. Pełne wydanie Developer ID może usunąć
+przez Bonjour po rozłączeniu VPN. Aplikacja może usunąć
 kolidujące trasy pozostałe po VPN (np. FortiClient), przywracając dostęp do
 plików i udostępniania ekranu bez restartu, gdy to te trasy są przyczyną awarii.
 Wymaga potwierdzenia użytkownika i uprawnień administratora, a po naprawie
 ponawia diagnostykę. Zachowanie potwierdzają kod planowania napraw oraz opis
 rzeczywistego incydentu z 29 września 2026 w `docs/verification.md` projektu
-NetUnstick. Opis oddziela tę funkcję od odczytowej wersji Mac App Store,
-której dotyczą lista kontroli, zrzut okna i planowana cena 0,99 USD.
-Wspólne wymaganie to macOS 14.
-Zrzuty w `public/NetUnstick/screenshots/` pochodzą z uruchomionego wydania
-Mac App Store we wszystkich 24 językach urzędowych UE. Ten sam obraz trafia do
+NetUnstick. Wymaganie systemowe to macOS 14.
+Zrzuty w `public/NetUnstick/screenshots/` przedstawiają diagnostykę
+we wszystkich 24 językach urzędowych UE. Ten sam obraz trafia do
 prezentacji i metadanych udostępniania linku. Wersje RU, BE i UK pokazują zrzut
 angielski z podpisem, ponieważ aplikacja nie obsługuje tych trzech języków.
-Status „wkrótce” należy zmienić po publikacji aplikacji, dodając wtedy odnośnik
-do jej karty w sklepie. Materiały PL/EN/ES z pakietu `Artifacts/Distribution/NetUnstick-Website.zip`
-projektu NetUnstick są dostępne pod `/NetUnstick/{pl,en,es}/{support,privacy}.html`,
-zgodnie z adresami przygotowanymi w jej metadanych App Store Connect. Treści
-strony `index.html` z pakietu uzupełniają istniejącą prezentację: zakres wersji
-sklepowej, jednorazowy zakup bez abonamentu i zakupów w aplikacji, przyszłe
-aktualizacje bez dopłat oraz zasady korzystania na urządzeniach. Osobny plik
+Prezentacja nie zawiera ceny, oferty sklepowej, zapowiedzi premiery ani
+odnośnika do pobierania. Dane o dystrybucji wymagają osobnego ustalenia.
+Materiały wsparcia i prywatności PL/EN/ES są dostępne pod
+`/NetUnstick/{pl,en,es}/{support,privacy}.html`. Osobny plik
 `public/NetUnstick/index.html` nie jest potrzebny, ponieważ ten adres generuje Next.js.
 
 Menu: **Usługi, Produkty, O firmie, Współpraca, Kontakt**. Pozycja Produkty
@@ -102,9 +97,9 @@ ABC PRO i polityka prywatności) funkcja Cloudflare wybiera język w kolejności
 3. Gdy kraju nie znamy lub nie ma go w mapie, obsługiwany język przeglądarki.
 4. Angielski jako język zastępczy.
 
-Jawne adresy z prefiksem języka oraz materiały App Store są zawsze respektowane.
+Jawne adresy z prefiksem języka oraz dokumenty NetUnstick są zawsze respektowane.
 Dotyczy to również `/NetUnstick/`, którego polski język jest częścią adresu
-prezentacji zapisanego w metadanych App Store.
+prezentacji aplikacji.
 Roboty wyszukiwarek otrzymują stabilną polską wersję adresów bez prefiksu.
 Przekierowania 302 zachowują parametry wejścia, a odpowiedzi zależne od odwiedzającego
 mają `private, no-store`. Automatyczny dobór nie zapisuje preferencji. Nie ma GPS,
@@ -116,9 +111,9 @@ ma `SameSite=Lax`, `HttpOnly` i na HTTPS także `Secure`. Nowy wybór odnawia te
 Po wyłączeniu cookies można otwierać bezpośrednie adresy językowe; polski wybór
 na adresie bez prefiksu wymaga zachowania cookie, aby uniknąć ponownego automatycznego doboru.
 
-### Stałe adresy NetUnstick w App Store
+### Stałe adresy NetUnstick
 
-Poniższe dziewięć adresów jest używane w 19 lokalizacjach metadanych aplikacji.
+Poniższe dziewięć adresów obejmuje prezentację i dokumenty w trzech językach.
 Ścieżki i języki są zachowywane niezależnie od kraju odwiedzającego i zapisanego
 wyboru języka witryny. Ręczny przełącznik na tych stronach pozostaje dostępny.
 
@@ -132,7 +127,7 @@ Pełne adresy HTTPS przechowuje [lib/netunstick-store.mjs](lib/netunstick-store.
 Linki wsparcia i prywatności w prezentacji prowadzą bezpośrednio do tych samych
 adresów bez `.html`. Dotychczasowe pliki `.html` pozostają dostępne; Cloudflare
 może przekierować je na adres bez rozszerzenia. Wykluczenia w `_routes.json`
-oraz osobny warunek middleware chronią strony sklepu przed automatyczną zmianą
+oraz osobny warunek middleware chronią dokumenty NetUnstick przed automatyczną zmianą
 języka. Testy [tests/netunstick-store.test.mjs](tests/netunstick-store.test.mjs)
 utrwalają dziewięć adresów, zawartość eksportu oraz zachowanie GET i HEAD z innym
 krajem, preferencjami przeglądarki i cookie.

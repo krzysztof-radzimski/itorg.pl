@@ -1453,10 +1453,6 @@ a.contact-item__value:hover {
 .netunstick__description { margin-top: 1rem; color: var(--ink-2); }
 .netunstick__features { display: grid; gap: 0.75rem; padding-left: 1.15rem; margin-top: 1.5rem; color: var(--ink-2); font-size: 0.9375rem; }
 .netunstick__features li::marker { color: var(--brand-text); }
-.netunstick__purchase { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line-2); font-size: 0.8125rem; color: var(--ink-2); }
-.netunstick__availability { font-size: 0.875rem; font-weight: 600; color: var(--brand-text); }
-.netunstick__price { margin-block: 0.25rem 0.5rem; font-size: 2.25rem; font-weight: 650; line-height: 1.25; color: var(--ink); }
-.netunstick__price span { font-size: 0.875rem; font-weight: 500; }
 .netunstick__links { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; margin-top: 1rem; color: var(--brand-text); font-size: 0.8125rem; }
 .netunstick__links a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: underline; text-underline-offset: 0.2em; }
 .netunstick__links a:hover { text-decoration-thickness: 2px; }

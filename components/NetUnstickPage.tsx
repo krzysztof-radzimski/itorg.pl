@@ -37,17 +37,10 @@ export default function NetUnstickPage({ locale }: { locale: Locale }) {
               <p className="netunstick__tagline">{fixOrphans(copy.tagline, locale)}</p>
               <p className="netunstick__description">{fixOrphans(copy.description, locale)}</p>
               <p className="netunstick__description">{fixOrphans(copy.recovery, locale)}</p>
-              <p className="netunstick__description">{fixOrphans(copy.scope, locale)}</p>
               <ul className="netunstick__features">
                 {copy.features.map((feature) => <li key={feature}>{fixOrphans(feature, locale)}</li>)}
               </ul>
-              <div className="netunstick__purchase">
-                <p className="netunstick__availability">{copy.availability}</p>
-                <p className="netunstick__price">{new Intl.NumberFormat(locale, { minimumFractionDigits: 2 }).format(0.99)} <span>USD</span></p>
-                <p>{copy.purchase}</p>
-                <p>{copy.devices}</p>
-                <p>{copy.requirement}</p>
-              </div>
+              <p className="netunstick__description">{copy.requirement}</p>
               <div className="netunstick__links">
                 <a href={new URL(documents.support).pathname} hrefLang={documentLocale}>{copy.support}</a>
                 <a href={new URL(documents.privacy).pathname} hrefLang={documentLocale}>{copy.privacy}</a>

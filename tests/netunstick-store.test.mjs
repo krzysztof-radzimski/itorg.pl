@@ -5,7 +5,7 @@ import test from "node:test";
 import { netunstickStoreUrls, isNetunstickStorePath } from "../lib/netunstick-store.mjs";
 import { onRequest } from "../functions/_middleware.js";
 
-// Niezależny kontrakt z metadanymi App Store, nie lista generowana z routingu witryny.
+// Niezależny kontrakt stałych adresów NetUnstick, nie lista generowana z routingu witryny.
 const expected = [
   ["pl", "marketing", "https://itorg.pl/NetUnstick/"],
   ["pl", "support", "https://itorg.pl/NetUnstick/pl/support"],
@@ -20,7 +20,7 @@ const expected = [
 const config = JSON.parse(readFileSync("public/_routes.json", "utf8"));
 
 for (const [language, kind, address] of expected) {
-  test(`App Store: ${language} ${kind}, stały adres, język i brak przekierowania geograficznego`, async () => {
+  test(`NetUnstick: ${language} ${kind}, stały adres, język i brak przekierowania geograficznego`, async () => {
     assert.equal(netunstickStoreUrls[language][kind], address);
     const path = new URL(address).pathname;
     const asset = kind === "marketing" ? resolve("out", `.${path}`, "index.html") : resolve("out", `.${path}.html`);
@@ -31,14 +31,14 @@ for (const [language, kind, address] of expected) {
       assert.match(html, /href="mailto:kr@itorg\.pl"/);
       assert.ok(!/<script\b/i.test(html), "Dokument dostępny bez wykonywania JavaScriptu");
     }
-    assert.ok(config.exclude.some((rule) => rule.endsWith("*") ? path.startsWith(rule.slice(0, -1)) : path === rule), "Stały adres sklepu omija funkcje Cloudflare");
+    assert.ok(config.exclude.some((rule) => rule.endsWith("*") ? path.startsWith(rule.slice(0, -1)) : path === rule), "Stały adres NetUnstick omija funkcje Cloudflare");
 
     const aliases = kind === "marketing" ? [path, path.slice(0, -1), `${path}index.html`] : [path, `${path}/`, `${path}.html`];
     for (const alias of aliases) {
       assert.ok(isNetunstickStorePath(alias), `Zachowanie aliasu ${alias}`);
       for (const method of ["GET", "HEAD"]) {
         for (const cookie of ["", "itorg-language=it", "itorg-language=pl"]) {
-          const request = new Request(`https://itorg.pl${alias}?source=appstore`, { method, headers: { Cookie: cookie, "Accept-Language": "de-DE,en;q=0.8" } });
+          const request = new Request(`https://itorg.pl${alias}?source=website`, { method, headers: { Cookie: cookie, "Accept-Language": "de-DE,en;q=0.8" } });
           Object.defineProperty(request, "cf", { value: { country: "IT" } });
           let calls = 0;
           const original = new Response(method === "HEAD" ? null : html, { headers: { "Content-Type": "text/html", "Content-Security-Policy": "default-src 'self'" } });
@@ -55,6 +55,6 @@ for (const [language, kind, address] of expected) {
   });
 }
 
-test("Wyjątek sklepu nie obejmuje głównej strony, katalogu ani podobnych nazw", () => {
+test("Wyjątek NetUnstick nie obejmuje głównej strony, katalogu ani podobnych nazw", () => {
   for (const path of ["/", "/produkty/", "/NetUnstick-extra/", "/other/NetUnstick/", "/NetUnstick/pl/privacy-other"]) assert.equal(isNetunstickStorePath(path), false);
 });

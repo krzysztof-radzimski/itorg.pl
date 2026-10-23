@@ -111,10 +111,9 @@ for (const language of languages) {
         for (const document of ["support", "privacy"]) {
           assert.ok(anchors.some((tag) => attr(tag, "href") === `/NetUnstick/${documentLanguage}/${document}` && attr(tag, "hreflang") === documentLanguage), `Niepoprawny język odnośnika do ${document}`);
         }
-        assert.match(html, /0[,.]99/);
-        assert.match(html, /USD/);
+        assert.doesNotMatch(html, /App\s*Store|0[,.]99|\bUSD\b/, "Prezentacja nie zawiera oferty sklepowej ani ceny");
         assert.match(html, /macOS 14/);
-        assert.ok(!anchors.some((tag) => /apps\.apple\.com/.test(attr(tag, "href"))), "Przed premierą nie reklamujemy nieaktywnego zakupu");
+        assert.ok(!anchors.some((tag) => /apps\.apple\.com/.test(attr(tag, "href"))), "Prezentacja nie odsyła do sklepu");
       } else if (kind === "eap-legislator") {
         const product = html.match(/<section\b[^>]*id="legislator"[\s\S]*?<\/section>/i)?.[0];
         assert.ok(product, "Opis EAP Legislator musi być w statycznym HTML");
@@ -143,13 +142,14 @@ for (const language of languages) {
 
 for (const language of ["pl", "en", "es"]) {
   for (const document of ["support", "privacy"]) {
-    test(`${language}: NetUnstick ${document}, komplet materiałów App Store i poprawne odnośniki`, () => {
+    test(`${language}: NetUnstick ${document}, komplet dokumentów i poprawne odnośniki`, () => {
       const path = `/NetUnstick/${language}/${document}.html`;
       const html = readFileSync(file(path), "utf8");
       assert.equal(attr(tags(html, "html")[0], "lang"), language);
       assert.equal(tags(html, "h1").length, 1);
       assert.match(html, /<title>NetUnstick: [^<]+<\/title>/);
       assert.equal(tags(html, "script").length, 0, "Strony wsparcia i prywatności pozostają statyczne");
+      assert.doesNotMatch(html, /App\s*Store/, "Dokument nie opisuje dystrybucji sklepowej");
       assert.ok(!html.includes("\u2014"), "Materiały nie przywracają długich myślników");
       const anchors = tags(html, "a");
       const landing = language === "pl" ? "/NetUnstick/" : `/${language}/NetUnstick/`;

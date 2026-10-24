@@ -1,14 +1,14 @@
 {
   "release" : {
     "architecture" : "arm64",
-    "build" : 15,
+    "build" : 16,
     "bundleIdentifier" : "org.netunstick.NetUnstick",
-    "byteCount" : 2079118,
+    "byteCount" : 2083526,
     "minimumSystemVersion" : "14.0",
-    "packageURL" : "https://itorg.pl/NetUnstick/updates/NetUnstick-0.4.0-15-arm64.pkg",
+    "packageURL" : "https://itorg.pl/NetUnstick/updates/NetUnstick-0.4.1-16-arm64.pkg",
     "schemaVersion" : 1,
-    "sha256" : "9760e36773a1bd637809c84ee75eb61034e493f9759b757f87c847a86150b432",
-    "version" : "0.4.0"
+    "sha256" : "319b658d3ac6faf6d6fff1d9244b0fc1b0ec31292babe8452c73c0a121fb439d",
+    "version" : "0.4.1"
   },
-  "signature" : "yXC9zt07X83ldhLFDt0zvrIPth9ABJhWApthtUQXiPjXG8xpM1J5vZn1yjUEztCeqQmQkng72zWblgKl2WbzDA=="
+  "signature" : "H7OA9D58o9He3OJG3u5flKDuCtn8SgRDhy0mG7RreYEs9E/CKckiP8km2KPAp5aHtTfpebAHrFzaDYzyN1dLBg=="
 }

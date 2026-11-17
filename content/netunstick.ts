@@ -19,7 +19,7 @@ const screenshotLanguages = euLocales;
 
 export function getNetUnstickScreenshot(locale: Locale) {
   const language = screenshotLanguages.find((language) => language === locale) ?? "en";
-  return { src: `/NetUnstick/screenshots/${language}.png`, language, width: 1800, height: 1208 };
+  return { src: `/NetUnstick/screenshots/${language}.png`, language, width: 1800, height: 1300 };
 }
 
 // Opis funkcji aplikacji i pobieranie podpisanego instalatora PKG.
